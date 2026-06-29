@@ -1,14 +1,20 @@
+# Pipeline
+
+---
+
 # Script 01 — Create Raw ROHE Dataset
 
 ## Objective
-Plan is to generate ROHE-style dataset from the MS COCO validation set by selecting suitable object instances and creating the metadata and segmentation masks required for object removal.
 
+Generate a ROHE-style dataset from the MS COCO validation set by selecting suitable object instances and creating the metadata and segmentation masks required for object removal.
 
-## Why is this script necessary?
-The Epistemic Uncertainty paper assumes that images already exist where an object has been removed. MS COCO does **not** contain these images. Therefore we must first build our own dataset. This script produces the raw dataset before inpainting.
+## Why this script is necessary
+
+The Epistemic Uncertainty paper assumes that images already exist where an object has been removed. MS COCO does not contain these removed-object images. Therefore, we first build our own dataset. This script produces the raw dataset before inpainting.
 
 ## Inputs
-```
+
+```text
 data/
     coco/
         val2017/
@@ -17,7 +23,8 @@ data/
 ```
 
 ## Outputs
-```
+
+```text
 data/
     rohe_raw/
         sample_000001/
@@ -26,62 +33,76 @@ data/
             mask_overlay.png
             metadata.json
 ```
-and
 
+Also creates:
+
+```text
+data/
+    rohe_raw/
+        manifest.json
 ```
-manifest.json
-```
+
+## Algorithm
 
 ### Step 1
 Load COCO annotations.
 
 ### Step 2
-Choose only target object categories.
-
-Example
+Select the target object categories.
 
 ```
 dog
 cat
 car
 chair
-...
+bicycle
+bus
+bottle
+bench
 ```
 
 ### Step 3
-Find every image containing those categories.
+Find every image containing one of the target categories.
 
 ### Step 4
-For every image, retrieve all object instances
+Retrieve every instance of the target object.
 
 ### Step 5
-Choose the largest instance.
-Reason: Small objects produce unreliable CLIP token regions.
+Choose the largest object instance.
+
+Reason:
+Small objects usually produce unreliable CLIP visual tokens.
 
 ### Step 6
 Compute
+
+```text
+object_fraction = object_area / image_area
 ```
-object_fraction =
-object_area / image_area
-```
-Keep only 5% to 30%
-Reason: Very small objects(almost no removed tokens), Very large objects(remove too much of the scene)
+
+Keep only objects occupying **5%–30%** of the image.
+
+Reason:
+
+- Very small objects → almost no removed tokens.
+- Very large objects → removed region dominates the image.
 
 ### Step 7
-Create binary mask using annToMask()
+Generate a binary segmentation mask using `annToMask()`.
 
 ### Step 8
-Copy original image.
+Copy the original COCO image.
 
 ### Step 9
-Create visualization mask_overlay for debugging.
+Generate `mask_overlay.png` for visual verification.
 
 ### Step 10
-Save metadata.
-Reason:Later scripts should never need to query COCO again. Everything required is stored locally.
+Store sample metadata.
 
-Example
+Metadata contains:
+
 ```
+sample_id
 target_object
 question
 ground_truth
@@ -90,7 +111,9 @@ source image
 ```
 
 ## Verification
-Every sample should contain
+
+Each sample directory contains
+
 ```
 original.jpg
 mask.png
@@ -98,76 +121,217 @@ mask_overlay.png
 metadata.json
 ```
 
-## Failure cases
-Missing image then skip sample
-Missing annotation then skip sample
-Bad segmentation then removed during quality filtering
+## Failure Cases
 
+- Missing image → Skip sample.
+- Missing annotation → Skip sample.
+- Invalid segmentation → Removed later during quality filtering.
+
+---
 
 # Script 02 — Prepare LaMa Input
 
 ## Objective
-Convert the raw ROHE dataset into the input format required by **LaMa (Large Mask Inpainting)**.
-After Script 01, each sample contains:
-```text
-sample_000001/
-    original.jpg
-    mask.png
+
+Convert the raw ROHE dataset into the input format expected by the LaMa inpainting model.
+
+## Why this script is necessary
+
+Each ROHE sample currently contains
+
 ```
-LaMa expects images and masks in a single folder with matching filenames.
-Therefore, we reorganize the dataset without modifying the images.
+original.jpg
+mask.png
+```
+
+LaMa expects
+
+```
+sample_xxxxxx.png
+sample_xxxxxx_mask.png
+```
+
+inside one directory.
 
 ## Inputs
+
 ```text
 data/
     rohe_raw/
-        sample_*/
-            original.jpg
-            mask.png
 ```
 
 ## Outputs
+
 ```text
 lama_input/
     sample_000001.png
     sample_000001_mask.png
-    sample_000002.png
-    sample_000002_mask.png
     ...
 ```
 
+## Algorithm
+
 ### Step 1
 Create the output directory.
-If it already exists, delete previous files to avoid mixing old and new runs.
 
 ### Step 2
-Iterate over every sample folders
+Delete previous contents to avoid mixing runs.
 
 ### Step 3
-Verify that both files exist:
-```text
+Iterate through every sample folder.
+
+### Step 4
+Verify that
+
+```
 original.jpg
 mask.png
 ```
-If either file is missing: Skip the sample and Print a warning.
+
+exist.
+
+### Step 5
+Copy and rename the files into the LaMa input directory.
+
+### Step 6
+Count successfully prepared samples.
+
+## Why copy instead of move?
+
+Keeping the raw dataset unchanged allows:
+
+- rerunning LaMa,
+- testing other inpainting models,
+- reproducing experiments.
+
+---
+
+# Stage 03 — LaMa Inpainting
+
+## Objective
+
+Generate object-removed images using the LaMa inpainting model.
+
+## Inputs
+
+```text
+lama_input/
+```
+
+## Outputs
+
+```text
+lama_output/
+```
+
+## Environment
+
+```
+conda activate lama39
+```
+
+## Execution
+
+Run the command documented in:
+
+```
+docs/LAMA_SETUP.md
+```
+
+## Verification
+
+Expected output:
+
+```
+636 inpainted images
+```
+
+Random visual inspection confirms:
+
+- object removed,
+- surrounding scene preserved,
+- filenames correctly matched.
+
+---
+
+# Script 03 — Integrate LaMa Outputs
+
+## Objective
+
+Copy the images generated by LaMa back into each ROHE sample directory.
+
+## Why this script is necessary
+
+Later scripts expect every sample directory to contain everything required for processing.
+
+After this stage each sample becomes self-contained.
+
+## Inputs
+
+```text
+lama_output/
+```
+
+```text
+data/
+    rohe_raw/
+```
+
+## Outputs
+
+```text
+data/
+    rohe_raw/
+        sample_xxxxxx/
+            removed.png
+```
+
+## Algorithm
+
+### Step 1
+Iterate over every sample directory.
+
+### Step 2
+Locate the corresponding LaMa output.
+
+### Step 3
+Verify the output exists.
 
 ### Step 4
-Copy the files into `lama_input`.
-Rename them as:
-```text
-sample_000001.png
-sample_000001_mask.png
+Copy it into the sample directory as
+
+```
+removed.png
 ```
 
 ### Step 5
-Count the successfully prepared samples.
+Count successfully copied samples.
 
-## Why copy instead of moving?
-We intentionally **copy** instead of moving because:
+## Verification
 
-* `rohe_raw` remains an untouched source dataset.
-* LaMa can be rerun multiple times.
-* If LaMa fails, the original data is still available.
-* Multiple inpainting methods could be tested later without rebuilding the dataset.
+Expected console output
 
-This separation makes the pipeline reproducible and safer.
+```
+Copied 636 LaMa outputs back into ../data/rohe_raw
+```
+
+Each sample now contains
+
+```
+original.jpg
+removed.png
+mask.png
+mask_overlay.png
+metadata.json
+```
+
+## Failure Cases
+
+- Missing LaMa output → Skip sample.
+- Filename mismatch → Print warning.
+
+## Why copy instead of referencing?
+
+Embedding `removed.png` inside each sample directory makes every sample independent.
+
+Future scripts only need to process a single directory per sample, making the pipeline cleaner, easier to debug, and fully reproducible.
