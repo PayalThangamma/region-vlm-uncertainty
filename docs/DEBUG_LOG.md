@@ -1,14 +1,15 @@
-Date:
+# Debug Log
 
-Script:
+This file records errors, failed runs, bugs, and fixes.
 
-Issue:
+## Template
 
-Error message:
+### Debug Entry 
 
-Cause:
+**Script:**  
+`code/...`
 
-Fix:
+**Problem:**  
 
-Verification:
-
+**Error message:**  
+```text
