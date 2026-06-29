@@ -1,0 +1,14 @@
+data/coco/
+data/rohe_raw/
+data/rohe_final/
+data/rohe_eval_images/
+outputs/
+lama_input/
+lama_output/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+__pycache__/
+.venv/
+.env
