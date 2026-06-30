@@ -1,3 +1,8 @@
+'''
+This script basically puts the input imaged from data set to perform inpainting on to get the image with target object inpainted
+using lama before runnung lama on it.
+'''
+
 from pathlib import Path
 import shutil
 

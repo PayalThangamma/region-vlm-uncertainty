@@ -1,0 +1,26 @@
+Good samples found in quality CSV: 522
+[OK] copied sample_000062
+[OK] copied sample_000068
+[OK] copied sample_000069
+[OK] copied sample_000073
+[OK] copied sample_000077
+[OK] copied sample_000079
+[OK] copied sample_000080
+[OK] copied sample_000081
+[OK] copied sample_000084
+:
+:
+:
+[OK] copied sample_000627
+[OK] copied sample_000628
+[OK] copied sample_000629
+[OK] copied sample_000632
+[OK] copied sample_000634
+[OK] copied sample_000635
+[OK] copied sample_000636
+------------------------------------------------------------
+Final common dataset created.
+Final samples: 522
+Final data dir: C:\Users\payal\region-vlm-uncertainty\data\rohe_final
+Final region map dir: C:\Users\payal\region-vlm-uncertainty\outputs\region_maps_final
+Final manifest: C:\Users\payal\region-vlm-uncertainty\outputs\final_dataset_manifest.json

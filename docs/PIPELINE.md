@@ -335,3 +335,269 @@ metadata.json
 Embedding `removed.png` inside each sample directory makes every sample independent.
 
 Future scripts only need to process a single directory per sample, making the pipeline cleaner, easier to debug, and fully reproducible.
+
+In `PIPELINE.md`, don’t add full terminal logs. Add a **workflow-level update** saying Stage 04 is now complete and what it produces.
+
+Open:
+
+```text
+docs/PIPELINE.md
+```
+
+Add this section after the LaMa / Script 03 step.
+
+````markdown
+
+## Stage 04 — Build Region Maps
+
+### Purpose
+
+This stage generates semantic region maps for every raw ROHE sample. These maps are needed for later region-wise epistemic masking experiments.
+
+Each image is divided into three semantic regions:
+
+1. **removed** — the original COCO object mask
+2. **context** — a dilated ring around the removed object
+3. **background** — everything outside removed and context regions
+
+### Input
+
+```text
+data/rohe_raw/
+````
+
+Each sample must contain:
+
+```text
+original.jpg
+removed.png
+mask.png
+metadata.json
+```
+
+### Method
+
+For each sample:
+
+1. Load `mask.png`.
+2. Resize the mask to `336 × 336`.
+3. Use this resized mask as the removed-object region.
+4. Create the context region by dilating the removed mask and subtracting the original removed mask.
+5. Create the background region as all remaining pixels.
+6. Divide the image into a `24 × 24` CLIP patch grid.
+7. Assign each of the `576` patch tokens to one region:
+
+   * `removed`
+   * `context`
+   * `background`
+
+### Key Parameters
+
+```text
+IMAGE_SIZE = 336
+PATCH_SIZE = 14
+GRID_SIZE = 24
+EXPECTED_TOKENS = 576
+DILATION_SIZE = 35
+OVERLAP_THRESHOLD = 0.25
+```
+
+### Output
+
+```text
+outputs/region_maps_rohe/
+```
+
+For each sample:
+
+```text
+removed_mask.png
+context_mask.png
+background_mask.png
+token_to_region.json
+region_counts.json
+metadata.json
+```
+
+Global output files:
+
+```text
+outputs/region_maps_rohe/manifest_region_maps.json
+outputs/region_maps_rohe/skipped_region_maps.json
+```
+
+### Result
+
+```text
+Samples found: 636
+Successful samples: 636
+Skipped samples: 0
+```
+
+All successful samples were mapped to exactly:
+
+```text
+24 × 24 = 576 patch tokens
+```
+
+## Stage 05 — Quality Filteirng
+
+**Script:** `code/05_quality_filter.py`  
+**Status:** Completed
+
+### Purpose
+
+This stage filters the raw ROHE samples using token-region statistics.
+
+The goal is to keep only samples that have a usable balance of:
+
+1. removed-object tokens
+2. context tokens
+3. background tokens
+
+This is needed because some raw samples have objects that are too large, context regions that are too small, or too little background. Those samples would make region-wise masking comparisons unfair.
+
+### Input
+
+```text
+outputs/region_maps_rohe/
+
+### Filtering Criteria
+
+A sample was marked as good if it satisfied:
+
+```text
+background >= 250
+20 <= removed <= 150
+30 <= context <= 200
+total == 576
+```
+
+### Output
+
+Quality file saved to:
+
+```text
+outputs/rohe_quality.csv
+```
+
+### Result
+
+```text
+Samples checked: 636
+Good samples: 522 / 636
+Rejected samples: 114 / 636
+```
+
+### Notes
+
+The filtered set of 522 samples will be used to create the final common dataset in the next stage.
+
+This common dataset will be used for all later experiments:
+
+* LLaVA baseline evaluation
+* global epistemic masking
+* removed-region masking
+* context-region masking
+* background-region masking
+* random/low-uncertainty controls
+
+## Stage 06 — Create Final Common Dataset
+
+**Script:** `code/06_create_final_dataset.py`  
+**Status:** Completed
+
+### Purpose
+
+This stage creates the final common dataset used for all later experiments.
+
+The common dataset is necessary because all baseline, masking, and control experiments must run on the same set of samples for a fair comparison.
+
+### Input
+
+```text
+data/rohe_raw/
+outputs/region_maps_rohe/
+outputs/rohe_quality.csv
+````
+
+### Method
+
+The script performs the following steps:
+
+1. Reads `outputs/rohe_quality.csv`.
+2. Selects only rows where `good_sample == True`.
+3. Clears any existing final dataset folders:
+
+   * `data/rohe_final/`
+   * `outputs/region_maps_final/`
+4. Copies each selected raw sample from:
+
+   * `data/rohe_raw/sample_xxxxxx/`
+     to:
+   * `data/rohe_final/sample_xxxxxx/`
+5. Copies the corresponding region maps from:
+
+   * `outputs/region_maps_rohe/sample_xxxxxx/`
+     to:
+   * `outputs/region_maps_final/sample_xxxxxx/`
+6. Creates a final manifest listing all selected samples.
+
+The script reads `outputs/rohe_quality.csv` and keeps only samples marked as:
+
+```text
+good_sample == True
+```
+
+For each good sample, it copies:
+
+```text
+data/rohe_raw/sample_xxxxxx/
+```
+
+to:
+
+```text
+data/rohe_final/sample_xxxxxx/
+```
+
+and copies:
+
+```text
+outputs/region_maps_rohe/sample_xxxxxx/
+```
+
+to:
+
+```text
+outputs/region_maps_final/sample_xxxxxx/
+```
+
+### Output
+
+```text
+data/rohe_final/
+outputs/region_maps_final/
+outputs/final_dataset_manifest.json
+```
+
+### Result
+
+```text
+Final samples: 522
+```
+
+### Notes
+
+The final common dataset contains 522 samples.
+
+This dataset will be used for:
+
+* LLaVA baseline evaluation
+* original-image vs removed-image comparison
+* hallucination subset selection
+* global epistemic masking
+* region-wise epistemic masking
+* random and low-uncertainty control experiments
+
+````

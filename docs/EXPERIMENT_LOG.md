@@ -109,3 +109,59 @@ Random samples were inspected to verify:
 
 **Notes:**
 The raw ROHE dataset is now complete and ready for region-map generation.
+
+## Run 005 — Region Map Generation
+
+**Date:** 2026-06-30  
+**Script:** `code/04_build_region_maps.py`
+
+### Goal
+
+Generate semantic region maps for every ROHE raw sample so that later LLaVA/epistemic masking experiments can separate visual tokens into:
+
+1. removed-object region
+2. context region
+3. background region
+
+These region maps will later be used for region-wise causal masking experiments.
+
+### Input
+
+Raw ROHE dataset:
+
+```text
+data/rohe_raw/
+
+## Run 006 — Quality Filtering for Region Maps
+
+**Date:** 2026-06-30  
+**Script:** `code/05_quality_filter.py`
+
+### Goal
+
+Filter the raw ROHE samples using token-region statistics so that the final common dataset contains only samples with usable removed-object, context, and background regions.
+
+This step is necessary because some raw samples have removed objects that are too large, too small, or leave too little background/context for meaningful region-wise masking experiments.
+
+### Input
+
+```text
+outputs/region_maps_rohe/
+
+## Run 007 — Create Final Common Dataset
+
+**Date:** 2026-06-30  
+**Script:** `code/06_create_final_dataset.py`
+
+### Goal
+
+Create the final common ROHE dataset by copying only the quality-approved samples into a separate final dataset directory.
+
+This final dataset will be used consistently across all later experiments so that every method is evaluated on the same image set.
+
+### Input
+
+Raw ROHE samples:
+
+```text
+data/rohe_raw/
