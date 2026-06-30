@@ -601,3 +601,126 @@ This dataset will be used for:
 * random and low-uncertainty control experiments
 
 ````
+
+## Stage 08 — Prepare HPC Inputs
+
+**Script:** `code/07_prepare_hpc_inputs.py`  
+**Status:** Completed
+
+### Purpose
+
+This stage prepares the final common ROHE dataset for running LLaVA and epistemic uncertainty experiments on the HPC cluster.
+
+The final dataset is converted into a flat, HPC-friendly structure so that evaluation scripts can easily load images, questions, labels, and token-region maps.
+
+### Input
+
+```text
+data/rohe_final/
+outputs/region_maps_final/
+````
+
+The final dataset contains 522 quality-approved samples.
+
+Each sample contains:
+
+```text
+original.jpg
+removed.png
+mask.png
+mask_overlay.png
+metadata.json
+```
+
+Each region-map folder contains:
+
+```text
+token_to_region.json
+region_counts.json
+metadata.json
+removed_mask.png
+context_mask.png
+background_mask.png
+```
+
+### Method
+
+For each final sample, the script:
+
+1. Copies the original image into a flat `original_images/` folder.
+2. Copies the removed image into a flat `removed_images/` folder.
+3. Converts the removed `.png` image into `.jpg` format for compatibility with the Epistemic attack pipeline.
+4. Copies token-region files into a `token_regions/` folder.
+5. Reads the sample metadata.
+6. Extracts the target object and question.
+7. Creates JSONL question files for original-image and removed-image evaluation.
+8. Creates an HPC manifest containing all prepared sample paths.
+
+### Output
+
+```text
+outputs/hpc_inputs/
+```
+
+Generated folders:
+
+```text
+outputs/hpc_inputs/original_images/
+outputs/hpc_inputs/removed_images/
+outputs/hpc_inputs/removed_images_jpg/
+outputs/hpc_inputs/token_regions/
+```
+
+Generated JSONL files:
+
+```text
+outputs/hpc_inputs/questions_original.jsonl
+outputs/hpc_inputs/questions_removed.jsonl
+outputs/hpc_inputs/questions_removed_jpg.jsonl
+```
+
+Generated manifest:
+
+```text
+outputs/hpc_inputs/hpc_manifest.json
+```
+
+### Evaluation Meaning
+
+For original images:
+
+```text
+label = yes
+```
+
+because the target object is present.
+
+For removed images:
+
+```text
+label = no
+```
+
+because the target object has been removed.
+
+### Result
+
+```text
+Prepared samples: 522
+Skipped samples: 0
+```
+
+### Notes
+
+This stage does not run LLaVA or generate epistemic uncertainty masks.
+
+It only prepares clean inputs for the next HPC stages:
+
+* original-image LLaVA baseline
+* removed-image LLaVA baseline
+* hallucination subset construction
+* adversarial image generation
+* global epistemic masking
+* region-wise masking experiments
+
+````

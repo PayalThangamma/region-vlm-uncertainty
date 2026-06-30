@@ -1,0 +1,32 @@
+Final samples found: 522
+HPC input dir: C:\Users\payal\region-vlm-uncertainty\outputs\hpc_inputs
+------------------------------------------------------------
+[OK] prepared sample_000062
+[OK] prepared sample_000068
+[OK] prepared sample_000069
+[OK] prepared sample_000073
+[OK] prepared sample_000077
+[OK] prepared sample_000079
+[OK] prepared sample_000080
+:
+:
+:
+[OK] prepared sample_000627
+[OK] prepared sample_000628
+[OK] prepared sample_000629
+[OK] prepared sample_000632
+[OK] prepared sample_000634
+[OK] prepared sample_000635
+[OK] prepared sample_000636
+------------------------------------------------------------
+HPC inputs prepared.
+Prepared samples: 522
+Skipped samples:  0
+Original images:  C:\Users\payal\region-vlm-uncertainty\outputs\hpc_inputs\original_images
+Removed images:   C:\Users\payal\region-vlm-uncertainty\outputs\hpc_inputs\removed_images
+Removed JPG:      C:\Users\payal\region-vlm-uncertainty\outputs\hpc_inputs\removed_images_jpg
+Token regions:    C:\Users\payal\region-vlm-uncertainty\outputs\hpc_inputs\token_regions
+Questions original:    C:\Users\payal\region-vlm-uncertainty\outputs\hpc_inputs\questions_original.jsonl
+Questions removed:     C:\Users\payal\region-vlm-uncertainty\outputs\hpc_inputs\questions_removed.jsonl
+Questions removed JPG: C:\Users\payal\region-vlm-uncertainty\outputs\hpc_inputs\questions_removed_jpg.jsonl
+HPC manifest:          C:\Users\payal\region-vlm-uncertainty\outputs\hpc_inputs\hpc_manifest.json

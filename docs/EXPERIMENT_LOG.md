@@ -165,3 +165,21 @@ Raw ROHE samples:
 
 ```text
 data/rohe_raw/
+
+## Run 008 — Prepare HPC Inputs
+
+**Date:** 2026-06-30  
+**Script:** `code/07_prepare_hpc_inputs.py`
+
+### Goal
+
+Prepare the final common ROHE dataset for HPC-based LLaVA and epistemic uncertainty experiments.
+
+This step converts the final dataset into a simple structure that can be uploaded to the cluster and used by evaluation scripts.
+
+### Input
+
+Final common dataset:
+
+```text
+data/rohe_final/
