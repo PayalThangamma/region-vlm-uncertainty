@@ -1,56 +1,54 @@
 # Pipeline
 
+This document describes the current project pipeline for region-wise causal analysis of object hallucination in LVLMs.
+
 ---
 
-# Script 01 — Create Raw ROHE Dataset
+## Current Pipeline Status
+
+| Stage | Script / Tool | Status |
+|---|---|---|
+| 01 | `code/01_create_rohe_dataset.py` | Completed |
+| 02 | `code/02_prepare_lama_input.py` | Completed |
+| 03 | LaMa inpainting | Completed |
+| 04 | `code/03_copy_lama_output.py` | Completed |
+| 05 | `code/04_build_region_maps.py` | Completed |
+| 06 | `code/05_quality_filter.py` | Completed |
+| 07 | `code/06_create_final_dataset.py` | Completed |
+| 08 | `code/07_prepare_hpc_inputs.py` | Completed |
+| 09 | Upload and verify HPC inputs | Completed |
+| 10 | LLaVA baseline evaluation | Next |
+| 11 | Hallucination subset construction | Pending |
+| 12 | Epistemic adversarial image generation | Pending |
+| 13 | Global epistemic masking | Pending |
+| 14 | Region-wise masking experiments | Pending |
+| 15 | Final metrics and plots | Pending |
+
+---
+
+# Stage 01 — Create Raw ROHE Dataset
+
+**Script:** `code/01_create_rohe_dataset.py`  
+**Status:** Completed
 
 ## Objective
 
 Generate a ROHE-style dataset from the MS COCO validation set by selecting suitable object instances and creating the metadata and segmentation masks required for object removal.
 
-## Why this script is necessary
+## Why this stage is necessary
 
-The Epistemic Uncertainty paper assumes that images already exist where an object has been removed. MS COCO does not contain these removed-object images. Therefore, we first build our own dataset. This script produces the raw dataset before inpainting.
+The Epistemic Uncertainty paper assumes images already exist where an object has been removed. MS COCO does not contain these removed-object images. Therefore, we first build our own dataset before inpainting.
 
 ## Inputs
 
 ```text
-data/
-    coco/
-        val2017/
-        annotations/
-            instances_val2017.json
+data/coco/val2017/
+data/coco/annotations/instances_val2017.json
 ```
 
-## Outputs
+## Target Categories
 
 ```text
-data/
-    rohe_raw/
-        sample_000001/
-            original.jpg
-            mask.png
-            mask_overlay.png
-            metadata.json
-```
-
-Also creates:
-
-```text
-data/
-    rohe_raw/
-        manifest.json
-```
-
-## Algorithm
-
-### Step 1
-Load COCO annotations.
-
-### Step 2
-Select the target object categories.
-
-```
 dog
 cat
 car
@@ -61,164 +59,124 @@ bottle
 bench
 ```
 
-### Step 3
-Find every image containing one of the target categories.
+## Method
 
-### Step 4
-Retrieve every instance of the target object.
-
-### Step 5
-Choose the largest object instance.
-
-Reason:
-Small objects usually produce unreliable CLIP visual tokens.
-
-### Step 6
-Compute
+1. Load COCO annotations.
+2. Select target object categories.
+3. Find images containing one of the target categories.
+4. Retrieve object instances.
+5. Choose the largest object instance.
+6. Compute object fraction:
 
 ```text
 object_fraction = object_area / image_area
 ```
 
-Keep only objects occupying **5%–30%** of the image.
+7. Keep only objects occupying 5%–30% of the image.
+8. Generate a binary segmentation mask using `annToMask()`.
+9. Copy the original COCO image.
+10. Generate `mask_overlay.png` for visual verification.
+11. Store sample metadata.
 
-Reason:
+## Output
 
-- Very small objects → almost no removed tokens.
-- Very large objects → removed region dominates the image.
-
-### Step 7
-Generate a binary segmentation mask using `annToMask()`.
-
-### Step 8
-Copy the original COCO image.
-
-### Step 9
-Generate `mask_overlay.png` for visual verification.
-
-### Step 10
-Store sample metadata.
-
-Metadata contains:
-
-```
-sample_id
-target_object
-question
-ground_truth
-annotation_id
-source image
+```text
+data/rohe_raw/
 ```
 
-## Verification
+Each sample contains:
 
-Each sample directory contains
-
-```
+```text
 original.jpg
 mask.png
 mask_overlay.png
 metadata.json
 ```
 
-## Failure Cases
+Global output:
 
-- Missing image → Skip sample.
-- Missing annotation → Skip sample.
-- Invalid segmentation → Removed later during quality filtering.
+```text
+data/rohe_raw/manifest.json
+```
+
+## Result
+
+```text
+636 candidate samples generated.
+```
 
 ---
 
-# Script 02 — Prepare LaMa Input
+# Stage 02 — Prepare LaMa Input
+
+**Script:** `code/02_prepare_lama_input.py`  
+**Status:** Completed
 
 ## Objective
 
 Convert the raw ROHE dataset into the input format expected by the LaMa inpainting model.
 
-## Why this script is necessary
+## Why this stage is necessary
 
-Each ROHE sample currently contains
+Each ROHE sample contains:
 
-```
+```text
 original.jpg
 mask.png
 ```
 
-LaMa expects
+LaMa expects files in a flat input folder:
 
-```
+```text
 sample_xxxxxx.png
 sample_xxxxxx_mask.png
 ```
 
-inside one directory.
-
-## Inputs
+## Input
 
 ```text
-data/
-    rohe_raw/
+data/rohe_raw/
 ```
 
-## Outputs
+## Output
 
 ```text
 lama_input/
-    sample_000001.png
-    sample_000001_mask.png
-    ...
 ```
 
-## Algorithm
+## Method
 
-### Step 1
-Create the output directory.
+1. Create the LaMa input directory.
+2. Delete previous contents to avoid mixing runs.
+3. Iterate through every sample folder.
+4. Verify that `original.jpg` and `mask.png` exist.
+5. Copy and rename files into the LaMa input directory.
+6. Count successfully prepared samples.
 
-### Step 2
-Delete previous contents to avoid mixing runs.
+## Result
 
-### Step 3
-Iterate through every sample folder.
-
-### Step 4
-Verify that
-
+```text
+636 samples prepared for LaMa.
 ```
-original.jpg
-mask.png
-```
-
-exist.
-
-### Step 5
-Copy and rename the files into the LaMa input directory.
-
-### Step 6
-Count successfully prepared samples.
-
-## Why copy instead of move?
-
-Keeping the raw dataset unchanged allows:
-
-- rerunning LaMa,
-- testing other inpainting models,
-- reproducing experiments.
 
 ---
 
 # Stage 03 — LaMa Inpainting
 
+**Tool:** LaMa  
+**Status:** Completed
+
 ## Objective
 
 Generate object-removed images using the LaMa inpainting model.
 
-## Inputs
+## Input
 
 ```text
 lama_input/
 ```
 
-## Outputs
+## Output
 
 ```text
 lama_output/
@@ -226,98 +184,79 @@ lama_output/
 
 ## Environment
 
-```
+```text
 conda activate lama39
 ```
 
 ## Execution
 
-Run the command documented in:
+The command is documented in:
 
-```
+```text
 docs/LAMA_SETUP.md
 ```
 
+## Result
+
+```text
+LaMa inpainting completed successfully.
+```
+
 ## Verification
 
-Expected output:
+Random visual inspection confirmed:
 
-```
-636 inpainted images
-```
-
-Random visual inspection confirms:
-
-- object removed,
-- surrounding scene preserved,
-- filenames correctly matched.
+1. target objects were removed,
+2. surrounding scene was preserved,
+3. filenames matched expected sample IDs.
 
 ---
 
-# Script 03 — Integrate LaMa Outputs
+# Stage 04 — Integrate LaMa Outputs
+
+**Script:** `code/03_copy_lama_output.py`  
+**Status:** Completed
 
 ## Objective
 
-Copy the images generated by LaMa back into each ROHE sample directory.
+Copy the images generated by LaMa back into each ROHE sample directory as `removed.png`.
 
-## Why this script is necessary
+## Why this stage is necessary
 
-Later scripts expect every sample directory to contain everything required for processing.
+Later scripts expect every sample folder to be self-contained.
 
-After this stage each sample becomes self-contained.
+After this stage, each sample has both the original image and the removed-object image.
 
-## Inputs
+## Input
 
 ```text
 lama_output/
+data/rohe_raw/
 ```
+
+## Output
 
 ```text
-data/
-    rohe_raw/
+data/rohe_raw/sample_xxxxxx/removed.png
 ```
 
-## Outputs
+## Method
+
+1. Iterate over every sample directory.
+2. Locate the corresponding LaMa output.
+3. Verify the output exists.
+4. Copy it into the sample directory as `removed.png`.
+5. Count successfully copied samples.
+
+## Result
 
 ```text
-data/
-    rohe_raw/
-        sample_xxxxxx/
-            removed.png
+636 LaMa outputs copied back into data/rohe_raw/.
 ```
 
-## Algorithm
+Each sample now contains:
 
-### Step 1
-Iterate over every sample directory.
-
-### Step 2
-Locate the corresponding LaMa output.
-
-### Step 3
-Verify the output exists.
-
-### Step 4
-Copy it into the sample directory as
-
-```
-removed.png
-```
-
-### Step 5
-Count successfully copied samples.
-
-## Verification
-
-Expected console output
-
-```
-Copied 636 LaMa outputs back into ../data/rohe_raw
-```
-
-Each sample now contains
-
-```
+```text
 original.jpg
 removed.png
 mask.png
@@ -325,34 +264,16 @@ mask_overlay.png
 metadata.json
 ```
 
-## Failure Cases
+---
 
-- Missing LaMa output → Skip sample.
-- Filename mismatch → Print warning.
+# Stage 05 — Build Region Maps
 
-## Why copy instead of referencing?
+**Script:** `code/04_build_region_maps.py`  
+**Status:** Completed
 
-Embedding `removed.png` inside each sample directory makes every sample independent.
+## Purpose
 
-Future scripts only need to process a single directory per sample, making the pipeline cleaner, easier to debug, and fully reproducible.
-
-In `PIPELINE.md`, don’t add full terminal logs. Add a **workflow-level update** saying Stage 04 is now complete and what it produces.
-
-Open:
-
-```text
-docs/PIPELINE.md
-```
-
-Add this section after the LaMa / Script 03 step.
-
-````markdown
-
-## Stage 04 — Build Region Maps
-
-### Purpose
-
-This stage generates semantic region maps for every raw ROHE sample. These maps are needed for later region-wise epistemic masking experiments.
+Generate semantic region maps for every raw ROHE sample. These maps are needed for later region-wise epistemic masking experiments.
 
 Each image is divided into three semantic regions:
 
@@ -360,11 +281,11 @@ Each image is divided into three semantic regions:
 2. **context** — a dilated ring around the removed object
 3. **background** — everything outside removed and context regions
 
-### Input
+## Input
 
 ```text
 data/rohe_raw/
-````
+```
 
 Each sample must contain:
 
@@ -375,7 +296,7 @@ mask.png
 metadata.json
 ```
 
-### Method
+## Method
 
 For each sample:
 
@@ -386,12 +307,11 @@ For each sample:
 5. Create the background region as all remaining pixels.
 6. Divide the image into a `24 × 24` CLIP patch grid.
 7. Assign each of the `576` patch tokens to one region:
+   - `removed`
+   - `context`
+   - `background`
 
-   * `removed`
-   * `context`
-   * `background`
-
-### Key Parameters
+## Key Parameters
 
 ```text
 IMAGE_SIZE = 336
@@ -402,7 +322,7 @@ DILATION_SIZE = 35
 OVERLAP_THRESHOLD = 0.25
 ```
 
-### Output
+## Output
 
 ```text
 outputs/region_maps_rohe/
@@ -426,7 +346,7 @@ outputs/region_maps_rohe/manifest_region_maps.json
 outputs/region_maps_rohe/skipped_region_maps.json
 ```
 
-### Result
+## Result
 
 ```text
 Samples found: 636
@@ -440,48 +360,76 @@ All successful samples were mapped to exactly:
 24 × 24 = 576 patch tokens
 ```
 
-## Stage 05 — Quality Filteirng
+## Notes
+
+This stage does not create the final common dataset. It creates region maps for all raw samples.
+
+---
+
+# Stage 06 — Quality Filtering
 
 **Script:** `code/05_quality_filter.py`  
 **Status:** Completed
 
-### Purpose
+## Purpose
 
-This stage filters the raw ROHE samples using token-region statistics.
+Filter the raw ROHE samples using token-region statistics.
 
 The goal is to keep only samples that have a usable balance of:
 
-1. removed-object tokens
-2. context tokens
-3. background tokens
+1. removed-object tokens,
+2. context tokens,
+3. background tokens.
 
 This is needed because some raw samples have objects that are too large, context regions that are too small, or too little background. Those samples would make region-wise masking comparisons unfair.
 
-### Input
+## Input
 
 ```text
 outputs/region_maps_rohe/
+```
 
-### Filtering Criteria
-
-A sample was marked as good if it satisfied:
+Each sample is expected to contain:
 
 ```text
+region_counts.json
+token_to_region.json
+removed_mask.png
+context_mask.png
+background_mask.png
+metadata.json
+```
+
+## Filtering Criteria
+
+A sample is marked as good if:
+
+```text
+total == 576
 background >= 250
 20 <= removed <= 150
 30 <= context <= 200
-total == 576
 ```
 
-### Output
-
-Quality file saved to:
+## Output
 
 ```text
 outputs/rohe_quality.csv
 ```
 
-### Result
+The CSV contains:
+
+```text
+sample_id
+removed
+context
+background
+total
+good_sample
+reasons
+```
+
+## Result
 
 ```text
 Samples checked: 636
@@ -489,59 +437,32 @@ Good samples: 522 / 636
 Rejected samples: 114 / 636
 ```
 
-### Notes
+## Notes
 
-The filtered set of 522 samples will be used to create the final common dataset in the next stage.
+The filtered set of 522 samples is used to create the final common dataset.
 
-This common dataset will be used for all later experiments:
+---
 
-* LLaVA baseline evaluation
-* global epistemic masking
-* removed-region masking
-* context-region masking
-* background-region masking
-* random/low-uncertainty controls
-
-## Stage 06 — Create Final Common Dataset
+# Stage 07 — Create Final Common Dataset
 
 **Script:** `code/06_create_final_dataset.py`  
 **Status:** Completed
 
-### Purpose
+## Purpose
 
-This stage creates the final common dataset used for all later experiments.
+Create the final common dataset used for all later experiments.
 
 The common dataset is necessary because all baseline, masking, and control experiments must run on the same set of samples for a fair comparison.
 
-### Input
+## Input
 
 ```text
 data/rohe_raw/
 outputs/region_maps_rohe/
 outputs/rohe_quality.csv
-````
+```
 
-### Method
-
-The script performs the following steps:
-
-1. Reads `outputs/rohe_quality.csv`.
-2. Selects only rows where `good_sample == True`.
-3. Clears any existing final dataset folders:
-
-   * `data/rohe_final/`
-   * `outputs/region_maps_final/`
-4. Copies each selected raw sample from:
-
-   * `data/rohe_raw/sample_xxxxxx/`
-     to:
-   * `data/rohe_final/sample_xxxxxx/`
-5. Copies the corresponding region maps from:
-
-   * `outputs/region_maps_rohe/sample_xxxxxx/`
-     to:
-   * `outputs/region_maps_final/sample_xxxxxx/`
-6. Creates a final manifest listing all selected samples.
+## Method
 
 The script reads `outputs/rohe_quality.csv` and keeps only samples marked as:
 
@@ -573,7 +494,9 @@ to:
 outputs/region_maps_final/sample_xxxxxx/
 ```
 
-### Output
+It also creates a final manifest listing all selected samples.
+
+## Output
 
 ```text
 data/rohe_final/
@@ -581,44 +504,44 @@ outputs/region_maps_final/
 outputs/final_dataset_manifest.json
 ```
 
-### Result
+## Result
 
 ```text
 Final samples: 522
 ```
 
-### Notes
+## Notes
 
 The final common dataset contains 522 samples.
 
 This dataset will be used for:
 
-* LLaVA baseline evaluation
-* original-image vs removed-image comparison
-* hallucination subset selection
-* global epistemic masking
-* region-wise epistemic masking
-* random and low-uncertainty control experiments
+- LLaVA baseline evaluation
+- original-image vs removed-image comparison
+- hallucination subset selection
+- global epistemic masking
+- region-wise epistemic masking
+- random and low-uncertainty control experiments
 
-````
+---
 
-## Stage 08 — Prepare HPC Inputs
+# Stage 08 — Prepare HPC Inputs
 
 **Script:** `code/07_prepare_hpc_inputs.py`  
 **Status:** Completed
 
-### Purpose
+## Purpose
 
-This stage prepares the final common ROHE dataset for running LLaVA and epistemic uncertainty experiments on the HPC cluster.
+Prepare the final common ROHE dataset for running LLaVA and epistemic uncertainty experiments on the HPC cluster.
 
 The final dataset is converted into a flat, HPC-friendly structure so that evaluation scripts can easily load images, questions, labels, and token-region maps.
 
-### Input
+## Input
 
 ```text
 data/rohe_final/
 outputs/region_maps_final/
-````
+```
 
 The final dataset contains 522 quality-approved samples.
 
@@ -643,7 +566,7 @@ context_mask.png
 background_mask.png
 ```
 
-### Method
+## Method
 
 For each final sample, the script:
 
@@ -656,7 +579,7 @@ For each final sample, the script:
 7. Creates JSONL question files for original-image and removed-image evaluation.
 8. Creates an HPC manifest containing all prepared sample paths.
 
-### Output
+## Output
 
 ```text
 outputs/hpc_inputs/
@@ -685,7 +608,7 @@ Generated manifest:
 outputs/hpc_inputs/hpc_manifest.json
 ```
 
-### Evaluation Meaning
+## Evaluation Meaning
 
 For original images:
 
@@ -703,24 +626,193 @@ label = no
 
 because the target object has been removed.
 
-### Result
+## Result
 
 ```text
 Prepared samples: 522
 Skipped samples: 0
 ```
 
-### Notes
+## Notes
 
 This stage does not run LLaVA or generate epistemic uncertainty masks.
 
 It only prepares clean inputs for the next HPC stages:
 
-* original-image LLaVA baseline
-* removed-image LLaVA baseline
-* hallucination subset construction
-* adversarial image generation
-* global epistemic masking
-* region-wise masking experiments
+- original-image LLaVA baseline
+- removed-image LLaVA baseline
+- hallucination subset construction
+- adversarial image generation
+- global epistemic masking
+- region-wise masking experiments
+
+---
+
+# Stage 09 — Upload and Verify HPC Inputs
+
+**Status:** Completed
+
+## Purpose
+
+Upload the prepared 522-sample HPC input package to the cluster and verify that all required files are accessible.
+
+## Input
+
+```text
+outputs/hpc_inputs.zip
+```
+
+## HPC Output Location
+
+```text
+/nethome/ptasathish/projects/region-vlm-uncertainty/hpc_inputs/
+```
+
+## Verification
+
+The following folders were checked on HPC:
+
+```text
+hpc_inputs/original_images/
+hpc_inputs/removed_images/
+hpc_inputs/removed_images_jpg/
+hpc_inputs/token_regions/
+```
+
+Expected file counts:
+
+```text
+original_images: 522
+removed_images: 522
+removed_images_jpg: 522
+token_regions: 522
+```
+
+Expected JSONL line counts:
+
+```text
+questions_original.jsonl: 522
+questions_removed.jsonl: 522
+questions_removed_jpg.jsonl: 522
+```
+
+## Issue Encountered
+
+After extraction, the `token_regions/` folders initially had permission errors.
+
+The issue was fixed using:
+
+```bash
+chmod -R u+rwX hpc_inputs
+```
+
+## Result
+
+The HPC input package is uploaded, extracted, permission-fixed, and verified.
+
+The dataset is ready for model evaluation.
+
+---
+
+# Stage 10 — LLaVA Baseline Evaluation
+
+## Purpose
+
+Run LLaVA on the original and removed images to establish the baseline hallucination behavior.
+
+## Planned Input
+
+Original-image evaluation:
+
+```text
+hpc_inputs/original_images/
+hpc_inputs/questions_original.jsonl
+```
+
+Removed-image evaluation:
+
+```text
+hpc_inputs/removed_images/
+hpc_inputs/questions_removed.jsonl
+```
+
+## Goal
+
+Run two baseline evaluations:
+
+```text
+Original images: expected answer = yes
+Removed images: expected answer = no
+```
+
+## Hallucination Definition
+
+A sample is a useful object-hallucination case if:
+
+```text
+original answer = yes
+removed answer = yes
+```
+
+Meaning:
+
+1. the model correctly recognizes the object when it is present,
+2. the model still says the object exists after it has been removed.
+
+These samples become the main subset for epistemic masking experiments.
+
+## Planned Output
+
+```text
+outputs/llava_baseline_original/
+outputs/llava_baseline_removed/
+outputs/hallucination_subset.json
+```
+
+Yes, but **not as an experiment run yet**.
+
+Putting the `Epistemic/` folder into the project is a **code setup step**, not an experiment result.
+
+Do this:
+
+```text id="crjb5u"
+No raw run log needed yet.
+No DEBUG_LOG entry unless something breaks.
+Add a short note in PIPELINE.md under Stage 10.
+```
+
+## Add this to `docs/PIPELINE.md`
+
+Under **Stage 10 — LLaVA Baseline Evaluation**, add this subsection:
+
+````markdown id="7134ol"
+## Model Code Setup
+
+The Epistemic repository is kept inside the local project root:
+
+```text
+region-vlm-uncertainty/
+    Epistemic/
+        baselines/
+            attack.py
+            eval_scripts/
+                eval_caption.py
+````
+
+This repository will be patched locally first, then uploaded to HPC after verification.
+
+The planned local patches are:
+
+1. Add ROHE dataset support to `Epistemic/baselines/attack.py`.
+2. Add full-dataset token-region support to `Epistemic/baselines/eval_scripts/eval_caption.py`.
+3. Add CLS-token-safe region masking for 576 patch tokens plus optional CLS token.
+4. Run a small smoke test before uploading the patched code to HPC.
+
+Backups of the original files will be kept as:
+
+```text
+Epistemic/baselines/attack_original.py
+Epistemic/baselines/eval_scripts/eval_caption_original.py
+```
 
 ````

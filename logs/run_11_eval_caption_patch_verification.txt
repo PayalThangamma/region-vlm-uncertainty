@@ -1,0 +1,40 @@
+Command: Select-String -Path .\Epistemic\baselines\eval_scripts\eval_caption.py -Pattern "rohe","token_region_root","has_cls","sample_id","region_mask_mode"
+
+Output:
+Epistemic\baselines\eval_scripts\eval_caption.py:206:    "--region_mask_mode",
+Epistemic\baselines\eval_scripts\eval_caption.py:220:    "--token_region_root",
+Epistemic\baselines\eval_scripts\eval_caption.py:223:    help="Root folder containing sample_id/token_to_region.json for full ROHE runs.",
+Epistemic\baselines\eval_scripts\eval_caption.py:374:    elif dataset_name == 'rohe':
+Epistemic\baselines\eval_scripts\eval_caption.py:375:        _dataset_name = 'rohe'
+Epistemic\baselines\eval_scripts\eval_caption.py:451:elif dataset_name == "rohe":
+Epistemic\baselines\eval_scripts\eval_caption.py:453:        rohe_data = [json.loads(line.strip()) for line in f if line.strip()]
+Epistemic\baselines\eval_scripts\eval_caption.py:456:        rohe_data = rohe_data[:args.num_samples]
+Epistemic\baselines\eval_scripts\eval_caption.py:459:    for d in rohe_data:
+Epistemic\baselines\eval_scripts\eval_caption.py:464:            "question_id": d.get("question_id", d.get("sample_id")),
+Epistemic\baselines\eval_scripts\eval_caption.py:465:            "sample_id": d.get("sample_id", 
+os.path.splitext(os.path.basename(image_name))[0]),
+Epistemic\baselines\eval_scripts\eval_caption.py:487:    sample_id = line.get("sample_id", 
+os.path.splitext(os.path.basename(image_file))[0])
+Epistemic\baselines\eval_scripts\eval_caption.py:575:        elif args.token_region_root is not None:
+Epistemic\baselines\eval_scripts\eval_caption.py:577:                args.token_region_root,
+Epistemic\baselines\eval_scripts\eval_caption.py:578:                sample_id,
+Epistemic\baselines\eval_scripts\eval_caption.py:592:        has_cls = False
+Epistemic\baselines\eval_scripts\eval_caption.py:598:                has_cls = True
+Epistemic\baselines\eval_scripts\eval_caption.py:607:                    f"Token-region mismatch for {sample_id}: "
+Epistemic\baselines\eval_scripts\eval_caption.py:614:                has_cls = True
+Epistemic\baselines\eval_scripts\eval_caption.py:626:        if args.region_mask_mode == "none":
+Epistemic\baselines\eval_scripts\eval_caption.py:629:        elif args.region_mask_mode == "all":
+Epistemic\baselines\eval_scripts\eval_caption.py:635:                    f"region_mask_mode={args.region_mask_mode} requires 
+token_region_root or token_region_path"
+Epistemic\baselines\eval_scripts\eval_caption.py:645:                        f"Invalid token id {token_id} for {sample_id}; "
+Epistemic\baselines\eval_scripts\eval_caption.py:649:                if region == args.region_mask_mode:
+Epistemic\baselines\eval_scripts\eval_caption.py:656:        if has_cls:
+Epistemic\baselines\eval_scripts\eval_caption.py:668:            "sample_id": sample_id,
+Epistemic\baselines\eval_scripts\eval_caption.py:670:            "region_mask_mode": args.region_mask_mode,
+Epistemic\baselines\eval_scripts\eval_caption.py:671:            "has_cls": has_cls,
+Epistemic\baselines\eval_scripts\eval_caption.py:714:        with open(os.path.join(analysis_dir, f"{sample_id}.json"), "w", 
+encoding="utf-8") as f:
+Epistemic\baselines\eval_scripts\eval_caption.py:719:            sample_id,
+Epistemic\baselines\eval_scripts\eval_caption.py:721:            args.region_mask_mode,
+Epistemic\baselines\eval_scripts\eval_caption.py:801:        "sample_id": sample_id,
+

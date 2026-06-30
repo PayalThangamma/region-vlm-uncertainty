@@ -12,3 +12,10 @@ lama_output/
 __pycache__/
 .venv/
 .env
+
+# External repositories
+Epistemic/
+Epistemic.zip
+
+# Backup copies of external files
+*_original.py

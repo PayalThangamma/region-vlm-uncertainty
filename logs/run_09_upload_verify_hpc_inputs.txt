@@ -1,0 +1,26 @@
+Run 009 — Upload and Verify HPC Inputs
+Date: Tue Jun 30 19:00:50 CEST 2026
+User: ptasathish
+Host: login.coli.uni-saarland.de
+Working directory: /nethome/ptasathish/projects/region-vlm-uncertainty
+----------------------------------------
+Image folder counts:
+original_images: 522
+removed_images: 522
+removed_images_jpg: 522
+token_regions: 522
+----------------------------------------
+JSONL line counts:
+522 hpc_inputs/questions_original.jsonl
+522 hpc_inputs/questions_removed.jsonl
+522 hpc_inputs/questions_removed_jpg.jsonl
+----------------------------------------
+Token-region file counts:
+token_to_region.json: 522
+region_counts.json: 522
+metadata.json: 522
+----------------------------------------
+Permission fix applied earlier:
+chmod -R u+rwX hpc_inputs
+----------------------------------------
+Status: HPC inputs uploaded, permission-fixed, and verified.

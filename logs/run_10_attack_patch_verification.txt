@@ -1,0 +1,10 @@
+Command:Select-String -Path .\Epistemic\baselines\attack.py -Pattern "rohe","os.path.splitext","No images found"
+
+Epistemic\baselines\attack.py:70:    elif args.dataset == "rohe":
+Epistemic\baselines\attack.py:82:            raise FileNotFoundError(f"No images found in ROHE data folder: {args.data}")
+Epistemic\baselines\attack.py:119:        stem = os.path.splitext(os.path.basename(pth))[0]
+Epistemic\baselines\attack.py:192:        stem = os.path.splitext(os.path.basename(pth))[0]
+Epistemic\baselines\attack.py:261:    parser_eva.add_argument("--dataset", type=str, default="chair", choices=["chair", "pope_rand", 
+"pope_pop", "pope_adv", "amber", "rohe"])
+Epistemic\baselines\attack.py:274:    parser_clip.add_argument("--dataset", type=str, default="chair", choices=["chair", "pope_rand", 
+"pope_pop", "pope_adv", "amber", "rohe"])
