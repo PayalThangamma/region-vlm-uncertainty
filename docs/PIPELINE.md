@@ -1,31 +1,3 @@
-# Pipeline
-
-This document describes the current project pipeline for region-wise causal analysis of object hallucination in LVLMs.
-
----
-
-## Current Pipeline Status
-
-| Stage | Script / Tool | Status |
-|---|---|---|
-| 01 | `code/01_create_rohe_dataset.py` | Completed |
-| 02 | `code/02_prepare_lama_input.py` | Completed |
-| 03 | LaMa inpainting | Completed |
-| 04 | `code/03_copy_lama_output.py` | Completed |
-| 05 | `code/04_build_region_maps.py` | Completed |
-| 06 | `code/05_quality_filter.py` | Completed |
-| 07 | `code/06_create_final_dataset.py` | Completed |
-| 08 | `code/07_prepare_hpc_inputs.py` | Completed |
-| 09 | Upload and verify HPC inputs | Completed |
-| 10 | LLaVA baseline evaluation | Next |
-| 11 | Hallucination subset construction | Pending |
-| 12 | Epistemic adversarial image generation | Pending |
-| 13 | Global epistemic masking | Pending |
-| 14 | Region-wise masking experiments | Pending |
-| 15 | Final metrics and plots | Pending |
-
----
-
 # Stage 01 — Create Raw ROHE Dataset
 
 **Script:** `code/01_create_rohe_dataset.py`  
@@ -714,81 +686,17 @@ The dataset is ready for model evaluation.
 
 ---
 
-# Stage 10 — LLaVA Baseline Evaluation
+# Stage 10 — Patch, Upload, and Verify Epistemic Code
+
+**Status:** Completed
 
 ## Purpose
 
-Run LLaVA on the original and removed images to establish the baseline hallucination behavior.
+Adapt the external Epistemic repository so it can run on the ROHE dataset and support region-wise masking experiments.
 
-## Planned Input
+## Local Code Setup
 
-Original-image evaluation:
-
-```text
-hpc_inputs/original_images/
-hpc_inputs/questions_original.jsonl
-```
-
-Removed-image evaluation:
-
-```text
-hpc_inputs/removed_images/
-hpc_inputs/questions_removed.jsonl
-```
-
-## Goal
-
-Run two baseline evaluations:
-
-```text
-Original images: expected answer = yes
-Removed images: expected answer = no
-```
-
-## Hallucination Definition
-
-A sample is a useful object-hallucination case if:
-
-```text
-original answer = yes
-removed answer = yes
-```
-
-Meaning:
-
-1. the model correctly recognizes the object when it is present,
-2. the model still says the object exists after it has been removed.
-
-These samples become the main subset for epistemic masking experiments.
-
-## Planned Output
-
-```text
-outputs/llava_baseline_original/
-outputs/llava_baseline_removed/
-outputs/hallucination_subset.json
-```
-
-Yes, but **not as an experiment run yet**.
-
-Putting the `Epistemic/` folder into the project is a **code setup step**, not an experiment result.
-
-Do this:
-
-```text id="crjb5u"
-No raw run log needed yet.
-No DEBUG_LOG entry unless something breaks.
-Add a short note in PIPELINE.md under Stage 10.
-```
-
-## Add this to `docs/PIPELINE.md`
-
-Under **Stage 10 — LLaVA Baseline Evaluation**, add this subsection:
-
-````markdown id="7134ol"
-## Model Code Setup
-
-The Epistemic repository is kept inside the local project root:
+The external Epistemic repository is kept inside the local project root during development:
 
 ```text
 region-vlm-uncertainty/
@@ -797,22 +705,342 @@ region-vlm-uncertainty/
             attack.py
             eval_scripts/
                 eval_caption.py
-````
-
-This repository will be patched locally first, then uploaded to HPC after verification.
-
-The planned local patches are:
-
-1. Add ROHE dataset support to `Epistemic/baselines/attack.py`.
-2. Add full-dataset token-region support to `Epistemic/baselines/eval_scripts/eval_caption.py`.
-3. Add CLS-token-safe region masking for 576 patch tokens plus optional CLS token.
-4. Run a small smoke test before uploading the patched code to HPC.
-
-Backups of the original files will be kept as:
-
-```text
-Epistemic/baselines/attack_original.py
-Epistemic/baselines/eval_scripts/eval_caption_original.py
 ```
 
-````
+The `Epistemic/` folder is ignored by Git. Project-controlled patch files are stored separately in:
+
+```text
+patches/
+```
+
+## Files Patched
+
+```text
+Epistemic/baselines/attack.py
+Epistemic/baselines/eval_scripts/eval_caption.py
+```
+
+## `attack.py` Changes
+
+- Added `rohe` as a supported dataset option.
+- Added ROHE image loading for `.jpg`, `.jpeg`, and `.png` files.
+- Removed the 500-image limit for ROHE.
+- Added extension-safe output naming using `os.path.splitext`.
+- Added ROHE support to both EVA and CLIP parser dataset choices.
+
+## `eval_caption.py` Changes
+
+- Added `rohe` as a supported dataset.
+- Added ROHE JSONL loading.
+- Added `sample_id`, `label`, `target_object`, and `split` support.
+- Added `--token_region_root` for full-dataset token-region loading.
+- Kept `--token_region_path` for one-image debugging.
+- Added `region_mask_mode = none` for no-masking runs.
+- Added CLS-token-safe masking logic.
+- Saved per-sample region uncertainty analysis JSON files.
+
+## HPC Upload Location
+
+```text
+/nethome/ptasathish/projects/region-vlm-uncertainty/Epistemic/
+```
+
+## Verification
+
+The patched code was verified on HPC with grep checks confirming:
+
+```text
+rohe
+os.path.splitext
+token_region_root
+has_cls
+sample_id
+region_mask_mode
+```
+
+## Raw Log
+
+```text
+logs/run_10_upload_verify_epistemic_code.txt
+```
+
+## Result
+
+The patched Epistemic code is uploaded and verified on HPC.
+
+---
+
+# Stage 11 — Prepare Smoke-Test Inputs
+
+**Status:** Completed
+
+## Purpose
+
+Create a tiny 3-sample subset from the full HPC input package to test the patched attack and evaluation scripts before running full experiments.
+
+## Input
+
+```text
+hpc_inputs/
+```
+
+## Smoke Samples
+
+```text
+sample_000062
+sample_000068
+sample_000069
+```
+
+## Output
+
+```text
+hpc_inputs_smoke/
+```
+
+The smoke-test folder contains:
+
+```text
+hpc_inputs_smoke/original_images/
+hpc_inputs_smoke/removed_images/
+hpc_inputs_smoke/removed_images_jpg/
+hpc_inputs_smoke/token_regions/
+hpc_inputs_smoke/questions_original.jsonl
+hpc_inputs_smoke/questions_removed.jsonl
+hpc_inputs_smoke/questions_removed_jpg.jsonl
+```
+
+## Verification
+
+```text
+removed_images_jpg: 3
+removed_images: 3
+original_images: 3
+token_regions: 3
+questions_original.jsonl: 3
+questions_removed.jsonl: 3
+questions_removed_jpg.jsonl: 3
+```
+
+## Raw Log
+
+```text
+logs/run_11_prepare_smoke_inputs.txt
+```
+
+## Result
+
+Smoke-test inputs are prepared and verified.
+
+---
+
+# Stage 12 — Attack Smoke Test
+
+**Status:** Completed
+
+## Purpose
+
+Verify that the patched Epistemic `attack.py` script can run on the ROHE smoke-test data through Condor on a GPU node.
+
+## Input
+
+```text
+hpc_inputs_smoke/removed_images_jpg/
+```
+
+## Output
+
+```text
+outputs/smoke_attack_removed/
+```
+
+## Configuration
+
+```text
+Script: Epistemic/baselines/attack.py
+Mode: clip
+Model: openai/clip-vit-large-patch14-336
+Dataset: rohe
+Epsilon: 3
+Alpha: 1
+Steps: 2
+```
+
+## Environment Fixes Required
+
+The smoke-test stage required resolving three HPC setup issues:
+
+1. Condor jobs did not automatically find `python3`.
+2. The root filesystem `/` was full, so package installation needed scratch-based temporary/cache paths.
+3. `transformers` rejected `torch 2.5.1`, so PyTorch was upgraded to `torch 2.6.0+cu118`.
+
+The final working Python environment was:
+
+```text
+/nethome/ptasathish/projects/region-vlm-uncertainty/.venv_epistemic/bin/python
+```
+
+## Verification
+
+The Condor GPU job confirmed:
+
+```text
+torch 2.6.0+cu118 cuda True
+transformers ok
+cv2 ok
+natsort ok
+```
+
+Generated outputs:
+
+```text
+outputs/smoke_attack_removed/sample_000062.png
+outputs/smoke_attack_removed/sample_000068.png
+outputs/smoke_attack_removed/sample_000069.png
+```
+
+Output count:
+
+```text
+3
+```
+
+## Raw Logs
+
+```text
+logs/run_12c_attack_smoke.out
+logs/run_12c_attack_smoke.err
+logs/run_12c_attack_smoke.condor.log
+```
+
+## Result
+
+The ROHE adversarial attack pipeline is validated end-to-end on HPC.
+
+---
+
+# Stage 13 — Full Adversarial Attack Generation
+
+## Purpose
+
+Generate adversarial versions of all final ROHE removed images using the patched Epistemic CLIP attack pipeline.
+
+These adversarial images are required for computing epistemic uncertainty by comparing CLIP/Vision Encoder representations of removed images and their adversarial counterparts.
+
+## Input
+
+```text
+hpc_inputs/removed_images_jpg/
+```
+
+Input count:
+
+```text
+522
+```
+
+## Output
+
+```text
+outputs/attack_removed_full/
+```
+
+## Configuration
+
+```text
+Script: Epistemic/baselines/attack.py
+Mode: clip
+Model: openai/clip-vit-large-patch14-336
+Dataset: rohe
+Epsilon: 3
+Alpha: 1
+Steps: 200
+```
+
+## Environment
+
+The run executed on a Condor GPU node and confirmed:
+
+```text
+torch 2.6.0+cu118 cuda True
+transformers ok
+cv2 ok
+natsort ok
+```
+
+## Result
+
+The full attack completed successfully:
+
+```text
+CLIP Attack: 100%|██████████| 522/522 [1:50:53<00:00, 12.75s/it]
+```
+
+Output count after run:
+
+```text
+522
+```
+
+First outputs included:
+
+```text
+outputs/attack_removed_full/sample_000062.png
+outputs/attack_removed_full/sample_000068.png
+outputs/attack_removed_full/sample_000069.png
+outputs/attack_removed_full/sample_000073.png
+outputs/attack_removed_full/sample_000077.png
+```
+
+## Raw Logs
+
+```text
+logs/run_13_attack_full_removed.out
+logs/run_13_attack_full_removed.err
+logs/run_13_attack_full_removed.condor.log
+```
+
+## Notes
+
+The `.err` log contained only non-fatal warnings:
+
+```text
+torch_dtype is deprecated
+Using a slow image processor as use_fast is unset
+```
+
+These warnings did not stop the run.
+
+## Result
+
+All 522 final removed-image samples now have adversarial counterparts for epistemic uncertainty computation.
+
+---
+
+## Stage 14 - eval_caption.py Smoke Test
+
+Date:
+Thu Jul 2 21:57:17 CEST 2026
+
+## Summary:
+The patched `eval_caption.py` pipeline was validated on 3 ROHE removed-image smoke samples using `region_mask_mode=all`.
+
+## Verified:
+- ROHE JSONL loading
+- removed-image loading
+- adversarial image loading
+- token-region loading
+- region-wise uncertain-token masking
+- LLaVA generation
+- `captions.jsonl` writing
+- per-sample `region_uncertainty` JSON writing
+
+## Outputs:
+- `outputs/smoke_eval_removed_all/captions.jsonl`
+- `outputs/smoke_eval_removed_all/config.json`
+- `outputs/smoke_eval_removed_all/region_uncertainty/sample_000062.json`
+- `outputs/smoke_eval_removed_all/region_uncertainty/sample_000068.json`
+- `outputs/smoke_eval_removed_all/region_uncertainty/sample_000069.json`
+
+## Result:
+The smoke test completed successfully for 3 / 3 samples.

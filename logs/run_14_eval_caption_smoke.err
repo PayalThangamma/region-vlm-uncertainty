@@ -1,0 +1,17 @@
+/nethome/ptasathish/projects/region-vlm-uncertainty/.venv_epistemic/lib64/python3.9/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/nethome/ptasathish/projects/region-vlm-uncertainty/.venv_epistemic/lib64/python3.9/site-packages/timm/models/hub.py:4: FutureWarning: Importing from timm.models.hub is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+/nethome/ptasathish/projects/region-vlm-uncertainty/.venv_epistemic/lib64/python3.9/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/nethome/ptasathish/projects/region-vlm-uncertainty/.venv_epistemic/lib64/python3.9/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/nethome/ptasathish/projects/region-vlm-uncertainty/.venv_epistemic/lib64/python3.9/site-packages/timm/models/registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+`torch_dtype` is deprecated! Use `dtype` instead!
+You are using a model of type llava to instantiate a model of type llava-1.5. This is not supported for all configurations of models and can yield errors.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  9.27it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 14.83it/s]
+  0%|          | 0/3 [00:00<?, ?it/s]/nethome/ptasathish/projects/region-vlm-uncertainty/Epistemic/baselines/minigpt4/models/llava.py:102: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  return torch.cuda.amp.autocast(dtype=dtype)
+The following generation flags are not valid and may be ignored: ['top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+ 33%|███▎      | 1/3 [00:07<00:14,  7.44s/it] 67%|██████▋   | 2/3 [00:10<00:04,  4.58s/it]100%|██████████| 3/3 [00:12<00:00,  3.66s/it]100%|██████████| 3/3 [00:12<00:00,  4.20s/it]

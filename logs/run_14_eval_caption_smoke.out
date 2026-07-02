@@ -1,0 +1,71 @@
+Run 014 — eval_caption.py smoke test
+Date: Thu Jul  2 21:57:17 CEST 2026
+Host: tony-2.coli.uni-saarland.de
+Python: /nethome/ptasathish/projects/region-vlm-uncertainty/.venv_epistemic/bin/python
+Python 3.9.25
+torch 2.6.0+cu118 cuda True
+transformers 4.57.6
+Checking inputs
+hpc_inputs_smoke/questions_removed_jpg.jsonl
+sample_000062.jpg
+sample_000068.jpg
+sample_000069.jpg
+sample_000062.png
+sample_000068.png
+sample_000069.png
+sample_000062
+sample_000068
+sample_000069
+Running eval_caption smoke test
+PYTHONPATH=/nethome/ptasathish/projects/region-vlm-uncertainty/Epistemic/baselines:
+Using Ours!! k_sig: 1.1 10 Masked layers: 12~17
+[42m####### Current Decoding Strategy: greedy #######[0m
+
+decoding strategy:  greedy
+backbone model_name:  llava-1.5-7b
+dataset_name:  rohe
+image_folder:  ../../hpc_inputs_smoke/removed_images_jpg
+output_dir:  ../../outputs/smoke_eval_removed_all
+num_samples:  3
+num_beams:  1
+seed:  42
+CLIPImageProcessor {
+  "crop_size": {
+    "height": 336,
+    "width": 336
+  },
+  "do_center_crop": true,
+  "do_convert_rgb": true,
+  "do_normalize": true,
+  "do_rescale": true,
+  "do_resize": true,
+  "image_mean": [
+    0.48145466,
+    0.4578275,
+    0.40821073
+  ],
+  "image_processor_type": "CLIPImageProcessor",
+  "image_std": [
+    0.26862954,
+    0.26130258,
+    0.27577711
+  ],
+  "resample": 3,
+  "rescale_factor": 0.00392156862745098,
+  "size": {
+    "shortest_edge": 336
+  }
+}
+
+Sample: sample_000062 Region mode: all suppressed_patch: 86 patch_total: 576 keep_mask_total: 577
+Sample: sample_000068 Region mode: all suppressed_patch: 115 patch_total: 576 keep_mask_total: 577
+Sample: sample_000069 Region mode: all suppressed_patch: 116 patch_total: 576 keep_mask_total: 577
+greedy 12.591861486434937
+Checking outputs
+outputs/smoke_eval_removed_all/captions.jsonl
+outputs/smoke_eval_removed_all/config.json
+outputs/smoke_eval_removed_all/region_uncertainty/sample_000062.json
+outputs/smoke_eval_removed_all/region_uncertainty/sample_000068.json
+outputs/smoke_eval_removed_all/region_uncertainty/sample_000069.json
+3 outputs/smoke_eval_removed_all/captions.jsonl
+Status: eval_caption smoke test completed.

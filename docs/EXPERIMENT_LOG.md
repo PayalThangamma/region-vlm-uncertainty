@@ -1,5 +1,3 @@
-# Experiment Log
-
 ## Run 001 — Created Raw ROHE Dataset
 
 **Date:** 2026-06-29  
@@ -671,3 +669,407 @@ LLaVA baseline evaluation
 ### Notes
 
 This run only verifies data availability on the cluster. It does not run model inference yet.
+---
+
+## Run 010 — Upload and Verify Patched Epistemic Code
+
+**Date:** 2026-06-30  
+**Location:** HPC  
+**Log:** `logs/run_10_upload_verify_epistemic_code.txt`
+
+### Goal
+
+Upload the locally patched Epistemic repository to HPC and verify that the ROHE-specific code changes are present before running model-side experiments.
+
+### Input
+
+```text
+Epistemic_rohe_patched.zip
+```
+
+### HPC Location
+
+```text
+/nethome/ptasathish/projects/region-vlm-uncertainty/
+```
+
+### Output
+
+```text
+Epistemic/
+logs/run_10_upload_verify_epistemic_code.txt
+```
+
+### Verification
+
+The patched code was verified on HPC.
+
+`attack.py` contained:
+
+```text
+rohe dataset branch
+extension-safe output naming using os.path.splitext
+rohe support in EVA and CLIP parser dataset choices
+```
+
+`eval_caption.py` contained:
+
+```text
+--token_region_root
+dataset_name == "rohe"
+sample_id support
+has_cls token handling
+region_mask_mode support
+```
+
+### Result
+
+```text
+Patched Epistemic code uploaded and verified on HPC.
+```
+
+### Notes
+
+This run only verifies that the patched code is present on HPC. It does not run the attack or evaluation pipeline.
+
+---
+
+## Run 011 — Prepare Smoke Test Inputs
+
+**Date:** 2026-06-30  
+**Location:** HPC  
+**Log:** `logs/run_11_prepare_smoke_inputs.txt`
+
+### Goal
+
+Create a tiny 3-sample smoke-test subset from the full ROHE HPC inputs.
+
+This smoke subset is used to test the patched attack and evaluation code before launching full 522-sample runs.
+
+### Input
+
+```text
+hpc_inputs/
+```
+
+### Output
+
+```text
+hpc_inputs_smoke/
+    original_images/
+    removed_images/
+    removed_images_jpg/
+    token_regions/
+    questions_original.jsonl
+    questions_removed.jsonl
+    questions_removed_jpg.jsonl
+```
+
+### Smoke Samples
+
+```text
+sample_000062
+sample_000068
+sample_000069
+```
+
+### Verification
+
+Folder counts:
+
+```text
+removed_images_jpg: 3
+removed_images: 3
+original_images: 3
+token_regions: 3
+```
+
+JSONL counts:
+
+```text
+questions_original.jsonl: 3
+questions_removed.jsonl: 3
+questions_removed_jpg.jsonl: 3
+```
+
+### Result
+
+```text
+Smoke-test inputs prepared successfully.
+```
+
+### Notes
+
+The smoke subset contains matching original images, removed images, JPG-converted removed images, token-region maps, and question files.
+
+---
+
+## Run 012C — Attack Smoke Test Completed Successfully
+
+**Date:** 2026-07-01  
+**Location:** HPC GPU node  
+**Log files:**
+
+```text
+logs/run_12c_attack_smoke.out
+logs/run_12c_attack_smoke.err
+logs/run_12c_attack_smoke.condor.log
+```
+
+### Goal
+
+Run a small 3-sample smoke test of the patched Epistemic `attack.py` pipeline on the ROHE dataset using the CLIP attack branch.
+
+This test verifies that the patched attack code, Python environment, Condor GPU submission, and ROHE image loading all work before running the full adversarial attack.
+
+### Input
+
+```text
+hpc_inputs_smoke/removed_images_jpg/
+```
+
+Smoke samples:
+
+```text
+sample_000062
+sample_000068
+sample_000069
+```
+
+### Configuration
+
+```text
+Script: Epistemic/baselines/attack.py
+Mode: clip
+Model: openai/clip-vit-large-patch14-336
+Dataset: rohe
+Epsilon: 3
+Alpha: 1
+Steps: 2
+```
+
+### Environment Verification
+
+The job ran on a GPU node and confirmed:
+
+```text
+torch 2.6.0+cu118 cuda True
+transformers ok
+cv2 ok
+natsort ok
+```
+
+### Output
+
+```text
+outputs/smoke_attack_removed/
+```
+
+Generated adversarial images:
+
+```text
+outputs/smoke_attack_removed/sample_000062.png
+outputs/smoke_attack_removed/sample_000068.png
+outputs/smoke_attack_removed/sample_000069.png
+```
+
+Output count:
+
+```text
+3
+```
+
+### Result
+
+```text
+Status: Attack smoke test completed.
+```
+
+### Notes
+
+The following setup issues were encountered and resolved before the successful `012C` run:
+
+```text
+Condor job could not find python3
+Root filesystem was full during Python environment setup
+transformers rejected torch 2.5.1 and required torch >= 2.6
+```
+
+These are documented separately in `docs/DEBUG_LOG.md`.
+
+---
+
+## Run 013 — Full Removed-Image Adversarial Attack
+
+**Date:** 2026-07-01  
+**Location:** HPC GPU node  
+**Log files:**
+
+```text
+logs/run_13_attack_full_removed.out
+logs/run_13_attack_full_removed.err
+logs/run_13_attack_full_removed.condor.log
+```
+
+### Goal
+
+Generate adversarial versions of all final ROHE removed images using the patched Epistemic CLIP attack pipeline.
+
+These adversarial images will later be compared with the clean removed images to compute epistemic uncertainty over visual tokens.
+
+### Input
+
+```text
+hpc_inputs/removed_images_jpg/
+```
+
+Input image count:
+
+```text
+522
+```
+
+### Configuration
+
+```text
+Script: Epistemic/baselines/attack.py
+Mode: clip
+Model: openai/clip-vit-large-patch14-336
+Dataset: rohe
+Epsilon: 3
+Alpha: 1
+Steps: 200
+```
+
+### Environment Verification
+
+The job ran successfully on a GPU node.
+
+```text
+torch 2.6.0+cu118 cuda True
+transformers ok
+cv2 ok
+natsort ok
+```
+
+### Output
+
+```text
+outputs/attack_removed_full/
+```
+
+Output adversarial image count:
+
+```text
+522
+```
+
+First outputs included:
+
+```text
+outputs/attack_removed_full/sample_000062.png
+outputs/attack_removed_full/sample_000068.png
+outputs/attack_removed_full/sample_000069.png
+outputs/attack_removed_full/sample_000073.png
+outputs/attack_removed_full/sample_000077.png
+outputs/attack_removed_full/sample_000079.png
+outputs/attack_removed_full/sample_000080.png
+outputs/attack_removed_full/sample_000081.png
+outputs/attack_removed_full/sample_000084.png
+outputs/attack_removed_full/sample_000085.png
+```
+
+### Runtime
+
+```text
+1:50:53
+```
+
+### Non-fatal Warnings
+
+The `.err` log contained only non-fatal compatibility warnings:
+
+```text
+torch_dtype is deprecated
+Using a slow image processor as use_fast is unset
+```
+
+These warnings did not stop execution.
+
+### Result
+
+```text
+CLIP Attack: 100%|██████████| 522/522 [1:50:53<00:00, 12.75s/it]
+Output count after run: 522
+Status: Full removed-image adversarial attack completed.
+```
+
+### Status
+
+Completed successfully.
+
+All 522 final removed-image samples now have adversarial counterparts for epistemic uncertainty computation.
+
+---
+
+## Run 014 - eval_caption.py Smoke Test
+
+
+Date:
+Thu Jul 2 21:57:17 CEST 2026
+
+
+## Environment:
+- Python 3.9.25
+- torch 2.6.0+cu118
+- CUDA available: True
+- transformers 4.57.6
+
+## Purpose:
+Smoke-test patched `eval_caption.py` on 3 ROHE removed-image samples before launching full LLaVA evaluation jobs.
+
+## Inputs:
+- `hpc_inputs_smoke/questions_removed_jpg.jsonl`
+- `hpc_inputs_smoke/removed_images_jpg/`
+- `outputs/smoke_attack_removed/`
+- `hpc_inputs_smoke/token_regions/`
+
+## Configuration:
+- model: `llava-1.5-7b`
+- decoder: `greedy`
+- dataset_name: `rohe`
+- image_folder: `../../hpc_inputs_smoke/removed_images_jpg`
+- attack_image_folder: `../../outputs/smoke_attack_removed`
+- output_dir: `../../outputs/smoke_eval_removed_all`
+- num_samples: `3`
+- max_new_tokens: `64`
+- use_ours: enabled
+- region_mask_mode: `all`
+- token_region_root: `../../hpc_inputs_smoke/token_regions`
+
+## Result:
+The smoke test completed successfully on all 3 samples.
+
+## Outputs:
+- `outputs/smoke_eval_removed_all/captions.jsonl`
+- `outputs/smoke_eval_removed_all/config.json`
+- `outputs/smoke_eval_removed_all/region_uncertainty/sample_000062.json`
+- `outputs/smoke_eval_removed_all/region_uncertainty/sample_000068.json`
+- `outputs/smoke_eval_removed_all/region_uncertainty/sample_000069.json`
+
+## Observed captions:
+- `sample_000062`, target object `bottle`: model answered no. This is correct after object removal.
+- `sample_000068`, target object `car`: model answered yes. This is a hallucination case.
+- `sample_000069`, target object `bus`: model answered yes. This is a hallucination case.
+
+## Region uncertainty sanity check:
+For `sample_000062`:
+- total patch tokens: 576
+- keep mask tokens including CLS: 577
+- uncertain patch tokens: 86
+- removed-region uncertainty density: 0.5347
+- context uncertainty density: 0.0244
+- background uncertainty density: 0.0205
+
+## Conclusion:
+Run 014 confirms that ROHE JSONL loading, removed-image loading, adversarial image loading, token-region loading, region-wise uncertain-token masking, LLaVA generation, captions writing, and region uncertainty writing all work on the smoke subset.

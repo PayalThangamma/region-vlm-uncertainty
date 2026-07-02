@@ -19,3 +19,41 @@ Epistemic.zip
 
 # Backup copies of external files
 *_original.py
+
+# Python / environments
+.venv/
+.venv_epistemic/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# External repos / large external code
+Epistemic/
+Epistemic.zip
+
+# Large/raw data
+data/
+lama_input/
+lama_output/
+hpc_inputs/
+hpc_inputs_smoke/
+
+# Backups and archives
+backups/
+*.zip
+*.tar
+*.tar.gz
+
+# Large outputs - ignore all by default
+outputs/*
+!outputs/smoke_eval_removed_all/
+!outputs/smoke_eval_removed_all/**
+
+# Logs - ignore all except documented successful smoke logs
+logs/*
+!logs/run_14_eval_caption_smoke.out
+!logs/run_14_eval_caption_smoke.err
+
+# Local backup source copies
+*_original.py
+*.bak*

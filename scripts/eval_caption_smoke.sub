@@ -1,0 +1,15 @@
+executable = /nethome/ptasathish/projects/region-vlm-uncertainty/scripts/run_eval_caption_smoke.sh
+
+request_CPUs = 4
+request_memory = 48GB
+request_disk = 100GB
+request_GPUs = 1
+
+requirements = (GPUs_GlobalMemoryMb >= 16000)
++MaxWallTime = 7200
+
+output = /nethome/ptasathish/projects/region-vlm-uncertainty/logs/run_14_eval_caption_smoke.out
+error  = /nethome/ptasathish/projects/region-vlm-uncertainty/logs/run_14_eval_caption_smoke.err
+log    = /nethome/ptasathish/projects/region-vlm-uncertainty/logs/run_14_eval_caption_smoke.condor.log
+
+queue
