@@ -57,3 +57,7 @@ logs/*
 # Local backup source copies
 *_original.py
 *.bak*
+
+# Full evaluation outputs kept locally, not committed raw
+outputs/eval_removed_all/
+outputs/eval_removed_none/
