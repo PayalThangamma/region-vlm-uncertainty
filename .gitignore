@@ -2,7 +2,6 @@ data/coco/
 data/rohe_raw/
 data/rohe_final/
 data/rohe_eval_images/
-outputs/
 lama_input/
 lama_output/
 *.pt
@@ -58,6 +57,23 @@ logs/*
 *_original.py
 *.bak*
 
-# Full evaluation outputs kept locally, not committed raw
-outputs/eval_removed_all/
-outputs/eval_removed_none/
+# Ignore generated outputs by default, but keep analysis results
+/outputs/*
+
+# Keep final analysis metrics
+!/outputs/metrics/
+!/outputs/metrics/**
+
+# Keep final plots
+!/outputs/plots/
+!/outputs/plots/**
+
+# Explicitly ignore raw/heavy output folders
+/outputs/eval_removed_none/
+/outputs/eval_removed_all/
+/outputs/eval_removed_removed/
+/outputs/eval_removed_context/
+/outputs/eval_removed_background/
+/outputs/attack_removed_full/
+/outputs/smoke_attack_removed/
+/outputs/smoke_eval_removed_all/
