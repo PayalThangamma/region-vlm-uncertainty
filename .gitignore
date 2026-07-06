@@ -1,36 +1,28 @@
-data/coco/
-data/rohe_raw/
-data/rohe_final/
-data/rohe_eval_images/
-lama_input/
-lama_output/
-*.pt
-*.pth
-*.ckpt
-*.safetensors
-__pycache__/
-.venv/
-.env
-
-# External repositories
-Epistemic/
-Epistemic.zip
-
-# Backup copies of external files
-*_original.py
-
 # Python / environments
 .venv/
-.venv_epistemic/
+.venv_*/
+.env
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
 
-# External repos / large external code
+# Model weights / checkpoints
+*.pt
+*.pkl
+*.bin
+*.pth
+*.ckpt
+*.safetensors
+
+# External repositories / large external code
 Epistemic/
 Epistemic.zip
+huggingface/
+torch/
+models/
+pretrained/
 
-# Large/raw data
+# Raw / large data
 data/
 lama_input/
 lama_output/
@@ -42,38 +34,39 @@ backups/
 *.zip
 *.tar
 *.tar.gz
-
-# Large outputs - ignore all by default
-outputs/*
-!outputs/smoke_eval_removed_all/
-!outputs/smoke_eval_removed_all/**
-
-# Logs - ignore all except documented successful smoke logs
-logs/*
-!logs/run_14_eval_caption_smoke.out
-!logs/run_14_eval_caption_smoke.err
-
-# Local backup source copies
-*_original.py
 *.bak*
+*_original.py
 
-# Ignore generated outputs by default, but keep analysis results
-/outputs/*
+# Logs
+logs/
+*.out
+*.err
+*.condor.log
 
-# Keep final analysis metrics
-!/outputs/metrics/
-!/outputs/metrics/**
+# Outputs: ignore all by default
+outputs/*
 
-# Keep final plots
-!/outputs/plots/
-!/outputs/plots/**
+# Keep final analysis metrics if present
+!outputs/metrics/
+!outputs/metrics/**
 
-# Explicitly ignore raw/heavy output folders
-/outputs/eval_removed_none/
-/outputs/eval_removed_all/
-/outputs/eval_removed_removed/
-/outputs/eval_removed_context/
-/outputs/eval_removed_background/
-/outputs/attack_removed_full/
-/outputs/smoke_attack_removed/
-/outputs/smoke_eval_removed_all/
+# Keep final plots if present
+!outputs/plots/
+!outputs/plots/**
+
+# Keep small final metadata if present
+!outputs/final_dataset_manifest.json
+!outputs/rohe_quality.csv
+
+# Explicitly ignore heavy output folders
+outputs/eval_removed_none/
+outputs/eval_removed_all/
+outputs/eval_removed_removed/
+outputs/eval_removed_context/
+outputs/eval_removed_background/
+outputs/attack_removed_full/
+outputs/smoke_attack_removed/
+outputs/smoke_eval_removed_all/
+
+# Local evidence backup copied from HPC
+evidence/

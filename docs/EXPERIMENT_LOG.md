@@ -733,24 +733,35 @@ Run 015B successfully generated the no-masking baseline for all 522 removed-imag
 **Date:** Fri Jul 3 01:51:30 CEST 2026  
 **Location:** HPC GPU node  
 **Dataset:** ROHE final removed-image set  
-**Model:** LLaVA-1.5-7B
+**Model:** LLaVA-1.5-7B  
+**Samples:** 522  
 
 ### Goal
 
 Run full LLaVA evaluation on all 522 ROHE removed-image samples while suppressing epistemically uncertain visual tokens only in the removed-object region.
 
-This run tests whether hallucination is causally linked to uncertain visual tokens located in the region where the target object originally existed before object removal.
+This condition tests whether hallucination is causally linked to uncertain visual tokens located in the region where the target object originally existed before object removal.
+
+### Input
+
+```text
+hpc_inputs/questions_removed_jpg.jsonl
+hpc_inputs/removed_images_jpg/
+outputs/attack_removed_full/
+hpc_inputs/token_regions/
+```
 
 ### Configuration
 
 ```text
-Model: llava-1.5-7b
-Decoder: greedy
-Dataset name: rohe
-Number of samples: 522
-Max new tokens: 64
+model: llava-1.5-7b
+decoder: greedy
+dataset_name: rohe
+num_samples: 522
+max_new_tokens: 64
 use_ours: enabled
 region_mask_mode: removed
+token_region_root: ../../hpc_inputs/token_regions
 ```
 
 ### Output
@@ -772,191 +783,26 @@ outputs/eval_removed_removed/region_uncertainty/
 
 ```text
 100%|██████████| 522/522 [40:44<00:00, 4.68s/it]
-```
-
-Runtime:
-
-```text
 greedy 2444.449285030365 seconds
 ```
 
-Approximately:
+Approximate runtime:
 
 ```text
 40.74 minutes
 ```
 
-### Masking Verification
+### Masking Meaning
 
-The logs confirm that removed-region masking was active:
-
-```text
-Region mode: removed
-patch_total: 576
-keep_mask_total: 577
-```
-
-Several samples had non-zero removed-region suppression:
-
-```text
-Sample: sample_000571 Region mode: removed suppressed_patch: 10 patch_total: 576 keep_mask_total: 577
-Sample: sample_000573 Region mode: removed suppressed_patch: 13 patch_total: 576 keep_mask_total: 577
-Sample: sample_000579 Region mode: removed suppressed_patch: 15 patch_total: 576 keep_mask_total: 577
-Sample: sample_000580 Region mode: removed suppressed_patch: 11 patch_total: 576 keep_mask_total: 577
-Sample: sample_000599 Region mode: removed suppressed_patch: 23 patch_total: 576 keep_mask_total: 577
-```
-
-Some samples had:
-
-```text
-suppressed_patch: 0
-```
-
-This is expected. It means no uncertain patch tokens fell inside the removed-object region for those samples.
-
-### Minor Logging Note
-
-The final status line printed:
-
-```text
-Status: Run 015C full eval removed none completed.
-```
-
-This is only a script text-label typo. The actual run is correct because the output folder and per-sample logs confirm:
-
-```text
-outputs/eval_removed_removed/
-Region mode: removed
-```
-
-### Raw Logs
-
-```text
-logs/run_15c_eval_removed_removed.out
-logs/run_15c_eval_removed_removed.err
-logs/run_15c_eval_removed_removed.condor.log
-```
-
-### Non-fatal Warnings
-
-The `.err` log contained only non-fatal warnings:
-
-```text
-TRANSFORMERS_CACHE is deprecated and will be removed in v5 of Transformers.
-Importing from timm.models.hub is deprecated.
-Importing from timm.models.layers is deprecated.
-Importing from timm.models.registry is deprecated.
-torch_dtype is deprecated.
-You are using a model of type llava to instantiate a model of type llava-1.5.
-torch.cuda.amp.autocast is deprecated.
-The generation flag top_p may be ignored.
-```
-
-### Conclusion
-
-Run 015C successfully generated full-dataset outputs for removed-region uncertain-token masking.
-
-## Run 015C — Full Removed-Image Evaluation with Removed-Region Masking
-
-**Status:** Completed successfully  
-**Date:** Fri Jul 3 01:51:30 CEST 2026  
-**Location:** HPC GPU node  
-**Dataset:** ROHE final removed-image set  
-**Model:** LLaVA-1.5-7B
-
-### Goal
-
-Run full LLaVA evaluation on all 522 ROHE removed-image samples while suppressing epistemically uncertain visual tokens only in the removed-object region.
-
-This run tests whether hallucination is causally linked to uncertain visual tokens located in the region where the target object originally existed before object removal.
-
-The main comparison after all region-wise runs will be:
-
-```text
-none vs all vs removed vs context vs background
-```
-
-### Input
-
-```text
-hpc_inputs/questions_removed_jpg.jsonl
-hpc_inputs/removed_images_jpg/
-outputs/attack_removed_full/
-hpc_inputs/token_regions/
-```
-
-Input count:
-
-```text
-522 samples
-```
-
-### Configuration
-
-```text
-Model: llava-1.5-7b
-Decoder: greedy
-Dataset name: rohe
-Number of samples: 522
-Max new tokens: 64
-use_ours: enabled
-region_mask_mode: removed
-```
-
-### Command Meaning
-
-The important setting for this run was:
+This run uses:
 
 ```text
 region_mask_mode = removed
 ```
 
-This means only epistemically uncertain patch tokens belonging to the removed-object region were suppressed during generation.
+Therefore, uncertain patch tokens were suppressed only if they belonged to the removed-object region.
 
-Uncertain tokens in the context and background regions were not suppressed by this condition.
-
-### Output
-
-```text
-outputs/eval_removed_removed/captions.jsonl
-outputs/eval_removed_removed/config.json
-outputs/eval_removed_removed/region_uncertainty/
-```
-
-### Output Verification
-
-The output checks confirmed:
-
-```text
-522 outputs/eval_removed_removed/captions.jsonl
-522 region_uncertainty JSON files
-```
-
-### Result
-
-The run completed successfully:
-
-```text
-100%|██████████| 522/522 [40:44<00:00, 4.68s/it]
-```
-
-Runtime:
-
-```text
-greedy 2444.449285030365 seconds
-```
-
-Approximately:
-
-```text
-40.74 minutes
-```
-
-Final timestamp:
-
-```text
-Fri Jul 3 01:51:30 CEST 2026
-```
+Uncertain tokens in the context and background regions were not suppressed in this condition.
 
 ### Masking Verification
 
@@ -971,11 +817,11 @@ keep_mask_total: 577
 Several samples had non-zero removed-region suppression:
 
 ```text
-Sample: sample_000571 Region mode: removed suppressed_patch: 10 patch_total: 576 keep_mask_total: 577
-Sample: sample_000573 Region mode: removed suppressed_patch: 13 patch_total: 576 keep_mask_total: 577
-Sample: sample_000579 Region mode: removed suppressed_patch: 15 patch_total: 576 keep_mask_total: 577
-Sample: sample_000580 Region mode: removed suppressed_patch: 11 patch_total: 576 keep_mask_total: 577
-Sample: sample_000599 Region mode: removed suppressed_patch: 23 patch_total: 576 keep_mask_total: 577
+sample_000571: suppressed_patch = 10
+sample_000573: suppressed_patch = 13
+sample_000579: suppressed_patch = 15
+sample_000580: suppressed_patch = 11
+sample_000599: suppressed_patch = 23
 ```
 
 Some samples had:
@@ -986,32 +832,6 @@ suppressed_patch: 0
 
 This is expected. It means no uncertain patch tokens fell inside the removed-object region for those samples.
 
-### Final Log Snippet
-
-```text
-Sample: sample_000570 Region mode: removed suppressed_patch: 0 patch_total: 576 keep_mask_total: 577
-Sample: sample_000571 Region mode: removed suppressed_patch: 10 patch_total: 576 keep_mask_total: 577
-Sample: sample_000572 Region mode: removed suppressed_patch: 0 patch_total: 576 keep_mask_total: 577
-:
-:
-Sample: sample_000635 Region mode: removed suppressed_patch: 8 patch_total: 576 keep_mask_total: 577
-Sample: sample_000636 Region mode: removed suppressed_patch: 0 patch_total: 576 keep_mask_total: 577
-greedy 2444.449285030365
-Checking outputs
-outputs/eval_removed_removed/captions.jsonl
-outputs/eval_removed_removed/config.json
-outputs/eval_removed_removed/region_uncertainty/sample_000062.json
-:
-:
-outputs/eval_removed_removed/region_uncertainty/sample_000094.json
-outputs/eval_removed_removed/region_uncertainty/sample_000095.json
-outputs/eval_removed_removed/region_uncertainty/sample_000096.json
-522 outputs/eval_removed_removed/captions.jsonl
-522
-Status: Run 015C full eval removed none completed.
-Fri Jul  3 01:51:30 CEST 2026
-```
-
 ### Minor Logging Note
 
 The final status line printed:
@@ -1020,9 +840,7 @@ The final status line printed:
 Status: Run 015C full eval removed none completed.
 ```
 
-This is only a script text-label typo inherited from the previous run script.
-
-The actual run is correct because the output folder and per-sample logs confirm:
+This was only a script text-label typo. The actual run is correct because the output folder and per-sample logs confirm:
 
 ```text
 outputs/eval_removed_removed/
@@ -1037,59 +855,25 @@ logs/run_15c_eval_removed_removed.err
 logs/run_15c_eval_removed_removed.condor.log
 ```
 
-### Non-fatal Warnings
-
-The `.err` log contained only non-fatal warnings:
-
-```text
-TRANSFORMERS_CACHE is deprecated and will be removed in v5 of Transformers.
-Importing from timm.models.hub is deprecated.
-Importing from timm.models.layers is deprecated.
-Importing from timm.models.registry is deprecated.
-torch_dtype is deprecated.
-You are using a model of type llava to instantiate a model of type llava-1.5.
-torch.cuda.amp.autocast is deprecated.
-The generation flag top_p may be ignored.
-```
-
-These warnings did not stop execution.
-
 ### Conclusion
 
 Run 015C successfully generated full-dataset outputs for removed-region uncertain-token masking.
 
-This condition will be compared against:
+---
 
-```text
-Run 015B: region_mask_mode = none
-Run 015A: region_mask_mode = all
-Run 015D: region_mask_mode = context
-Run 015E: region_mask_mode = background
-```
+## Run 015D - Full Removed-Image Evaluation with Context-Region Masking
 
-If removed-region masking reduces hallucination more than context or background masking, this would support the hypothesis that uncertain tokens in the removed-object region are causally important for object hallucination.
-
-If removed-region masking has little effect, this may suggest that hallucination is driven more by context, background cues, or language priors.
-
-
-## Run 015D — Full Removed-Image Evaluation with Context-Region Masking
-
-**Date:** REPLACE_WITH_COMPLETION_TIMESTAMP  
+**Status:** Completed successfully  
 **Location:** HPC GPU node  
 **Dataset:** ROHE final removed-image set  
-**Model:** LLaVA-1.5-7B
+**Model:** LLaVA-1.5-7B  
+**Samples:** 522  
 
 ### Goal
 
 Run full LLaVA evaluation on all 522 ROHE removed-image samples while suppressing epistemically uncertain visual tokens only in the context region around the removed object.
 
-This run tests whether hallucination is causally linked to uncertain visual tokens in the surrounding context rather than only the removed-object region.
-
-The main comparison after all region-wise runs will be:
-
-```text
-none vs all vs removed vs context vs background
-```
+This condition tests whether hallucination is causally linked to uncertain visual tokens in the surrounding context rather than only the removed-object region.
 
 ### Input
 
@@ -1100,35 +884,18 @@ outputs/attack_removed_full/
 hpc_inputs/token_regions/
 ```
 
-Input count:
-
-```text
-522 samples
-```
-
 ### Configuration
 
 ```text
-Model: llava-1.5-7b
-Decoder: greedy
-Dataset name: rohe
-Number of samples: 522
-Max new tokens: 64
+model: llava-1.5-7b
+decoder: greedy
+dataset_name: rohe
+num_samples: 522
+max_new_tokens: 64
 use_ours: enabled
 region_mask_mode: context
+token_region_root: ../../hpc_inputs/token_regions
 ```
-
-### Command Meaning
-
-The important setting for this run was:
-
-```text
-region_mask_mode = context
-```
-
-This means only epistemically uncertain patch tokens belonging to the context region were suppressed during generation.
-
-Uncertain tokens in the removed-object region and background region were not suppressed by this condition.
 
 ### Output
 
@@ -1140,38 +907,22 @@ outputs/eval_removed_context/region_uncertainty/
 
 ### Output Verification
 
-The output checks confirmed:
-
 ```text
 522 outputs/eval_removed_context/captions.jsonl
 522 region_uncertainty JSON files
 ```
 
-### Result
+### Masking Meaning
 
-The run completed successfully:
-
-```text
-100%|██████████| 522/522 [REPLACE_WITH_RUNTIME]
-```
-
-Runtime:
+This run uses:
 
 ```text
-REPLACE_WITH_GREEDY_SECONDS seconds
+region_mask_mode = context
 ```
 
-Approximately:
+Therefore, uncertain patch tokens were suppressed only if they belonged to the context region.
 
-```text
-REPLACE_WITH_RUNTIME_MINUTES minutes
-```
-
-Final timestamp:
-
-```text
-REPLACE_WITH_COMPLETION_TIMESTAMP
-```
+Uncertain tokens in the removed-object region and background region were not suppressed in this condition.
 
 ### Masking Verification
 
@@ -1183,15 +934,13 @@ patch_total: 576
 keep_mask_total: 577
 ```
 
-Some samples may have:
+Some samples had:
 
 ```text
 suppressed_patch: 0
 ```
 
 This is expected. It means no uncertain patch tokens fell inside the context region for those samples.
-
-Non-zero `suppressed_patch` values confirm that context-region masking was applied where uncertain context tokens existed.
 
 ### Raw Logs
 
@@ -1201,45 +950,27 @@ logs/run_15d_eval_removed_context.err
 logs/run_15d_eval_removed_context.condor.log
 ```
 
-### Non-fatal Warnings
-
-The `.err` log contained only non-fatal warnings similar to previous runs, including:
-
-```text
-TRANSFORMERS_CACHE is deprecated and will be removed in v5 of Transformers.
-Importing from timm.models.hub is deprecated.
-Importing from timm.models.layers is deprecated.
-Importing from timm.models.registry is deprecated.
-torch_dtype is deprecated.
-You are using a model of type llava to instantiate a model of type llava-1.5.
-torch.cuda.amp.autocast is deprecated.
-The generation flag top_p may be ignored.
-```
-
-These warnings did not stop execution.
-
 ### Conclusion
 
 Run 015D successfully generated full-dataset outputs for context-region uncertain-token masking.
 
-## Run 015E — Full Removed-Image Evaluation with Background-Region Masking
- 
-**Date:** REPLACE_WITH_15E_COMPLETION_TIMESTAMP  
+In the final analysis, context-region masking produced only a small and statistically unreliable reduction in hallucination.
+
+---
+
+## Run 015E - Full Removed-Image Evaluation with Background-Region Masking
+
+**Status:** Completed successfully  
 **Location:** HPC GPU node  
 **Dataset:** ROHE final removed-image set  
-**Model:** LLaVA-1.5-7B
+**Model:** LLaVA-1.5-7B  
+**Samples:** 522  
 
 ### Goal
 
 Run full LLaVA evaluation on all 522 ROHE removed-image samples while suppressing epistemically uncertain visual tokens only in the background region.
 
-This run tests whether hallucination is causally linked to uncertain visual tokens in the background rather than the removed-object region or nearby context.
-
-The main comparison after this run is:
-
-```text
-none vs all vs removed vs context vs background
-```
+This condition tests whether hallucination is causally linked to uncertain background or broader scene-level visual tokens.
 
 ### Input
 
@@ -1250,35 +981,18 @@ outputs/attack_removed_full/
 hpc_inputs/token_regions/
 ```
 
-Input count:
-
-```text
-522 samples
-```
-
 ### Configuration
 
 ```text
-Model: llava-1.5-7b
-Decoder: greedy
-Dataset name: rohe
-Number of samples: 522
-Max new tokens: 64
+model: llava-1.5-7b
+decoder: greedy
+dataset_name: rohe
+num_samples: 522
+max_new_tokens: 64
 use_ours: enabled
 region_mask_mode: background
+token_region_root: ../../hpc_inputs/token_regions
 ```
-
-### Command Meaning
-
-The important setting for this run was:
-
-```text
-region_mask_mode = background
-```
-
-This means only epistemically uncertain patch tokens belonging to the background region were suppressed during generation.
-
-Uncertain tokens in the removed-object region and context region were not suppressed by this condition.
 
 ### Output
 
@@ -1290,8 +1004,6 @@ outputs/eval_removed_background/region_uncertainty/
 
 ### Output Verification
 
-The output checks confirmed:
-
 ```text
 522 outputs/eval_removed_background/captions.jsonl
 522 region_uncertainty JSON files
@@ -1299,29 +1011,28 @@ The output checks confirmed:
 
 ### Result
 
-The run completed successfully:
-
 ```text
 100%|██████████| 522/522 [39:12<00:00, 4.51s/it]
-```
-
-Runtime:
-
-```text
 greedy 2352.300552368164 seconds
 ```
 
-Approximately:
+Approximate runtime:
 
 ```text
 39.2 minutes
 ```
 
-Final timestamp:
+### Masking Meaning
+
+This run uses:
 
 ```text
-REPLACE_WITH_15E_COMPLETION_TIMESTAMP
+region_mask_mode = background
 ```
+
+Therefore, uncertain patch tokens were suppressed only if they belonged to the background region.
+
+Uncertain tokens in the removed-object region and context region were not suppressed in this condition.
 
 ### Masking Verification
 
@@ -1336,14 +1047,31 @@ keep_mask_total: 577
 Several samples had substantial background-region suppression:
 
 ```text
-Sample: sample_000625 Region mode: background suppressed_patch: 124 patch_total: 576 keep_mask_total: 577
-Sample: sample_000626 Region mode: background suppressed_patch: 110 patch_total: 576 keep_mask_total: 577
-Sample: sample_000622 Region mode: background suppressed_patch: 94 patch_total: 576 keep_mask_total: 577
-Sample: sample_000617 Region mode: background suppressed_patch: 93 patch_total: 576 keep_mask_total: 577
-Sample: sample_000618 Region mode: background suppressed_patch: 90 patch_total: 576 keep_mask_total: 577
+sample_000625: suppressed_patch = 124
+sample_000626: suppressed_patch = 110
+sample_000622: suppressed_patch = 94
+sample_000617: suppressed_patch = 93
+sample_000618: suppressed_patch = 90
 ```
 
-This confirms that background-region masking was applied.
+This confirms that background-region uncertain-token masking was applied.
+
+### Minor Logging Note
+
+The log contained:
+
+```text
+sort: write failed: 'standard output': Broken pipe
+sort: write error
+```
+
+This did not affect the evaluation outputs. This likely happened because a command similar to:
+
+```text
+find ... | sort | head -20
+```
+
+was used. When `head` closes the pipe after receiving enough lines, `sort` can report a broken pipe.
 
 ### Raw Logs
 
@@ -1353,47 +1081,11 @@ logs/run_15e_eval_removed_background.err
 logs/run_15e_eval_removed_background.condor.log
 ```
 
-### Non-fatal Warnings
-
-The `.err` log contained only non-fatal warnings similar to previous runs, including:
-
-```text
-TRANSFORMERS_CACHE is deprecated and will be removed in v5 of Transformers.
-Importing from timm.models.hub is deprecated.
-Importing from timm.models.layers is deprecated.
-Importing from timm.models.registry is deprecated.
-torch_dtype is deprecated.
-You are using a model of type llava to instantiate a model of type llava-1.5.
-torch.cuda.amp.autocast is deprecated.
-The generation flag top_p may be ignored.
-```
-
-These warnings did not stop execution.
-
-### Minor Logging Note
-
-The log also contained:
-
-```text
-sort: write failed: 'standard output': Broken pipe
-sort: write error
-```
-
-This did not affect the evaluation outputs.
-
-This likely happened because the script used a command similar to:
-
-```text
-find ... | sort | head -20
-```
-
-When `head` closes the pipe after 20 lines, `sort` can report a broken pipe. The important outputs were already written and verified.
-
 ### Conclusion
 
 Run 015E successfully generated full-dataset outputs for background-region uncertain-token masking.
 
-This completes the core removed-image masking experiment set:
+This completed the core five-condition removed-image masking experiment:
 
 ```text
 Run 015A: region_mask_mode = all
@@ -1402,3 +1094,569 @@ Run 015C: region_mask_mode = removed
 Run 015D: region_mask_mode = context
 Run 015E: region_mask_mode = background
 ```
+
+---
+
+## Run 016 — Removed-Image Evaluation Analysis
+ 
+**Location:** Local machine  
+**Dataset:** ROHE final removed-image evaluation outputs  
+**Samples:** 522  
+**Conditions analyzed:** none, all, removed, context, background
+
+### Goal
+
+Analyze the five completed removed-image evaluation conditions and compute hallucination rates, causal effects, category-level results, region uncertainty summaries, and plots.
+
+The five analyzed conditions were:
+
+```text
+none
+all
+removed
+context
+background
+```
+
+### Input
+
+```text
+outputs/eval_removed_none/
+outputs/eval_removed_all/
+outputs/eval_removed_removed/
+outputs/eval_removed_context/
+outputs/eval_removed_background/
+```
+
+Each folder contained:
+
+```text
+captions.jsonl
+config.json
+region_uncertainty/*.json
+```
+
+Each condition had:
+
+```text
+522 captions
+522 region_uncertainty JSON files
+```
+
+### Script
+
+```text
+code/08_analyze_removed_eval.py
+```
+
+### Command
+
+```powershell
+python code\08_analyze_removed_eval.py
+```
+
+### Output Files
+
+```text
+outputs/metrics/removed_eval_all_captions_long.csv
+outputs/metrics/removed_eval_region_uncertainty_long.csv
+outputs/metrics/removed_eval_per_sample.csv
+outputs/metrics/removed_eval_summary.csv
+outputs/metrics/removed_eval_by_category.csv
+outputs/metrics/removed_eval_region_summary.csv
+
+outputs/plots/hallucination_rate_by_condition.png
+outputs/plots/causal_effect_by_condition.png
+outputs/plots/mean_suppression_density_by_region.png
+```
+
+### Hallucination Rule
+
+Because all removed-image questions have:
+
+```text
+label = no
+```
+
+the answer was classified as:
+
+```text
+hallucinated        if answer starts with "Yes"
+correct rejection   if answer starts with "No"
+unclear             otherwise
+```
+
+No unclear answers occurred in this run.
+
+### Main Summary
+
+```text
+condition     n     hallucinated_yes   correct_rejection_no   unclear_other   hallucination_rate   correct_rejection_rate
+none          522   415                107                    0               0.795019             0.204981
+all           522   396                126                    0               0.758621             0.241379
+removed       522   409                113                    0               0.783525             0.216475
+context       522   412                110                    0               0.789272             0.210728
+background    522   399                123                    0               0.764368             0.235632
+```
+
+### Causal Effects
+
+The causal effect was computed as:
+
+```text
+hallucination_rate_none - hallucination_rate_condition
+```
+
+Results:
+
+```text
+all          0.036398   = +3.64 percentage points
+removed      0.011494   = +1.15 percentage points
+context      0.005747   = +0.57 percentage points
+background   0.030651   = +3.07 percentage points
+```
+
+### Initial Interpretation
+
+The no-masking baseline produced a high hallucination rate:
+
+```text
+79.50%
+```
+
+Global uncertain-token masking reduced hallucination the most:
+
+```text
+75.86%
+```
+
+Among region-specific conditions, background-region masking was strongest:
+
+```text
+76.44%
+```
+
+Removed-region and context-region masking had much smaller effects.
+
+This suggests that hallucination is not primarily driven by uncertain tokens inside the removed-object region alone.
+
+---
+
+## Run 016A — Category-Level and Qualitative Analysis
+
+### Goal
+
+Inspect whether the masking effect is consistent across object categories and identify qualitative examples where masking changes a hallucinated answer into a correct rejection.
+
+### Input
+
+```text
+outputs/metrics/removed_eval_by_category.csv
+outputs/metrics/removed_eval_per_sample.csv
+```
+
+### Category-Level Results
+
+The effect was not uniform across object categories.
+
+The largest improvements appeared for bicycle and bench.
+
+For bicycle:
+
+```text
+none        21 / 26 hallucinated = 80.8%
+all         17 / 26 hallucinated = 65.4%
+background 17 / 26 hallucinated = 65.4%
+```
+
+For bench:
+
+```text
+none        60 / 66 hallucinated = 90.9%
+all         53 / 66 hallucinated = 80.3%
+background 55 / 66 hallucinated = 83.3%
+```
+
+Other categories showed smaller or no effects.
+
+Bottle was unchanged:
+
+```text
+none        23 / 29 hallucinated = 79.3%
+all         23 / 29 hallucinated = 79.3%
+removed     23 / 29 hallucinated = 79.3%
+context     23 / 29 hallucinated = 79.3%
+background  23 / 29 hallucinated = 79.3%
+```
+
+Dog was almost unchanged:
+
+```text
+none        54 / 73 hallucinated = 74.0%
+background 53 / 73 hallucinated = 72.6%
+```
+
+### Qualitative Changed Cases
+
+There were:
+
+```text
+32 changed cases
+```
+
+where the no-masking baseline hallucinated but at least one masking condition corrected the response.
+
+Examples:
+
+```text
+sample_000148 — bicycle
+none: Yes, there is a bicycle in the image.
+removed/context/background: No, there is no bicycle in the image.
+
+sample_000185 — bus
+none: Yes, there is a bus in the image.
+all/removed/context/background: No, there is no bus in the image.
+
+sample_000205 — cat
+none: Yes, there is a cat in the image.
+all/removed/context/background: No, there is no cat in the image.
+
+sample_000416 — chair
+none: Yes, there is a chair in the image.
+all/context/background: No, there is no chair in the image.
+```
+
+### Interpretation
+
+The qualitative cases confirm that uncertain-token masking can causally change model behavior from hallucination to correct rejection.
+
+However, the category-level results show that this effect is object-dependent.
+
+Some object categories, especially bicycle and bench, are more affected by masking, while others such as bottle and dog remain mostly unchanged.
+
+---
+
+## Run 016B — Bootstrap Significance Analysis
+ 
+**Location:** Local machine  
+**Bootstrap iterations:** 10000  
+**Samples:** 522  
+**Random seed:** 42
+
+### Goal
+
+Test whether the observed causal effects are statistically reliable using paired bootstrap resampling over the 522 samples.
+
+The comparison is paired because every sample appears in every condition.
+
+### Input
+
+```text
+outputs/metrics/removed_eval_per_sample.csv
+```
+
+### Script
+
+```text
+code/09_bootstrap_removed_eval.py
+```
+
+### Command
+
+```powershell
+python code\09_bootstrap_removed_eval.py
+```
+
+### Output
+
+```text
+outputs/metrics/removed_eval_bootstrap_effects.csv
+```
+
+### Bootstrap Results
+
+```text
+condition     observed_effect   effect_pp   95% CI pp          approx p-value
+all           0.036398          3.64        [1.53, 5.94]       0.0014
+removed       0.011494          1.15        [0.00, 2.30]       0.0642
+context       0.005747          0.57        [-0.57, 1.72]      0.3840
+background    0.030651          3.07        [0.96, 5.17]       0.0036
+```
+
+### Interpretation
+
+Global uncertain-token masking produced a statistically supported reduction in hallucination:
+
+```text
+effect = +3.64 percentage points
+95% CI = [1.53, 5.94]
+p ≈ 0.0014
+```
+
+Background-region masking also produced a statistically supported reduction:
+
+```text
+effect = +3.07 percentage points
+95% CI = [0.96, 5.17]
+p ≈ 0.0036
+```
+
+Removed-region masking showed only a weak or borderline trend:
+
+```text
+effect = +1.15 percentage points
+95% CI = [0.00, 2.30]
+p ≈ 0.0642
+```
+
+Context-region masking was not statistically reliable:
+
+```text
+effect = +0.57 percentage points
+95% CI = [-0.57, 1.72]
+p ≈ 0.3840
+```
+
+### Conclusion
+
+The bootstrap analysis supports the claim that global uncertain-token masking and background-region masking reduce hallucination compared with the no-masking baseline.
+
+The results do not support a strong claim that removed-region or context-region uncertainty alone is the main causal driver.
+
+The final interpretation is:
+
+```text
+Hallucination in this removed-object setting is not mainly explained by uncertainty localized to the removed-object region. Instead, hallucination appears to be more distributed, with background-region uncertainty showing a stronger causal effect than removed-region or context-region uncertainty.
+```
+
+### Final Result Statement
+
+The no-masking baseline hallucinated the removed object in 79.50% of samples. Global uncertain-token masking significantly reduced hallucination to 75.86% with an effect of 3.64 percentage points, 95% CI [1.53, 5.94], and p ≈ 0.0014. Background-region masking also significantly reduced hallucination to 76.44% with an effect of 3.07 percentage points, 95% CI [0.96, 5.17], and p ≈ 0.0036. In contrast, removed-region masking showed only a weak trend, while context-region masking was not statistically reliable. These results suggest that hallucination is driven more by distributed scene-level uncertainty than by uncertainty localized only to the removed-object region.
+
+---
+
+## Different-Family Backend Attempt - MiniGPT-4
+
+**Status:** Attempted, not used for final evaluation
+
+### Goal
+
+MiniGPT-4 was tested as a different-family VLM backend to check whether the epistemic region-wise masking method could be extended beyond LLaVA.
+
+### Result
+
+MiniGPT-4 ran, but its generated outputs were empty or unusable for the removed-object question answering task.
+
+### Decision
+
+MiniGPT-4 was not used for the full evaluation because the generated answers were not reliable enough for hallucination scoring.
+
+---
+
+## Different-Family Backend Attempt - Shikra
+
+**Status:** Attempted, not used for final evaluation
+
+### Goal
+
+Shikra was tested as another different-family VLM backend to check whether the epistemic region-wise masking method could be extended beyond LLaVA.
+
+### Setup Completed
+
+The infrastructure setup was successful:
+
+- LLaMA-7B base checkpoint was downloaded.
+- Shikra delta was applied.
+- The merged checkpoint was created as `shikra-combined`.
+- The merged checkpoint was linked into the Epistemic repo.
+- The checkpoint loaded successfully on a V100 GPU.
+- The smoke evaluation ran.
+- The script wrote output files.
+
+### Compatibility Fixes Attempted
+
+Several compatibility fixes were required:
+
+- Fixed `PYTHONPATH` for `minigpt4` imports.
+- Removed unsupported generation kwargs passed to Hugging Face `generate`.
+- Added compatibility defaults for missing decoding variables.
+- Tested the default yes/no prompt.
+- Tested a simple caption prompt: `Describe the image.`
+- Tested prompt formatting with and without the system-message prefix.
+- Tested newline-separated image/question prompt formatting.
+- Added temporary debug logging to inspect generated token IDs.
+
+### Result
+
+Although Shikra loaded and ran, generation was degenerate.
+
+For a simple caption prompt:
+
+```text
+Describe the image.
+```
+
+the generated token IDs were repeatedly:
+
+```text
+29900, 29900, 29900, ...
+```
+
+These decoded to:
+
+```text
+0000000000000000
+```
+
+This means the model was genuinely generating repeated `"0"` tokens.
+
+The issue was not caused by:
+
+- JSON output writing
+- output slicing
+- missing images
+- Condor failure
+- data-path failure
+
+### Interpretation
+
+The issue appears to be checkpoint/tokenizer/prompt/backend compatibility.
+
+Because the model did not produce valid natural-language answers, running the full region-wise evaluation would have produced meaningless results.
+
+### Decision
+
+Shikra was not used for the full evaluation.
+
+The completed LLaVA-1.5-7B experiment remains the main result.
+
+The recommended robustness run is:
+
+```text
+LLaVA-1.5-13B
+```
+
+Qwen can be considered as a future model-specific backend extension.
+
+---
+
+## Model Backend Protocol and Comparability Note
+
+### Purpose
+
+This project compares VLMs using a shared epistemic-causal evaluation protocol.
+
+The project does not require identical internal code paths across all models. It requires the same experimental logic.
+
+### Shared Protocol
+
+For each model, the protocol is:
+
+1. Use the same ROHE removed-object samples.
+2. Use the same removed images and questions.
+3. Use the same semantic region maps.
+4. Identify uncertain visual tokens within that model.
+5. Assign uncertain visual tokens to semantic regions.
+6. Apply the same masking conditions:
+   - `none`
+   - `all`
+   - `removed`
+   - `context`
+   - `background`
+7. Compute hallucination rate.
+8. Report causal effect relative to the model's own no-mask baseline.
+
+### Causal Effect
+
+For each masking condition:
+
+```text
+causal_effect(region) =
+hallucination_rate_none - hallucination_rate_region_masked
+```
+
+A positive value means that masking uncertain tokens in that condition reduced hallucination.
+
+### Cross-Model Comparability
+
+Different VLMs expose visual tokens differently.
+
+For example:
+
+```text
+LLaVA visual tokens are not the same as Qwen visual tokens.
+LLaVA vision encoder is not the same as Qwen vision encoder.
+LLaVA image-token mapping is not the same as Qwen image-token mapping.
+```
+
+Therefore, raw token counts should not be directly compared across models.
+
+Do not compare:
+
+```text
+LLaVA has X uncertain tokens and Qwen has Y uncertain tokens.
+```
+
+Instead, compare within-model causal effects:
+
+```text
+Does masking background-region uncertain tokens reduce hallucination in each model?
+```
+
+### Backend-Specific Implementation
+
+The methodology is shared, but token extraction and masking are model-specific backend operations.
+
+A model backend must define:
+
+- how the model is loaded
+- how images are preprocessed
+- how prompts are formatted
+- where visual tokens appear
+- how visual-token uncertainty is estimated
+- how token indices map to image regions
+- how selected visual tokens are masked
+- how outputs are decoded and scored
+
+### Current Backend Status
+
+| Model | Status | Project Use |
+|---|---|---|
+| LLaVA-1.5-7B | Working | Main completed experiment |
+| LLaVA-1.5-13B | Supported by same structure | Recommended robustness run |
+| MiniGPT-4 | Ran but produced unusable empty outputs | Not used |
+| Shikra | Loaded but generated repeated `0` outputs | Not used |
+| Qwen | Not plug-and-play | Possible future backend extension |
+
+### Recommended Framing
+
+The final project should be described as:
+
+```text
+We use a shared epistemic-causal evaluation protocol. Token extraction and masking are implemented through model-specific backends because VLM architectures expose visual tokens differently. Cross-model comparison is therefore based on within-model causal effects rather than raw token counts.
+```
+
+---
+
+## Current Project Decision
+
+The completed LLaVA-1.5-7B five-condition experiment is the main valid result.
+
+The strongest current conclusion is:
+
+```text
+Global uncertain-token masking and background-region masking significantly reduce object hallucination, while removed-region and context-region masking do not show strong statistically reliable effects.
+```
+
+Recommended next experiment:
+
+```text
+Run LLaVA-1.5-13B with the same five masking conditions as a full-method robustness check.
+```
+
+Possible future extension:
+
+```text
+Implement a Qwen backend for the same epistemic-causal protocol.
+```
+

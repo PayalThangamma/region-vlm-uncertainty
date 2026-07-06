@@ -1,0 +1,2612 @@
+[
+  {
+    "sample_id": "sample_000062",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000062",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000062"
+  },
+  {
+    "sample_id": "sample_000068",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000068",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000068"
+  },
+  {
+    "sample_id": "sample_000069",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000069",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000069"
+  },
+  {
+    "sample_id": "sample_000073",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000073",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000073"
+  },
+  {
+    "sample_id": "sample_000077",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000077",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000077"
+  },
+  {
+    "sample_id": "sample_000079",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000079",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000079"
+  },
+  {
+    "sample_id": "sample_000080",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000080",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000080"
+  },
+  {
+    "sample_id": "sample_000081",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000081",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000081"
+  },
+  {
+    "sample_id": "sample_000084",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000084",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000084"
+  },
+  {
+    "sample_id": "sample_000085",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000085",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000085"
+  },
+  {
+    "sample_id": "sample_000086",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000086",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000086"
+  },
+  {
+    "sample_id": "sample_000088",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000088",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000088"
+  },
+  {
+    "sample_id": "sample_000090",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000090",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000090"
+  },
+  {
+    "sample_id": "sample_000092",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000092",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000092"
+  },
+  {
+    "sample_id": "sample_000093",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000093",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000093"
+  },
+  {
+    "sample_id": "sample_000094",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000094",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000094"
+  },
+  {
+    "sample_id": "sample_000095",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000095",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000095"
+  },
+  {
+    "sample_id": "sample_000096",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000096",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000096"
+  },
+  {
+    "sample_id": "sample_000097",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000097",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000097"
+  },
+  {
+    "sample_id": "sample_000098",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000098",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000098"
+  },
+  {
+    "sample_id": "sample_000099",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000099",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000099"
+  },
+  {
+    "sample_id": "sample_000100",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000100",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000100"
+  },
+  {
+    "sample_id": "sample_000101",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000101",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000101"
+  },
+  {
+    "sample_id": "sample_000102",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000102",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000102"
+  },
+  {
+    "sample_id": "sample_000103",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000103",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000103"
+  },
+  {
+    "sample_id": "sample_000104",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000104",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000104"
+  },
+  {
+    "sample_id": "sample_000105",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000105",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000105"
+  },
+  {
+    "sample_id": "sample_000106",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000106",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000106"
+  },
+  {
+    "sample_id": "sample_000107",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000107",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000107"
+  },
+  {
+    "sample_id": "sample_000108",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000108",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000108"
+  },
+  {
+    "sample_id": "sample_000109",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000109",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000109"
+  },
+  {
+    "sample_id": "sample_000110",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000110",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000110"
+  },
+  {
+    "sample_id": "sample_000111",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000111",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000111"
+  },
+  {
+    "sample_id": "sample_000112",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000112",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000112"
+  },
+  {
+    "sample_id": "sample_000113",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000113",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000113"
+  },
+  {
+    "sample_id": "sample_000114",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000114",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000114"
+  },
+  {
+    "sample_id": "sample_000115",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000115",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000115"
+  },
+  {
+    "sample_id": "sample_000116",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000116",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000116"
+  },
+  {
+    "sample_id": "sample_000117",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000117",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000117"
+  },
+  {
+    "sample_id": "sample_000118",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000118",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000118"
+  },
+  {
+    "sample_id": "sample_000119",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000119",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000119"
+  },
+  {
+    "sample_id": "sample_000120",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000120",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000120"
+  },
+  {
+    "sample_id": "sample_000121",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000121",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000121"
+  },
+  {
+    "sample_id": "sample_000122",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000122",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000122"
+  },
+  {
+    "sample_id": "sample_000123",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000123",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000123"
+  },
+  {
+    "sample_id": "sample_000124",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000124",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000124"
+  },
+  {
+    "sample_id": "sample_000125",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000125",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000125"
+  },
+  {
+    "sample_id": "sample_000126",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000126",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000126"
+  },
+  {
+    "sample_id": "sample_000127",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000127",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000127"
+  },
+  {
+    "sample_id": "sample_000128",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000128",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000128"
+  },
+  {
+    "sample_id": "sample_000129",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000129",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000129"
+  },
+  {
+    "sample_id": "sample_000130",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000130",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000130"
+  },
+  {
+    "sample_id": "sample_000131",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000131",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000131"
+  },
+  {
+    "sample_id": "sample_000132",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000132",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000132"
+  },
+  {
+    "sample_id": "sample_000133",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000133",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000133"
+  },
+  {
+    "sample_id": "sample_000134",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000134",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000134"
+  },
+  {
+    "sample_id": "sample_000135",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000135",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000135"
+  },
+  {
+    "sample_id": "sample_000136",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000136",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000136"
+  },
+  {
+    "sample_id": "sample_000137",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000137",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000137"
+  },
+  {
+    "sample_id": "sample_000138",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000138",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000138"
+  },
+  {
+    "sample_id": "sample_000139",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000139",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000139"
+  },
+  {
+    "sample_id": "sample_000140",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000140",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000140"
+  },
+  {
+    "sample_id": "sample_000141",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000141",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000141"
+  },
+  {
+    "sample_id": "sample_000142",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000142",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000142"
+  },
+  {
+    "sample_id": "sample_000143",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000143",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000143"
+  },
+  {
+    "sample_id": "sample_000144",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000144",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000144"
+  },
+  {
+    "sample_id": "sample_000145",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000145",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000145"
+  },
+  {
+    "sample_id": "sample_000146",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000146",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000146"
+  },
+  {
+    "sample_id": "sample_000147",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000147",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000147"
+  },
+  {
+    "sample_id": "sample_000148",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000148",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000148"
+  },
+  {
+    "sample_id": "sample_000149",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000149",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000149"
+  },
+  {
+    "sample_id": "sample_000150",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000150",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000150"
+  },
+  {
+    "sample_id": "sample_000151",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000151",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000151"
+  },
+  {
+    "sample_id": "sample_000152",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000152",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000152"
+  },
+  {
+    "sample_id": "sample_000153",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000153",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000153"
+  },
+  {
+    "sample_id": "sample_000154",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000154",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000154"
+  },
+  {
+    "sample_id": "sample_000155",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000155",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000155"
+  },
+  {
+    "sample_id": "sample_000156",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000156",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000156"
+  },
+  {
+    "sample_id": "sample_000157",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000157",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000157"
+  },
+  {
+    "sample_id": "sample_000158",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000158",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000158"
+  },
+  {
+    "sample_id": "sample_000159",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000159",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000159"
+  },
+  {
+    "sample_id": "sample_000160",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000160",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000160"
+  },
+  {
+    "sample_id": "sample_000161",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000161",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000161"
+  },
+  {
+    "sample_id": "sample_000162",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000162",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000162"
+  },
+  {
+    "sample_id": "sample_000163",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000163",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000163"
+  },
+  {
+    "sample_id": "sample_000164",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000164",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000164"
+  },
+  {
+    "sample_id": "sample_000165",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000165",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000165"
+  },
+  {
+    "sample_id": "sample_000166",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000166",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000166"
+  },
+  {
+    "sample_id": "sample_000167",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000167",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000167"
+  },
+  {
+    "sample_id": "sample_000168",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000168",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000168"
+  },
+  {
+    "sample_id": "sample_000169",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000169",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000169"
+  },
+  {
+    "sample_id": "sample_000170",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000170",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000170"
+  },
+  {
+    "sample_id": "sample_000171",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000171",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000171"
+  },
+  {
+    "sample_id": "sample_000172",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000172",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000172"
+  },
+  {
+    "sample_id": "sample_000173",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000173",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000173"
+  },
+  {
+    "sample_id": "sample_000174",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000174",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000174"
+  },
+  {
+    "sample_id": "sample_000175",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000175",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000175"
+  },
+  {
+    "sample_id": "sample_000176",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000176",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000176"
+  },
+  {
+    "sample_id": "sample_000177",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000177",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000177"
+  },
+  {
+    "sample_id": "sample_000178",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000178",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000178"
+  },
+  {
+    "sample_id": "sample_000179",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000179",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000179"
+  },
+  {
+    "sample_id": "sample_000180",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000180",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000180"
+  },
+  {
+    "sample_id": "sample_000181",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000181",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000181"
+  },
+  {
+    "sample_id": "sample_000182",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000182",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000182"
+  },
+  {
+    "sample_id": "sample_000183",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000183",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000183"
+  },
+  {
+    "sample_id": "sample_000184",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000184",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000184"
+  },
+  {
+    "sample_id": "sample_000185",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000185",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000185"
+  },
+  {
+    "sample_id": "sample_000186",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000186",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000186"
+  },
+  {
+    "sample_id": "sample_000187",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000187",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000187"
+  },
+  {
+    "sample_id": "sample_000188",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000188",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000188"
+  },
+  {
+    "sample_id": "sample_000189",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000189",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000189"
+  },
+  {
+    "sample_id": "sample_000190",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000190",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000190"
+  },
+  {
+    "sample_id": "sample_000191",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000191",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000191"
+  },
+  {
+    "sample_id": "sample_000192",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000192",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000192"
+  },
+  {
+    "sample_id": "sample_000193",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000193",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000193"
+  },
+  {
+    "sample_id": "sample_000194",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000194",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000194"
+  },
+  {
+    "sample_id": "sample_000195",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000195",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000195"
+  },
+  {
+    "sample_id": "sample_000196",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000196",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000196"
+  },
+  {
+    "sample_id": "sample_000197",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000197",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000197"
+  },
+  {
+    "sample_id": "sample_000198",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000198",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000198"
+  },
+  {
+    "sample_id": "sample_000199",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000199",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000199"
+  },
+  {
+    "sample_id": "sample_000200",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000200",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000200"
+  },
+  {
+    "sample_id": "sample_000201",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000201",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000201"
+  },
+  {
+    "sample_id": "sample_000202",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000202",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000202"
+  },
+  {
+    "sample_id": "sample_000203",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000203",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000203"
+  },
+  {
+    "sample_id": "sample_000204",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000204",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000204"
+  },
+  {
+    "sample_id": "sample_000205",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000205",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000205"
+  },
+  {
+    "sample_id": "sample_000206",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000206",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000206"
+  },
+  {
+    "sample_id": "sample_000207",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000207",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000207"
+  },
+  {
+    "sample_id": "sample_000208",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000208",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000208"
+  },
+  {
+    "sample_id": "sample_000209",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000209",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000209"
+  },
+  {
+    "sample_id": "sample_000210",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000210",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000210"
+  },
+  {
+    "sample_id": "sample_000211",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000211",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000211"
+  },
+  {
+    "sample_id": "sample_000212",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000212",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000212"
+  },
+  {
+    "sample_id": "sample_000213",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000213",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000213"
+  },
+  {
+    "sample_id": "sample_000214",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000214",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000214"
+  },
+  {
+    "sample_id": "sample_000215",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000215",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000215"
+  },
+  {
+    "sample_id": "sample_000216",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000216",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000216"
+  },
+  {
+    "sample_id": "sample_000217",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000217",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000217"
+  },
+  {
+    "sample_id": "sample_000218",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000218",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000218"
+  },
+  {
+    "sample_id": "sample_000219",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000219",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000219"
+  },
+  {
+    "sample_id": "sample_000220",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000220",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000220"
+  },
+  {
+    "sample_id": "sample_000221",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000221",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000221"
+  },
+  {
+    "sample_id": "sample_000222",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000222",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000222"
+  },
+  {
+    "sample_id": "sample_000223",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000223",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000223"
+  },
+  {
+    "sample_id": "sample_000224",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000224",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000224"
+  },
+  {
+    "sample_id": "sample_000225",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000225",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000225"
+  },
+  {
+    "sample_id": "sample_000226",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000226",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000226"
+  },
+  {
+    "sample_id": "sample_000227",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000227",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000227"
+  },
+  {
+    "sample_id": "sample_000228",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000228",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000228"
+  },
+  {
+    "sample_id": "sample_000229",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000229",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000229"
+  },
+  {
+    "sample_id": "sample_000230",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000230",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000230"
+  },
+  {
+    "sample_id": "sample_000231",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000231",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000231"
+  },
+  {
+    "sample_id": "sample_000232",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000232",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000232"
+  },
+  {
+    "sample_id": "sample_000233",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000233",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000233"
+  },
+  {
+    "sample_id": "sample_000234",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000234",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000234"
+  },
+  {
+    "sample_id": "sample_000235",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000235",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000235"
+  },
+  {
+    "sample_id": "sample_000236",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000236",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000236"
+  },
+  {
+    "sample_id": "sample_000237",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000237",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000237"
+  },
+  {
+    "sample_id": "sample_000238",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000238",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000238"
+  },
+  {
+    "sample_id": "sample_000239",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000239",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000239"
+  },
+  {
+    "sample_id": "sample_000240",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000240",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000240"
+  },
+  {
+    "sample_id": "sample_000241",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000241",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000241"
+  },
+  {
+    "sample_id": "sample_000242",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000242",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000242"
+  },
+  {
+    "sample_id": "sample_000243",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000243",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000243"
+  },
+  {
+    "sample_id": "sample_000244",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000244",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000244"
+  },
+  {
+    "sample_id": "sample_000245",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000245",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000245"
+  },
+  {
+    "sample_id": "sample_000246",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000246",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000246"
+  },
+  {
+    "sample_id": "sample_000247",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000247",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000247"
+  },
+  {
+    "sample_id": "sample_000248",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000248",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000248"
+  },
+  {
+    "sample_id": "sample_000249",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000249",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000249"
+  },
+  {
+    "sample_id": "sample_000250",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000250",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000250"
+  },
+  {
+    "sample_id": "sample_000252",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000252",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000252"
+  },
+  {
+    "sample_id": "sample_000253",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000253",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000253"
+  },
+  {
+    "sample_id": "sample_000254",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000254",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000254"
+  },
+  {
+    "sample_id": "sample_000255",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000255",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000255"
+  },
+  {
+    "sample_id": "sample_000256",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000256",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000256"
+  },
+  {
+    "sample_id": "sample_000257",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000257",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000257"
+  },
+  {
+    "sample_id": "sample_000258",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000258",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000258"
+  },
+  {
+    "sample_id": "sample_000259",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000259",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000259"
+  },
+  {
+    "sample_id": "sample_000260",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000260",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000260"
+  },
+  {
+    "sample_id": "sample_000261",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000261",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000261"
+  },
+  {
+    "sample_id": "sample_000262",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000262",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000262"
+  },
+  {
+    "sample_id": "sample_000263",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000263",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000263"
+  },
+  {
+    "sample_id": "sample_000264",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000264",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000264"
+  },
+  {
+    "sample_id": "sample_000265",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000265",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000265"
+  },
+  {
+    "sample_id": "sample_000266",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000266",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000266"
+  },
+  {
+    "sample_id": "sample_000267",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000267",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000267"
+  },
+  {
+    "sample_id": "sample_000268",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000268",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000268"
+  },
+  {
+    "sample_id": "sample_000269",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000269",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000269"
+  },
+  {
+    "sample_id": "sample_000270",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000270",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000270"
+  },
+  {
+    "sample_id": "sample_000271",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000271",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000271"
+  },
+  {
+    "sample_id": "sample_000272",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000272",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000272"
+  },
+  {
+    "sample_id": "sample_000273",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000273",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000273"
+  },
+  {
+    "sample_id": "sample_000274",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000274",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000274"
+  },
+  {
+    "sample_id": "sample_000275",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000275",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000275"
+  },
+  {
+    "sample_id": "sample_000276",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000276",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000276"
+  },
+  {
+    "sample_id": "sample_000277",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000277",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000277"
+  },
+  {
+    "sample_id": "sample_000278",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000278",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000278"
+  },
+  {
+    "sample_id": "sample_000279",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000279",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000279"
+  },
+  {
+    "sample_id": "sample_000280",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000280",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000280"
+  },
+  {
+    "sample_id": "sample_000281",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000281",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000281"
+  },
+  {
+    "sample_id": "sample_000282",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000282",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000282"
+  },
+  {
+    "sample_id": "sample_000283",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000283",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000283"
+  },
+  {
+    "sample_id": "sample_000284",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000284",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000284"
+  },
+  {
+    "sample_id": "sample_000285",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000285",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000285"
+  },
+  {
+    "sample_id": "sample_000286",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000286",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000286"
+  },
+  {
+    "sample_id": "sample_000287",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000287",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000287"
+  },
+  {
+    "sample_id": "sample_000288",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000288",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000288"
+  },
+  {
+    "sample_id": "sample_000289",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000289",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000289"
+  },
+  {
+    "sample_id": "sample_000290",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000290",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000290"
+  },
+  {
+    "sample_id": "sample_000291",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000291",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000291"
+  },
+  {
+    "sample_id": "sample_000292",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000292",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000292"
+  },
+  {
+    "sample_id": "sample_000293",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000293",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000293"
+  },
+  {
+    "sample_id": "sample_000294",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000294",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000294"
+  },
+  {
+    "sample_id": "sample_000295",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000295",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000295"
+  },
+  {
+    "sample_id": "sample_000296",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000296",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000296"
+  },
+  {
+    "sample_id": "sample_000297",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000297",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000297"
+  },
+  {
+    "sample_id": "sample_000298",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000298",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000298"
+  },
+  {
+    "sample_id": "sample_000299",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000299",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000299"
+  },
+  {
+    "sample_id": "sample_000300",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000300",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000300"
+  },
+  {
+    "sample_id": "sample_000301",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000301",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000301"
+  },
+  {
+    "sample_id": "sample_000302",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000302",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000302"
+  },
+  {
+    "sample_id": "sample_000303",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000303",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000303"
+  },
+  {
+    "sample_id": "sample_000304",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000304",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000304"
+  },
+  {
+    "sample_id": "sample_000305",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000305",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000305"
+  },
+  {
+    "sample_id": "sample_000306",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000306",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000306"
+  },
+  {
+    "sample_id": "sample_000307",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000307",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000307"
+  },
+  {
+    "sample_id": "sample_000308",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000308",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000308"
+  },
+  {
+    "sample_id": "sample_000309",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000309",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000309"
+  },
+  {
+    "sample_id": "sample_000310",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000310",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000310"
+  },
+  {
+    "sample_id": "sample_000311",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000311",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000311"
+  },
+  {
+    "sample_id": "sample_000312",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000312",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000312"
+  },
+  {
+    "sample_id": "sample_000313",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000313",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000313"
+  },
+  {
+    "sample_id": "sample_000314",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000314",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000314"
+  },
+  {
+    "sample_id": "sample_000315",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000315",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000315"
+  },
+  {
+    "sample_id": "sample_000316",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000316",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000316"
+  },
+  {
+    "sample_id": "sample_000317",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000317",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000317"
+  },
+  {
+    "sample_id": "sample_000318",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000318",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000318"
+  },
+  {
+    "sample_id": "sample_000319",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000319",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000319"
+  },
+  {
+    "sample_id": "sample_000320",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000320",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000320"
+  },
+  {
+    "sample_id": "sample_000321",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000321",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000321"
+  },
+  {
+    "sample_id": "sample_000322",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000322",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000322"
+  },
+  {
+    "sample_id": "sample_000323",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000323",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000323"
+  },
+  {
+    "sample_id": "sample_000324",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000324",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000324"
+  },
+  {
+    "sample_id": "sample_000325",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000325",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000325"
+  },
+  {
+    "sample_id": "sample_000326",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000326",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000326"
+  },
+  {
+    "sample_id": "sample_000327",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000327",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000327"
+  },
+  {
+    "sample_id": "sample_000329",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000329",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000329"
+  },
+  {
+    "sample_id": "sample_000330",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000330",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000330"
+  },
+  {
+    "sample_id": "sample_000331",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000331",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000331"
+  },
+  {
+    "sample_id": "sample_000332",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000332",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000332"
+  },
+  {
+    "sample_id": "sample_000333",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000333",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000333"
+  },
+  {
+    "sample_id": "sample_000334",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000334",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000334"
+  },
+  {
+    "sample_id": "sample_000335",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000335",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000335"
+  },
+  {
+    "sample_id": "sample_000336",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000336",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000336"
+  },
+  {
+    "sample_id": "sample_000337",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000337",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000337"
+  },
+  {
+    "sample_id": "sample_000338",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000338",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000338"
+  },
+  {
+    "sample_id": "sample_000339",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000339",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000339"
+  },
+  {
+    "sample_id": "sample_000340",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000340",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000340"
+  },
+  {
+    "sample_id": "sample_000341",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000341",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000341"
+  },
+  {
+    "sample_id": "sample_000342",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000342",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000342"
+  },
+  {
+    "sample_id": "sample_000343",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000343",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000343"
+  },
+  {
+    "sample_id": "sample_000344",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000344",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000344"
+  },
+  {
+    "sample_id": "sample_000345",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000345",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000345"
+  },
+  {
+    "sample_id": "sample_000346",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000346",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000346"
+  },
+  {
+    "sample_id": "sample_000347",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000347",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000347"
+  },
+  {
+    "sample_id": "sample_000348",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000348",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000348"
+  },
+  {
+    "sample_id": "sample_000349",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000349",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000349"
+  },
+  {
+    "sample_id": "sample_000350",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000350",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000350"
+  },
+  {
+    "sample_id": "sample_000351",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000351",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000351"
+  },
+  {
+    "sample_id": "sample_000352",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000352",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000352"
+  },
+  {
+    "sample_id": "sample_000353",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000353",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000353"
+  },
+  {
+    "sample_id": "sample_000354",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000354",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000354"
+  },
+  {
+    "sample_id": "sample_000355",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000355",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000355"
+  },
+  {
+    "sample_id": "sample_000356",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000356",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000356"
+  },
+  {
+    "sample_id": "sample_000357",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000357",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000357"
+  },
+  {
+    "sample_id": "sample_000358",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000358",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000358"
+  },
+  {
+    "sample_id": "sample_000359",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000359",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000359"
+  },
+  {
+    "sample_id": "sample_000360",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000360",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000360"
+  },
+  {
+    "sample_id": "sample_000361",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000361",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000361"
+  },
+  {
+    "sample_id": "sample_000362",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000362",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000362"
+  },
+  {
+    "sample_id": "sample_000363",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000363",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000363"
+  },
+  {
+    "sample_id": "sample_000364",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000364",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000364"
+  },
+  {
+    "sample_id": "sample_000365",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000365",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000365"
+  },
+  {
+    "sample_id": "sample_000366",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000366",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000366"
+  },
+  {
+    "sample_id": "sample_000367",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000367",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000367"
+  },
+  {
+    "sample_id": "sample_000369",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000369",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000369"
+  },
+  {
+    "sample_id": "sample_000370",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000370",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000370"
+  },
+  {
+    "sample_id": "sample_000371",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000371",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000371"
+  },
+  {
+    "sample_id": "sample_000372",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000372",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000372"
+  },
+  {
+    "sample_id": "sample_000373",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000373",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000373"
+  },
+  {
+    "sample_id": "sample_000374",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000374",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000374"
+  },
+  {
+    "sample_id": "sample_000375",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000375",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000375"
+  },
+  {
+    "sample_id": "sample_000376",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000376",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000376"
+  },
+  {
+    "sample_id": "sample_000377",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000377",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000377"
+  },
+  {
+    "sample_id": "sample_000378",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000378",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000378"
+  },
+  {
+    "sample_id": "sample_000379",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000379",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000379"
+  },
+  {
+    "sample_id": "sample_000380",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000380",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000380"
+  },
+  {
+    "sample_id": "sample_000381",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000381",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000381"
+  },
+  {
+    "sample_id": "sample_000382",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000382",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000382"
+  },
+  {
+    "sample_id": "sample_000383",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000383",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000383"
+  },
+  {
+    "sample_id": "sample_000384",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000384",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000384"
+  },
+  {
+    "sample_id": "sample_000385",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000385",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000385"
+  },
+  {
+    "sample_id": "sample_000387",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000387",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000387"
+  },
+  {
+    "sample_id": "sample_000388",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000388",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000388"
+  },
+  {
+    "sample_id": "sample_000389",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000389",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000389"
+  },
+  {
+    "sample_id": "sample_000390",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000390",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000390"
+  },
+  {
+    "sample_id": "sample_000391",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000391",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000391"
+  },
+  {
+    "sample_id": "sample_000392",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000392",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000392"
+  },
+  {
+    "sample_id": "sample_000393",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000393",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000393"
+  },
+  {
+    "sample_id": "sample_000394",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000394",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000394"
+  },
+  {
+    "sample_id": "sample_000395",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000395",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000395"
+  },
+  {
+    "sample_id": "sample_000396",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000396",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000396"
+  },
+  {
+    "sample_id": "sample_000397",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000397",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000397"
+  },
+  {
+    "sample_id": "sample_000398",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000398",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000398"
+  },
+  {
+    "sample_id": "sample_000399",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000399",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000399"
+  },
+  {
+    "sample_id": "sample_000400",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000400",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000400"
+  },
+  {
+    "sample_id": "sample_000403",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000403",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000403"
+  },
+  {
+    "sample_id": "sample_000404",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000404",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000404"
+  },
+  {
+    "sample_id": "sample_000405",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000405",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000405"
+  },
+  {
+    "sample_id": "sample_000406",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000406",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000406"
+  },
+  {
+    "sample_id": "sample_000407",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000407",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000407"
+  },
+  {
+    "sample_id": "sample_000408",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000408",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000408"
+  },
+  {
+    "sample_id": "sample_000409",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000409",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000409"
+  },
+  {
+    "sample_id": "sample_000410",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000410",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000410"
+  },
+  {
+    "sample_id": "sample_000411",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000411",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000411"
+  },
+  {
+    "sample_id": "sample_000412",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000412",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000412"
+  },
+  {
+    "sample_id": "sample_000413",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000413",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000413"
+  },
+  {
+    "sample_id": "sample_000414",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000414",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000414"
+  },
+  {
+    "sample_id": "sample_000415",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000415",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000415"
+  },
+  {
+    "sample_id": "sample_000416",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000416",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000416"
+  },
+  {
+    "sample_id": "sample_000417",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000417",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000417"
+  },
+  {
+    "sample_id": "sample_000418",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000418",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000418"
+  },
+  {
+    "sample_id": "sample_000419",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000419",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000419"
+  },
+  {
+    "sample_id": "sample_000420",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000420",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000420"
+  },
+  {
+    "sample_id": "sample_000421",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000421",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000421"
+  },
+  {
+    "sample_id": "sample_000422",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000422",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000422"
+  },
+  {
+    "sample_id": "sample_000423",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000423",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000423"
+  },
+  {
+    "sample_id": "sample_000424",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000424",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000424"
+  },
+  {
+    "sample_id": "sample_000425",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000425",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000425"
+  },
+  {
+    "sample_id": "sample_000426",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000426",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000426"
+  },
+  {
+    "sample_id": "sample_000427",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000427",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000427"
+  },
+  {
+    "sample_id": "sample_000430",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000430",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000430"
+  },
+  {
+    "sample_id": "sample_000431",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000431",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000431"
+  },
+  {
+    "sample_id": "sample_000432",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000432",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000432"
+  },
+  {
+    "sample_id": "sample_000433",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000433",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000433"
+  },
+  {
+    "sample_id": "sample_000434",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000434",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000434"
+  },
+  {
+    "sample_id": "sample_000435",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000435",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000435"
+  },
+  {
+    "sample_id": "sample_000436",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000436",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000436"
+  },
+  {
+    "sample_id": "sample_000437",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000437",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000437"
+  },
+  {
+    "sample_id": "sample_000438",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000438",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000438"
+  },
+  {
+    "sample_id": "sample_000439",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000439",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000439"
+  },
+  {
+    "sample_id": "sample_000440",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000440",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000440"
+  },
+  {
+    "sample_id": "sample_000441",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000441",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000441"
+  },
+  {
+    "sample_id": "sample_000442",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000442",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000442"
+  },
+  {
+    "sample_id": "sample_000443",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000443",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000443"
+  },
+  {
+    "sample_id": "sample_000444",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000444",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000444"
+  },
+  {
+    "sample_id": "sample_000445",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000445",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000445"
+  },
+  {
+    "sample_id": "sample_000446",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000446",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000446"
+  },
+  {
+    "sample_id": "sample_000447",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000447",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000447"
+  },
+  {
+    "sample_id": "sample_000448",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000448",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000448"
+  },
+  {
+    "sample_id": "sample_000449",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000449",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000449"
+  },
+  {
+    "sample_id": "sample_000450",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000450",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000450"
+  },
+  {
+    "sample_id": "sample_000451",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000451",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000451"
+  },
+  {
+    "sample_id": "sample_000454",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000454",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000454"
+  },
+  {
+    "sample_id": "sample_000455",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000455",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000455"
+  },
+  {
+    "sample_id": "sample_000456",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000456",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000456"
+  },
+  {
+    "sample_id": "sample_000457",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000457",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000457"
+  },
+  {
+    "sample_id": "sample_000458",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000458",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000458"
+  },
+  {
+    "sample_id": "sample_000459",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000459",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000459"
+  },
+  {
+    "sample_id": "sample_000460",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000460",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000460"
+  },
+  {
+    "sample_id": "sample_000461",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000461",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000461"
+  },
+  {
+    "sample_id": "sample_000462",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000462",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000462"
+  },
+  {
+    "sample_id": "sample_000463",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000463",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000463"
+  },
+  {
+    "sample_id": "sample_000464",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000464",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000464"
+  },
+  {
+    "sample_id": "sample_000465",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000465",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000465"
+  },
+  {
+    "sample_id": "sample_000466",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000466",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000466"
+  },
+  {
+    "sample_id": "sample_000467",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000467",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000467"
+  },
+  {
+    "sample_id": "sample_000468",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000468",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000468"
+  },
+  {
+    "sample_id": "sample_000469",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000469",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000469"
+  },
+  {
+    "sample_id": "sample_000470",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000470",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000470"
+  },
+  {
+    "sample_id": "sample_000471",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000471",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000471"
+  },
+  {
+    "sample_id": "sample_000472",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000472",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000472"
+  },
+  {
+    "sample_id": "sample_000473",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000473",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000473"
+  },
+  {
+    "sample_id": "sample_000474",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000474",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000474"
+  },
+  {
+    "sample_id": "sample_000475",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000475",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000475"
+  },
+  {
+    "sample_id": "sample_000477",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000477",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000477"
+  },
+  {
+    "sample_id": "sample_000479",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000479",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000479"
+  },
+  {
+    "sample_id": "sample_000480",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000480",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000480"
+  },
+  {
+    "sample_id": "sample_000481",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000481",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000481"
+  },
+  {
+    "sample_id": "sample_000483",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000483",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000483"
+  },
+  {
+    "sample_id": "sample_000484",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000484",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000484"
+  },
+  {
+    "sample_id": "sample_000486",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000486",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000486"
+  },
+  {
+    "sample_id": "sample_000487",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000487",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000487"
+  },
+  {
+    "sample_id": "sample_000488",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000488",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000488"
+  },
+  {
+    "sample_id": "sample_000489",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000489",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000489"
+  },
+  {
+    "sample_id": "sample_000490",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000490",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000490"
+  },
+  {
+    "sample_id": "sample_000491",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000491",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000491"
+  },
+  {
+    "sample_id": "sample_000492",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000492",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000492"
+  },
+  {
+    "sample_id": "sample_000493",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000493",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000493"
+  },
+  {
+    "sample_id": "sample_000494",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000494",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000494"
+  },
+  {
+    "sample_id": "sample_000495",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000495",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000495"
+  },
+  {
+    "sample_id": "sample_000496",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000496",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000496"
+  },
+  {
+    "sample_id": "sample_000497",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000497",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000497"
+  },
+  {
+    "sample_id": "sample_000499",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000499",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000499"
+  },
+  {
+    "sample_id": "sample_000500",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000500",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000500"
+  },
+  {
+    "sample_id": "sample_000501",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000501",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000501"
+  },
+  {
+    "sample_id": "sample_000502",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000502",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000502"
+  },
+  {
+    "sample_id": "sample_000503",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000503",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000503"
+  },
+  {
+    "sample_id": "sample_000504",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000504",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000504"
+  },
+  {
+    "sample_id": "sample_000505",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000505",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000505"
+  },
+  {
+    "sample_id": "sample_000506",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000506",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000506"
+  },
+  {
+    "sample_id": "sample_000507",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000507",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000507"
+  },
+  {
+    "sample_id": "sample_000508",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000508",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000508"
+  },
+  {
+    "sample_id": "sample_000509",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000509",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000509"
+  },
+  {
+    "sample_id": "sample_000510",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000510",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000510"
+  },
+  {
+    "sample_id": "sample_000511",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000511",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000511"
+  },
+  {
+    "sample_id": "sample_000512",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000512",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000512"
+  },
+  {
+    "sample_id": "sample_000513",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000513",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000513"
+  },
+  {
+    "sample_id": "sample_000514",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000514",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000514"
+  },
+  {
+    "sample_id": "sample_000515",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000515",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000515"
+  },
+  {
+    "sample_id": "sample_000516",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000516",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000516"
+  },
+  {
+    "sample_id": "sample_000519",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000519",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000519"
+  },
+  {
+    "sample_id": "sample_000520",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000520",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000520"
+  },
+  {
+    "sample_id": "sample_000521",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000521",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000521"
+  },
+  {
+    "sample_id": "sample_000522",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000522",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000522"
+  },
+  {
+    "sample_id": "sample_000523",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000523",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000523"
+  },
+  {
+    "sample_id": "sample_000524",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000524",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000524"
+  },
+  {
+    "sample_id": "sample_000526",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000526",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000526"
+  },
+  {
+    "sample_id": "sample_000527",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000527",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000527"
+  },
+  {
+    "sample_id": "sample_000528",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000528",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000528"
+  },
+  {
+    "sample_id": "sample_000530",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000530",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000530"
+  },
+  {
+    "sample_id": "sample_000532",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000532",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000532"
+  },
+  {
+    "sample_id": "sample_000533",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000533",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000533"
+  },
+  {
+    "sample_id": "sample_000534",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000534",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000534"
+  },
+  {
+    "sample_id": "sample_000535",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000535",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000535"
+  },
+  {
+    "sample_id": "sample_000536",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000536",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000536"
+  },
+  {
+    "sample_id": "sample_000537",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000537",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000537"
+  },
+  {
+    "sample_id": "sample_000538",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000538",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000538"
+  },
+  {
+    "sample_id": "sample_000539",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000539",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000539"
+  },
+  {
+    "sample_id": "sample_000540",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000540",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000540"
+  },
+  {
+    "sample_id": "sample_000541",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000541",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000541"
+  },
+  {
+    "sample_id": "sample_000542",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000542",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000542"
+  },
+  {
+    "sample_id": "sample_000543",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000543",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000543"
+  },
+  {
+    "sample_id": "sample_000544",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000544",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000544"
+  },
+  {
+    "sample_id": "sample_000545",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000545",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000545"
+  },
+  {
+    "sample_id": "sample_000547",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000547",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000547"
+  },
+  {
+    "sample_id": "sample_000548",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000548",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000548"
+  },
+  {
+    "sample_id": "sample_000549",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000549",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000549"
+  },
+  {
+    "sample_id": "sample_000550",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000550",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000550"
+  },
+  {
+    "sample_id": "sample_000551",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000551",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000551"
+  },
+  {
+    "sample_id": "sample_000552",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000552",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000552"
+  },
+  {
+    "sample_id": "sample_000553",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000553",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000553"
+  },
+  {
+    "sample_id": "sample_000554",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000554",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000554"
+  },
+  {
+    "sample_id": "sample_000555",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000555",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000555"
+  },
+  {
+    "sample_id": "sample_000556",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000556",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000556"
+  },
+  {
+    "sample_id": "sample_000557",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000557",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000557"
+  },
+  {
+    "sample_id": "sample_000558",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000558",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000558"
+  },
+  {
+    "sample_id": "sample_000559",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000559",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000559"
+  },
+  {
+    "sample_id": "sample_000560",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000560",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000560"
+  },
+  {
+    "sample_id": "sample_000561",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000561",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000561"
+  },
+  {
+    "sample_id": "sample_000563",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000563",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000563"
+  },
+  {
+    "sample_id": "sample_000564",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000564",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000564"
+  },
+  {
+    "sample_id": "sample_000565",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000565",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000565"
+  },
+  {
+    "sample_id": "sample_000566",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000566",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000566"
+  },
+  {
+    "sample_id": "sample_000567",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000567",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000567"
+  },
+  {
+    "sample_id": "sample_000568",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000568",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000568"
+  },
+  {
+    "sample_id": "sample_000570",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000570",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000570"
+  },
+  {
+    "sample_id": "sample_000571",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000571",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000571"
+  },
+  {
+    "sample_id": "sample_000572",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000572",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000572"
+  },
+  {
+    "sample_id": "sample_000573",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000573",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000573"
+  },
+  {
+    "sample_id": "sample_000574",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000574",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000574"
+  },
+  {
+    "sample_id": "sample_000575",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000575",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000575"
+  },
+  {
+    "sample_id": "sample_000577",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000577",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000577"
+  },
+  {
+    "sample_id": "sample_000578",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000578",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000578"
+  },
+  {
+    "sample_id": "sample_000579",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000579",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000579"
+  },
+  {
+    "sample_id": "sample_000580",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000580",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000580"
+  },
+  {
+    "sample_id": "sample_000581",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000581",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000581"
+  },
+  {
+    "sample_id": "sample_000583",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000583",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000583"
+  },
+  {
+    "sample_id": "sample_000584",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000584",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000584"
+  },
+  {
+    "sample_id": "sample_000585",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000585",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000585"
+  },
+  {
+    "sample_id": "sample_000586",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000586",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000586"
+  },
+  {
+    "sample_id": "sample_000587",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000587",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000587"
+  },
+  {
+    "sample_id": "sample_000588",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000588",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000588"
+  },
+  {
+    "sample_id": "sample_000590",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000590",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000590"
+  },
+  {
+    "sample_id": "sample_000591",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000591",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000591"
+  },
+  {
+    "sample_id": "sample_000592",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000592",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000592"
+  },
+  {
+    "sample_id": "sample_000594",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000594",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000594"
+  },
+  {
+    "sample_id": "sample_000595",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000595",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000595"
+  },
+  {
+    "sample_id": "sample_000596",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000596",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000596"
+  },
+  {
+    "sample_id": "sample_000598",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000598",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000598"
+  },
+  {
+    "sample_id": "sample_000599",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000599",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000599"
+  },
+  {
+    "sample_id": "sample_000600",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000600",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000600"
+  },
+  {
+    "sample_id": "sample_000601",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000601",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000601"
+  },
+  {
+    "sample_id": "sample_000602",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000602",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000602"
+  },
+  {
+    "sample_id": "sample_000603",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000603",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000603"
+  },
+  {
+    "sample_id": "sample_000604",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000604",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000604"
+  },
+  {
+    "sample_id": "sample_000605",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000605",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000605"
+  },
+  {
+    "sample_id": "sample_000606",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000606",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000606"
+  },
+  {
+    "sample_id": "sample_000607",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000607",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000607"
+  },
+  {
+    "sample_id": "sample_000610",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000610",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000610"
+  },
+  {
+    "sample_id": "sample_000611",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000611",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000611"
+  },
+  {
+    "sample_id": "sample_000612",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000612",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000612"
+  },
+  {
+    "sample_id": "sample_000614",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000614",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000614"
+  },
+  {
+    "sample_id": "sample_000616",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000616",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000616"
+  },
+  {
+    "sample_id": "sample_000617",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000617",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000617"
+  },
+  {
+    "sample_id": "sample_000618",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000618",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000618"
+  },
+  {
+    "sample_id": "sample_000619",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000619",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000619"
+  },
+  {
+    "sample_id": "sample_000620",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000620",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000620"
+  },
+  {
+    "sample_id": "sample_000621",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000621",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000621"
+  },
+  {
+    "sample_id": "sample_000622",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000622",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000622"
+  },
+  {
+    "sample_id": "sample_000624",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000624",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000624"
+  },
+  {
+    "sample_id": "sample_000625",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000625",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000625"
+  },
+  {
+    "sample_id": "sample_000626",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000626",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000626"
+  },
+  {
+    "sample_id": "sample_000627",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000627",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000627"
+  },
+  {
+    "sample_id": "sample_000628",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000628",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000628"
+  },
+  {
+    "sample_id": "sample_000629",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000629",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000629"
+  },
+  {
+    "sample_id": "sample_000632",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000632",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000632"
+  },
+  {
+    "sample_id": "sample_000634",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000634",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000634"
+  },
+  {
+    "sample_id": "sample_000635",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000635",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000635"
+  },
+  {
+    "sample_id": "sample_000636",
+    "sample_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\data\\rohe_final\\sample_000636",
+    "region_map_dir": "C:\\Users\\payal\\region-vlm-uncertainty\\outputs\\region_maps_final\\sample_000636"
+  }
+]
