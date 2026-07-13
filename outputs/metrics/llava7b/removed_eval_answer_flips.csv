@@ -1,0 +1,5 @@
+condition,total,yes_to_no,no_to_yes,unchanged_yes,unchanged_no,unknown_changes,net_hallucination_reduction
+all,522,28,9,387,98,0,19
+removed,522,8,2,407,105,0,6
+context,522,6,3,409,104,0,3
+background,522,23,7,392,100,0,16

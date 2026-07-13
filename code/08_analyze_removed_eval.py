@@ -10,15 +10,15 @@ import matplotlib.pyplot as plt
 ROOT = Path(__file__).resolve().parents[1]
 
 RUNS = {
-    "none": ROOT / "outputs" / "eval_removed_none",
-    "all": ROOT / "outputs" / "eval_removed_all",
-    "removed": ROOT / "outputs" / "eval_removed_removed",
-    "context": ROOT / "outputs" / "eval_removed_context",
-    "background": ROOT / "outputs" / "eval_removed_background",
+    "none": ROOT / "outputs" /"llava13b"/ "eval_removed_none_llava13b",
+    "all": ROOT / "outputs" / "llava13b"/ "eval_removed_all_llava13b",
+    "removed": ROOT / "outputs" /"llava13b"/  "eval_removed_removed_llava13b",
+    "context": ROOT / "outputs" / "llava13b"/ "eval_removed_context_llava13b",
+    "background": ROOT / "outputs" / "llava13b"/ "eval_removed_background_llava13b",
 }
 
-METRICS_DIR = ROOT / "outputs" / "metrics"
-PLOTS_DIR = ROOT / "outputs" / "plots"
+METRICS_DIR = ROOT / "outputs" / "metrics"/"llava13b"
+PLOTS_DIR = ROOT / "outputs" / "plots" / "llava13b"
 
 METRICS_DIR.mkdir(parents=True, exist_ok=True)
 PLOTS_DIR.mkdir(parents=True, exist_ok=True)

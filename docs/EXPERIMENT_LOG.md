@@ -1623,7 +1623,7 @@ A model backend must define:
 | Model | Status | Project Use |
 |---|---|---|
 | LLaVA-1.5-7B | Working | Main completed experiment |
-| LLaVA-1.5-13B | Supported by same structure | Recommended robustness run |
+| LLaVA-1.5-13B | Working | Completed model-size robustness check |
 | MiniGPT-4 | Ran but produced unusable empty outputs | Not used |
 | Shikra | Loaded but generated repeated `0` outputs | Not used |
 | Qwen | Not plug-and-play | Possible future backend extension |
@@ -1638,25 +1638,472 @@ We use a shared epistemic-causal evaluation protocol. Token extraction and maski
 
 ---
 
-## Current Project Decision
 
-The completed LLaVA-1.5-7B five-condition experiment is the main valid result.
+---
+
+## Run 017 - LLaVA-1.5-13B Backend Setup and Smoke Test
+
+**Status:** Completed successfully  
+**Date:** 2026-07-06  
+**Location:** HPC GPU node  
+**Model:** LLaVA-1.5-13B  
+**Dataset:** ROHE smoke subset  
+
+### Goal
+
+Validate LLaVA-1.5-13B as a robustness backend for the same five-condition ROHE removed-image masking protocol.
+
+### Issue Encountered
+
+The first smoke attempts failed because the 13B config still pointed to a local checkpoint path:
+
+```text
+../pretrained/llava-v1.5-13b
+```
+
+### Fix
+
+The 13B configs were updated to use:
+
+```text
+liuhaotian/llava-v1.5-13b
+```
+
+The relevant files were:
+
+```text
+Epistemic/baselines/eval_configs/llava-1.5_13b_eval.yaml
+Epistemic/baselines/minigpt4/configs/models/llava-1.5_vicuna13b.yaml
+```
+
+### Smoke Configuration
+
+```text
+model: llava-1.5-13b
+dataset_name: rohe
+image_folder: ../../hpc_inputs_smoke/removed_images_jpg
+caption_file_path: ../../hpc_inputs_smoke/questions_removed_jpg.jsonl
+attack_image_folder: ../../outputs/smoke_attack_removed
+output_dir: ../../outputs/smoke_eval_removed_all_llava13b
+num_samples: 3
+max_new_tokens: 64
+use_ours: enabled
+region_mask_mode: all
+token_region_root: ../../hpc_inputs_smoke/token_regions
+```
+
+### Output Verification
+
+```text
+3 outputs/smoke_eval_removed_all_llava13b/captions.jsonl
+3 region_uncertainty JSON files
+```
+
+### Observed Smoke Outputs
+
+```text
+sample_000062, target bottle: answer = yes
+sample_000068, target car: answer = yes
+sample_000069, target bus: answer = yes
+```
+
+### Conclusion
+
+The LLaVA-1.5-13B smoke test completed successfully. The model loaded, generated natural-language answers, and wrote captions and region uncertainty outputs.
+
+---
+
+## Run 018 - Full LLaVA-1.5-13B Five-Condition Evaluation
+
+**Status:** Completed successfully  
+**Date:** 2026-07-06  
+**Location:** HPC GPU node  
+**Model:** LLaVA-1.5-13B  
+**Dataset:** ROHE final removed-image set  
+**Samples:** 522  
+
+### Goal
+
+Repeat the full five-condition removed-image experiment on LLaVA-1.5-13B as a model-size robustness check.
+
+### Conditions
+
+```text
+none
+all
+removed
+context
+background
+```
+
+### Output Folders
+
+```text
+outputs/eval_removed_none_llava13b/
+outputs/eval_removed_all_llava13b/
+outputs/eval_removed_removed_llava13b/
+outputs/eval_removed_context_llava13b/
+outputs/eval_removed_background_llava13b/
+```
+
+### Output Verification
+
+```text
+condition     captions     region_uncertainty files
+none          522          522
+all           522          522
+removed       522          522
+context       522          522
+background    522          522
+```
+
+### Conclusion
+
+All five LLaVA-1.5-13B conditions completed successfully.
+
+---
+
+## Run 019 - LLaVA-1.5-13B Analysis and Bootstrap
+
+**Status:** Completed  
+**Date:** 2026-07-06 / 2026-07-07  
+**Location:** HPC first, then local VS Code for final records  
+**Model:** LLaVA-1.5-13B  
+**Samples:** 522  
+
+### Goal
+
+Analyze the 13B five-condition outputs using the same hallucination scoring and paired-bootstrap protocol as the 7B experiment.
+
+### Output Files
+
+```text
+outputs/metrics/llava13b/removed_eval_all_captions_long.csv
+outputs/metrics/llava13b/removed_eval_per_sample.csv
+outputs/metrics/llava13b/removed_eval_summary.csv
+outputs/metrics/llava13b/removed_eval_bootstrap_effects.csv
+outputs/metrics/llava13b/removed_eval_region_summary.csv
+outputs/metrics/llava13b/removed_eval_region_uncertainty_long.csv
+```
+
+### Hallucination Summary
+
+```text
+condition     n     hallucinated_yes   correct_rejection_no   unknown   hallucination_rate   effect_vs_none
+none          522   463                59                     0         0.886973             0.000000
+all           522   466                56                     0         0.892720            -0.005747
+removed       522   466                56                     0         0.892720            -0.005747
+context       522   464                58                     0         0.888889            -0.001916
+background    522   466                56                     0         0.892720            -0.005747
+```
+
+### Bootstrap Results
+
+```text
+condition     effect_pp   95% CI pp           p-value
+all          -0.575      [-2.874, 1.533]     0.6588
+removed      -0.575      [-1.724, 0.575]     0.4016
+context      -0.192      [-1.149, 0.575]     0.8472
+background   -0.575      [-2.682, 1.533]     0.6800
+```
+
+### Interpretation
+
+Unlike LLaVA-1.5-7B, LLaVA-1.5-13B did not show a reliable reduction in hallucination under any masking condition. The baseline hallucination rate was higher, and all masking effects were small, negative, and statistically non-significant.
+
+This means the 7B causal effect is not scale-invariant across LLaVA-1.5 model sizes.
+
+---
+
+## Run 020 - Answer-Flip Diagnostic
+
+**Status:** Completed  
+**Date:** 2026-07-07  
+**Location:** Local VS Code  
+**Script:** `code/10_answer_flip_analysis.py`  
+
+### Goal
+
+Count answer changes between the no-masking baseline and each masking condition for both LLaVA-1.5-7B and LLaVA-1.5-13B.
+
+This diagnostic separates useful hallucination corrections from harmful flips:
+
+```text
+yes -> no    hallucination corrected
+no -> yes    correct rejection broken
+```
+
+### LLaVA-1.5-7B
+
+```text
+condition     yes_to_no   no_to_yes   unchanged_yes   unchanged_no   net_reduction
+all           28          9           387             98             +19
+removed       8           2           407             105            +6
+context       6           3           409             104            +3
+background    23          7           392             100            +16
+```
+
+### LLaVA-1.5-13B
+
+```text
+condition     yes_to_no   no_to_yes   unchanged_yes   unchanged_no   net_reduction
+all           16          19          447             40             -3
+removed       3           6           460             53             -3
+context       2           3           461             56             -1
+background    15          18          448             41             -3
+```
+
+### Interpretation
+
+For LLaVA-1.5-7B, masking corrected more hallucinated answers than it broke correct rejections. This explains the positive causal effects, especially for all-token and background-region masking.
+
+For LLaVA-1.5-13B, masking produced mixed answer flips. Useful yes-to-no corrections were offset by harmful no-to-yes flips. This explains why the 13B effects are small, negative, and statistically non-significant.
+
+---
+
+## Run 021 - Final Results Notebook and Comparison Plots
+
+**Status:** In progress / local notebook created  
+**Date:** 2026-07-07  
+**Notebook:** `notebooks/10_results_analysis.ipynb`  
+
+### Goal
+
+Create a final results-analysis notebook that loads the saved CSV outputs for both models and produces thesis-ready comparison tables and plots.
+
+### Input
+
+```text
+outputs/metrics/llava7b/
+outputs/metrics/llava13b/
+```
+
+### Planned / Generated Plots
+
+```text
+outputs/plots/final/comparison_hallucination_rate.png
+outputs/plots/final/comparison_causal_effect_with_ci.png
+outputs/plots/final/comparison_answer_flips_net.png
+outputs/plots/final/suppression_density_LLaVA15_7B.png
+outputs/plots/final/suppression_density_LLaVA15_13B.png
+```
+
+### Final Cross-Model Interpretation
+
+LLaVA-1.5-7B shows a positive causal masking effect. Global uncertain-token masking and background-region masking reduce hallucination, and the effect is supported by bootstrap confidence intervals and answer-flip analysis.
+
+LLaVA-1.5-13B does not show the same effect. Its baseline hallucination rate is higher, and masking produces mixed answer flips where useful yes-to-no corrections are offset by harmful no-to-yes changes.
+
+Therefore, the region-wise epistemic masking effect is model-dependent. It is visible in LLaVA-1.5-7B but does not transfer directly to LLaVA-1.5-13B.
+
+---
+
+## Current Project Decision - Updated 2026-07-07
+
+The completed LLaVA-1.5-7B five-condition experiment remains the main positive result.
+
+The completed LLaVA-1.5-13B experiment is included as a model-size robustness check. It did not reproduce the 7B masking effect, which strengthens the final interpretation by showing that the region-wise causal effect is model-dependent rather than automatically scale-invariant.
 
 The strongest current conclusion is:
 
 ```text
-Global uncertain-token masking and background-region masking significantly reduce object hallucination, while removed-region and context-region masking do not show strong statistically reliable effects.
-```
-
-Recommended next experiment:
-
-```text
-Run LLaVA-1.5-13B with the same five masking conditions as a full-method robustness check.
+Global uncertain-token masking and background-region masking significantly reduce object hallucination in LLaVA-1.5-7B. The same protocol does not produce a reliable hallucination reduction in LLaVA-1.5-13B. Answer-flip analysis shows that 7B benefits from net hallucination corrections, while 13B exhibits mixed flips that cancel out.
 ```
 
 Possible future extension:
 
 ```text
 Implement a Qwen backend for the same epistemic-causal protocol.
+```
+
+---
+
+## Run 022 - Matched Random-Token Controls
+
+**Status:** Completed  
+**Model:** LLaVA-1.5-7B  
+**Dataset:** ROHE final removed-image set  
+**Samples:** 522 per condition  
+
+### Goal
+
+Test whether uncertainty-guided masking is better than masking the same number of randomly selected tokens from the same eligible region.
+
+### Conditions
+
+```text
+random_all
+random_removed
+random_context
+random_background
+```
+
+Random selection was deterministic using the base seed, sample ID, condition name, and a SHA-256-derived sample seed.
+
+### Full-run verification
+
+```text
+random_all:        522 captions, 522 region JSON files
+random_removed:    522 captions, 522 region JSON files
+random_context:    522 captions, 522 region JSON files
+random_background: 522 captions, 522 region JSON files
+```
+
+### Single-seed results
+
+```text
+condition     uncertainty rate   random rate   uncertainty advantage
+all           75.86%             75.10%        -0.77 pp
+removed       78.35%             78.74%        +0.38 pp
+context       78.93%             79.12%        +0.19 pp
+background    76.44%             76.63%        +0.19 pp
+```
+
+None of the paired uncertainty-versus-random comparisons was statistically significant.
+
+---
+
+## Run 023 - Multi-Seed Matched Random Controls
+
+**Status:** Completed  
+**Random seeds:** 42, 43, 44, 45, 46  
+**Samples:** 522 per seed and condition  
+
+### Goal
+
+Measure random-mask variability and avoid relying on a single random realization.
+
+### Multi-seed summary
+
+```text
+condition     uncertainty rate   random mean ± SD      mean uncertainty advantage
+all           75.86%             75.75% ± 0.90        -0.11 pp
+removed       78.35%             78.58% ± 0.55        +0.23 pp
+context       78.93%             79.39% ± 0.37        +0.46 pp
+background    76.44%             76.90% ± 0.50        +0.46 pp
+```
+
+The advantage remained small relative to random-seed variation.
+
+### Scripts
+
+```text
+code/12_random_token_control_analysis.py
+code/13_multiseed_random_control_analysis.py
+code/14_multiseed_random_pooled_bootstrap.py
+```
+
+### Interpretation
+
+Uncertainty-guided selection does not provide a large or consistent advantage over matched random masking. The result is better described as a region and information-removal effect than as uniquely uncertainty-specific.
+
+---
+
+## Run 024 - Original-Image Sanity Check
+
+**Status:** Completed  
+**Model:** LLaVA-1.5-7B  
+**Samples:** 522  
+**Correct label:** yes  
+
+### Goal
+
+Test whether masking reduces hallucination selectively or also removes valid visual evidence and shifts the model toward answering "No."
+
+### Accuracy results
+
+```text
+condition     correct yes   false negative no   accuracy
+none          494           28                  94.64%
+all           482           40                  92.34%
+removed       492           30                  94.25%
+context       492           30                  94.25%
+background    484           38                  92.72%
+```
+
+### Paired accuracy-drop results
+
+```text
+condition     accuracy drop   95% CI pp        p-value
+all           2.30 pp         [0.77, 4.02]     0.0052
+removed       0.38 pp         [-0.38, 1.15]    0.4550
+context       0.38 pp         [0.00, 0.96]     0.2760
+background    1.92 pp         [0.38, 3.45]     0.0136
+```
+
+### Interpretation
+
+Global and background masking significantly reduce correct recognition on original images. The removed-image improvement therefore has a measurable false-negative cost.
+
+### Scripts
+
+```text
+code/15_original_image_sanity_analysis.py
+code/17_verify_original_sanity_outputs.py
+```
+
+---
+
+## Run 025 - Matched Low-Uncertainty Controls
+
+**Status:** Completed  
+**Model:** LLaVA-1.5-7B  
+**Samples:** 522 per condition  
+
+### Goal
+
+Test whether uncertainty ranking matters by suppressing the same number of lowest-uncertainty tokens from the same region.
+
+### Results
+
+```text
+region       high uncertainty   matched low uncertainty   high advantage
+all          75.86%             79.50%                    +3.64 pp
+removed      78.35%             79.50%                    +1.15 pp
+context      78.93%             79.50%                    +0.57 pp
+background   76.44%             79.50%                    +3.07 pp
+```
+
+All four low-uncertainty conditions produced exactly the same 522 answers as the no-masking baseline:
+
+```text
+low_all:        0 / 522 changed
+low_removed:    0 / 522 changed
+low_context:    0 / 522 changed
+low_background: 0 / 522 changed
+```
+
+### Interpretation
+
+High-uncertainty global and background masking clearly differs from matched low-uncertainty masking. However, the multi-seed random controls show that high-uncertainty selection is not uniquely superior to arbitrary matched selection.
+
+### Script
+
+```text
+code/16_low_uncertainty_control_analysis.py
+```
+
+---
+
+## Updated Project Interpretation - 2026-07-13
+
+The strongest supported findings are:
+
+```text
+1. Global and background high-uncertainty masking reduce hallucination in LLaVA-1.5-7B relative to no masking.
+
+2. The same conditions reduce correct recognition on original images, showing a false-negative cost.
+
+3. High-uncertainty masking clearly differs from matched low-uncertainty masking.
+
+4. High-uncertainty masking does not consistently outperform matched random masking across five seeds.
+
+5. LLaVA-1.5-13B does not reproduce the 7B effect.
+```
+
+Final interpretation:
+
+```text
+High-uncertainty global and background tokens identify visually influential parts of the representation. Suppressing them can reduce hallucination, but the effect is not uniquely attributable to uncertainty ranking and comes with a measurable loss in correct recognition. The behavior is model-dependent and does not transfer directly from LLaVA-1.5-7B to LLaVA-1.5-13B.
 ```
 

@@ -3,7 +3,7 @@ import pandas as pd
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-METRICS = ROOT / "outputs" / "metrics"
+METRICS = ROOT / "outputs" / "metrics"/ "llava13b"
 OUT = METRICS / "removed_eval_bootstrap_effects.csv"
 
 df = pd.read_csv(METRICS / "removed_eval_per_sample.csv")

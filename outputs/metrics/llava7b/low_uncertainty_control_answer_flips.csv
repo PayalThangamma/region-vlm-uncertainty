@@ -1,0 +1,9 @@
+region,comparison,n,high_yes_comparison_no,high_no_comparison_yes,unchanged_yes,unchanged_no,unknown_changes,net_high_uncertainty_advantage
+all,low,522,9,28,387,98,0,19
+all,random,522,12,8,384,118,0,-4
+removed,low,522,2,8,407,105,0,6
+removed,random,522,1,3,408,110,0,2
+context,low,522,3,6,409,104,0,3
+context,random,522,4,5,408,105,0,1
+background,low,522,7,23,392,100,0,16
+background,random,522,11,12,388,111,0,1

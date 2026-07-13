@@ -1,0 +1,5 @@
+uncertainty_condition,random_condition,n,uncertainty_yes_random_no,uncertainty_no_random_yes,unchanged_yes,unchanged_no,unknown_changes,net_uncertainty_advantage
+all,random_all,522,12,8,384,118,0,-4
+removed,random_removed,522,1,3,408,110,0,2
+context,random_context,522,4,5,408,105,0,1
+background,random_background,522,11,12,388,111,0,1
