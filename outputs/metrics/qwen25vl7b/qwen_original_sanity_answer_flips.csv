@@ -1,0 +1,5 @@
+condition,n,yes_to_no,no_to_yes,unchanged_yes,unchanged_no,unknown_changes,net_accuracy_change
+all,522,16,2,456,48,0,-14
+removed,522,2,1,470,49,0,-1
+context,522,1,1,471,49,0,0
+background,522,11,1,461,49,0,-10

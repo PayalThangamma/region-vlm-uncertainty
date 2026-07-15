@@ -1,0 +1,15 @@
+executable = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/scripts/run_qwen_baseline_smoke.sh
+
+request_CPUs = 4
+request_memory = 64GB
+request_disk = 150GB
+request_GPUs = 1
+
+requirements = (GPUs_GlobalMemoryMb >= 32000)
++MaxWallTime = 7200
+
+output = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/logs/qwen_baseline_smoke.out
+error  = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/logs/qwen_baseline_smoke.err
+log    = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/logs/qwen_baseline_smoke.condor.log
+
+queue

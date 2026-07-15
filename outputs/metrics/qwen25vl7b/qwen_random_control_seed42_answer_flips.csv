@@ -1,0 +1,5 @@
+region,n,high_yes_random_no,high_no_random_yes,unchanged_yes,unchanged_no,unknown_changes,net_uncertainty_advantage
+all,522,8,7,274,231,2,-1
+removed,522,2,1,302,217,0,-1
+context,522,1,2,304,214,1,1
+background,522,4,5,283,228,2,1

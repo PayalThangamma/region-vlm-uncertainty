@@ -1,0 +1,15 @@
+executable = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/scripts/run_qwen_masking_generation_full.sh
+
+request_CPUs = 4
+request_memory = 64GB
+request_disk = 180GB
+request_GPUs = 1
+
+requirements = (GPUs_GlobalMemoryMb >= 32000)
++MaxWallTime = 43200
+
+output = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/logs/qwen_masking_generation_full.out
+error  = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/logs/qwen_masking_generation_full.err
+log    = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/logs/qwen_masking_generation_full.condor.log
+
+queue

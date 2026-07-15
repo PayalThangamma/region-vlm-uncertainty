@@ -1,0 +1,4 @@
+model,baseline_hallucination_rate_percent,all_hallucination_reduction_pp,removed_hallucination_reduction_pp,context_hallucination_reduction_pp,background_hallucination_reduction_pp,all_accuracy_drop_pp,background_accuracy_drop_pp,removed_accuracy_drop_pp,context_accuracy_drop_pp
+LLaVA-1.5-7B,79.5,3.64,1.15,0.57,3.07,2.3,1.92,0.38,0.38
+LLaVA-1.5-13B,88.7,-0.57,-0.57,-0.19,-0.57,,,,
+Qwen2.5-VL-7B,58.24,3.83,0.0,-0.19,3.07,2.68,1.92,0.19,0.0

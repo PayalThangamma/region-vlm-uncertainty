@@ -1,5 +1,3 @@
-# Results and Discussion Draft
-
 ## 4. Results
 
 ### 4.1 Experimental setup
@@ -205,6 +203,78 @@ Overall, the evidence supports a model-dependent relationship between epistemic 
 
 ---
 
+---
+
+### 4.11 Qwen2.5-VL-7B results
+
+A separate model-specific backend was implemented for Qwen2.5-VL-7B. The same 522 ROHE removed-image samples and the same five masking conditions were used.
+
+| Condition | Hallucinated yes | Correct rejection no | Unknown | Hallucination rate | Effect vs none |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| none | 304 | 218 | 0 | 58.24% | 0.00 pp |
+| all | 284 | 238 | 0 | 54.41% | +3.83 pp |
+| removed | 304 | 218 | 0 | 58.24% | 0.00 pp |
+| context | 305 | 216 | 1 | 58.43% | -0.19 pp |
+| background | 288 | 234 | 0 | 55.17% | +3.07 pp |
+
+Global masking reduced hallucination by 3.83 percentage points, with a 95% confidence interval of [2.30, 5.56] and p < 0.0001. Background masking reduced hallucination by 3.07 percentage points, with a 95% confidence interval of [1.53, 4.60] and p < 0.0001.
+
+| Condition | Yes→No | No→Yes | Net reduction |
+| --- | ---: | ---: | ---: |
+| all | 20 | 0 | +20 |
+| removed | 2 | 2 | 0 |
+| context | 2 | 3 | -1 |
+| background | 17 | 1 | +16 |
+
+---
+
+### 4.12 Qwen control experiments
+
+| Region | High uncertainty | Random matched | High-uncertainty advantage |
+| --- | ---: | ---: | ---: |
+| all | 54.41% | 53.83% | -0.57 pp |
+| removed | 58.24% | 58.05% | -0.19 pp |
+| context | 58.43% | 58.62% | +0.19 pp |
+| background | 55.17% | 55.17% | 0.00 pp |
+
+None of the random-control differences was statistically significant.
+
+| Region | High uncertainty | Low uncertainty | High-uncertainty advantage |
+| --- | ---: | ---: | ---: |
+| all | 54.41% | 53.83% | -0.57 pp |
+| removed | 58.24% | 57.47% | -0.77 pp |
+| context | 58.43% | 58.43% | 0.00 pp |
+| background | 55.17% | 55.17% | 0.00 pp |
+
+The removed-region comparison slightly favored low-uncertainty masking, with a difference of -0.77 percentage points, 95% CI [-1.53, -0.19], and p = 0.0318.
+
+---
+
+### 4.13 Qwen original-image sanity check
+
+| Condition | Correct yes | False-negative no | Accuracy | Accuracy drop |
+| --- | ---: | ---: | ---: | ---: |
+| none | 472 | 50 | 90.42% | 0.00 pp |
+| all | 458 | 64 | 87.74% | 2.68 pp |
+| removed | 471 | 51 | 90.23% | 0.19 pp |
+| context | 472 | 50 | 90.42% | 0.00 pp |
+| background | 462 | 60 | 88.51% | 1.92 pp |
+
+Global masking caused a 2.68 percentage-point accuracy drop, 95% CI [1.15, 4.41], p = 0.0002. Background masking caused a 1.92 percentage-point drop, 95% CI [0.77, 3.26], p = 0.0016.
+
+---
+
+### 4.14 Final cross-model comparison
+
+| Model | Baseline hallucination | All effect | Removed effect | Context effect | Background effect |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| LLaVA-1.5-7B | 79.50% | +3.64 pp | +1.15 pp | +0.57 pp | +3.07 pp |
+| LLaVA-1.5-13B | 88.70% | -0.57 pp | -0.57 pp | -0.19 pp | -0.57 pp |
+| Qwen2.5-VL-7B | 58.24% | +3.83 pp | 0.00 pp | -0.19 pp | +3.07 pp |
+
+The strongest repeated pattern is that global and background masking reduce hallucination in LLaVA-1.5-7B and Qwen2.5-VL-7B, while the same protocol does not help LLaVA-1.5-13B.
+
+
 ## 5. Discussion
 
 ### 5.1 Interpretation of the 7B result
@@ -295,13 +365,13 @@ Second, the removed-object images are generated using inpainting. Inpainting may
 
 Third, hallucination is measured using a yes/no answer rule: answers beginning with “Yes” are counted as hallucinations and answers beginning with “No” are counted as correct rejections. This rule is appropriate for the controlled object-presence questions used in this project and produced no unclear answers in the final runs. However, it does not capture more complex hallucination behavior in long-form captioning or free-form dialogue.
 
-Fourth, the final model comparison is limited to LLaVA-1.5-7B and LLaVA-1.5-13B. This allows a clean model-size robustness check within the same model family, but it does not prove that the same behavior holds across all VLM architectures. MiniGPT-4 and Shikra were explored as different-family backends, but their generations were not reliable enough for final scoring. Extending the protocol to Qwen-VL or other VLMs would require a model-specific backend for visual-token extraction, uncertainty estimation, region alignment, and masking.
+Fourth, the final model comparison includes LLaVA-1.5-7B, LLaVA-1.5-13B, and Qwen2.5-VL-7B. This provides both a within-family model-size comparison and a cross-family comparison, but it still does not establish generality across all VLM architectures. MiniGPT-4 and Shikra were explored as additional backends, but their generations were not reliable enough for final scoring. Moreover, the masking intervention is not identical across architectures: LLaVA masking is applied inside selected visual-attention layers, while Qwen masking is applied to merged visual embeddings before language-model input. Cross-model conclusions therefore rely on within-model causal effects rather than direct equivalence of internal token operations.
 
 ---
 
 ### 5.7 Future work
 
-Future work should extend the region-wise epistemic masking protocol to additional VLM families such as Qwen-VL. This would test whether the model-dependent behavior observed between LLaVA-1.5-7B and LLaVA-1.5-13B also appears across different architectures.
+Future work should extend the region-wise epistemic masking protocol beyond LLaVA and Qwen to additional VLM families. This would test whether the model-dependent behavior observed here is specific to these architectures or reflects a broader pattern.
 
 A second direction is to evaluate more object categories and larger counterfactual datasets. This would show whether the strong background-region effect in LLaVA-1.5-7B is specific to the selected ROHE categories or reflects a broader hallucination mechanism.
 
@@ -313,13 +383,14 @@ Finally, future work could test different uncertainty thresholds and masking str
 
 ### 5.8 Final conclusion
 
-This project shows that region-wise masking can reveal which parts of the visual representation influence object-presence decisions. In LLaVA-1.5-7B, global and background high-uncertainty masking reduce hallucination relative to no masking. The same intervention does not produce a reliable reduction in LLaVA-1.5-13B.
+This project shows that region-wise masking can reveal which parts of a visual representation influence object-presence decisions. In LLaVA-1.5-7B and Qwen2.5-VL-7B, global and background masking reduce hallucination relative to no masking. The same intervention does not produce a reliable reduction in LLaVA-1.5-13B.
 
-The additional controls qualify the 7B result. High-uncertainty masking clearly differs from matched low-uncertainty masking, showing that the uncertainty ranking contains useful information. However, matched random masking produces similar effects, so the reduction cannot be attributed uniquely to uncertainty-guided selection. The original-image sanity check further shows that global and background masking reduce correct recognition, revealing a false-negative cost.
+The control experiments qualify these positive results. In LLaVA-1.5-7B, high-uncertainty masking clearly differs from matched low-uncertainty masking, but it does not consistently outperform matched random masking. In Qwen2.5-VL-7B, high-uncertainty masking does not outperform either matched random or matched low-uncertainty masking. Therefore, the improvements cannot be attributed uniquely to uncertainty-guided token selection.
+
+The original-image sanity checks further show that global and background masking reduce correct recognition, revealing a measurable false-negative cost.
 
 The final conclusion is:
 
 ```text
-High-uncertainty global and background tokens identify visually influential parts of LLaVA-1.5-7B's representation. Suppressing them can reduce hallucination, but the effect is not uniquely uncertainty-specific and comes with a measurable loss in correct recognition. The behavior is model-dependent and does not transfer directly to LLaVA-1.5-13B.
+Global and background visual information is causally influential for object-presence decisions in LLaVA-1.5-7B and Qwen2.5-VL-7B. Suppressing these representations can reduce hallucination, but the benefit is not uniquely uncertainty-specific and comes with a measurable loss in correct recognition. The effect is model-dependent and does not transfer to LLaVA-1.5-13B.
 ```
-

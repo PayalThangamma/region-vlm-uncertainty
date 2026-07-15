@@ -1,0 +1,13 @@
+executable = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/scripts/create_qwen_env.sh
+
+request_CPUs = 4
+request_memory = 16GB
+request_disk = 50GB
+
++MaxWallTime = 7200
+
+output = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/logs/create_qwen_env.out
+error  = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/logs/create_qwen_env.err
+log    = /nethome/ptasathish/projects/region-vlm-uncertainty/qwen_pipeline/logs/create_qwen_env.condor.log
+
+queue

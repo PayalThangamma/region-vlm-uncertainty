@@ -1474,7 +1474,7 @@ The completed LLaVA-1.5-7B experiment remains the main positive result.
 
 The LLaVA-1.5-13B robustness run was later completed using the same five masking conditions. It is used as a model-size comparison rather than as a replacement for the 7B result.
 
-Qwen can be considered as a future model-specific backend extension.
+Qwen2.5-VL-7B was implemented as a separate backend and completed end-to-end.
 
 ---
 
@@ -1564,7 +1564,7 @@ A model backend must define:
 | LLaVA-1.5-13B | Working | Completed model-size robustness check |
 | MiniGPT-4 | Ran but produced unusable empty outputs | Not used |
 | Shikra | Loaded but generated repeated `0` outputs | Not used |
-| Qwen | Not plug-and-play | Possible future backend extension |
+| Qwen2.5-VL-7B | Working | Completed cross-family backend evaluation |
 
 ## Recommended Framing
 
@@ -2002,4 +2002,131 @@ High-uncertainty global and background masking significantly outperformed matche
 ```text
 High-uncertainty global and background tokens are visually influential in LLaVA-1.5-7B. Their suppression reduces hallucination relative to no masking and clearly differs from suppressing low-uncertainty tokens. However, matched random masking produces similar effects, and original-image evaluation shows a measurable loss in correct recognition. The intervention is therefore not uniquely uncertainty-specific or cost-free. The behavior is also model-dependent because LLaVA-1.5-13B does not reproduce the 7B effect.
 ```
+---
 
+# Stage 26 - Qwen2.5-VL-7B Backend Development
+
+## Purpose
+
+Implement the shared epistemic-causal protocol for Qwen2.5-VL-7B using a separate backend.
+
+## Backend-Specific Design
+
+```text
+dynamic image preprocessing
+merged visual-token geometry
+Qwen visual hidden-state hooks
+Qwen-specific representation attack
+2 x 2 score merging
+dynamic region-to-token alignment
+merged-embedding masking
+```
+
+## Important Difference from LLaVA
+
+```text
+LLaVA: masking inside selected visual-attention layers
+Qwen: masking merged visual embeddings before language-model input
+```
+
+---
+
+# Stage 27 - Qwen Dynamic Region Maps
+
+```text
+Input: hpc_inputs/questions_removed_jpg.jsonl
+Output: qwen_pipeline/outputs/token_regions_full/
+Result: 522 maps generated and verified
+```
+
+---
+
+# Stage 28 - Qwen Removed-Image Attack Generation
+
+```text
+Output: qwen_pipeline/outputs/attack_removed_full/
+Result: 522 JSON summaries and 522 tensors
+```
+
+---
+
+# Stage 29 - Qwen Epistemic Uncertainty
+
+```text
+Output: qwen_pipeline/outputs/uncertainty_removed_full/
+Result: 522 uncertainty JSON files
+```
+
+---
+
+# Stage 30 - Qwen Five-Condition Removed-Image Evaluation
+
+```text
+none          58.24%
+all           54.41%   effect +3.83 pp
+removed       58.24%   effect  0.00 pp
+context       58.43%   effect -0.19 pp
+background    55.17%   effect +3.07 pp
+```
+
+---
+
+# Stage 31 - Qwen Active-Suppression Ablation
+
+```text
+all          +3.83 pp
+removed       0.00 pp
+context      -0.20 pp
+background   +3.07 pp
+```
+
+---
+
+# Stage 32 - Qwen Matched Random Control
+
+High-uncertainty masking did not significantly outperform matched random masking in any region.
+
+---
+
+# Stage 33 - Qwen Matched Low-Uncertainty Control
+
+High-uncertainty masking did not outperform low-uncertainty masking. The removed-region comparison slightly favored low-uncertainty masking.
+
+---
+
+# Stage 34 - Qwen Original-Image Sanity Check
+
+```text
+none          90.42% accuracy
+all           87.74% accuracy   drop 2.68 pp
+removed       90.23% accuracy   drop 0.19 pp
+context       90.42% accuracy   drop 0.00 pp
+background    88.51% accuracy   drop 1.92 pp
+```
+
+---
+
+# Stage 35 - Final Cross-Model Analysis
+
+```text
+model             baseline HR   all effect   background effect
+LLaVA-1.5-7B      79.50%        +3.64 pp     +3.07 pp
+LLaVA-1.5-13B     88.70%        -0.57 pp     -0.57 pp
+Qwen2.5-VL-7B     58.24%        +3.83 pp     +3.07 pp
+```
+
+## Final Protocol Summary
+
+```text
+ROHE dataset
+-> semantic region masks
+-> model-specific visual-token mapping
+-> model-specific representation attack
+-> epistemic uncertainty
+-> none/all/removed/context/background masking
+-> paired hallucination analysis
+-> random control
+-> low-uncertainty control
+-> original-image sanity check
+-> cross-model comparison
+```

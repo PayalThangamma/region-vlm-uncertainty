@@ -1,72 +1,101 @@
-# Python / environments
 .venv/
 .venv_*/
+venv/
+env/
 .env
+.env.*
+
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .ipynb_checkpoints/
 
-# Model weights / checkpoints
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
 *.pt
+*.pth
 *.pkl
 *.bin
-*.pth
 *.ckpt
 *.safetensors
+*.onnx
 
-# External repositories / large external code
-Epistemic/
-Epistemic.zip
-huggingface/
-torch/
 models/
 pretrained/
+checkpoints/
+huggingface/
+torch/
 
-# Raw / large data
+Epistemic/
+Epistemic.zip
+Epistemic_rohe_patched.zip
+
 data/
 lama_input/
 lama_output/
+
 hpc_inputs/
 hpc_inputs_smoke/
 
-# Backups and archives
-backups/
-*.zip
-*.tar
-*.tar.gz
-*.bak*
-*_original.py
+eval_original_full/
+eval_removed_full/
 
-# Logs
+qwen_pipeline/outputs/
+qwen_pipeline/logs/
+
+outputs/*
+
+!outputs/metrics/
+!outputs/metrics/**
+
+!outputs/plots/
+outputs/plots/*
+!outputs/plots/final/
+!outputs/plots/final/**
+
+!outputs/final_dataset_manifest.json
+!outputs/rohe_quality.csv
+
+outputs/metrics/**/*sample_level*.csv
+outputs/metrics/**/*captions_long*.csv
+outputs/metrics/**/*uncertainty_long*.csv
+outputs/metrics/**/*per_sample*.csv
+
 logs/
+**/logs/
+
+*.log
 *.out
 *.err
 *.condor.log
 
-# Outputs: ignore all by default
-outputs/*
-
-# Keep final analysis metrics if present
-!outputs/metrics/
-!outputs/metrics/**
-
-# Keep final plots if present
-!outputs/plots/
-!outputs/plots/**
-
-# Keep small final metadata if present
-!outputs/final_dataset_manifest.json
-!outputs/rohe_quality.csv
-
-# Explicitly ignore heavy output folders
-outputs/eval_removed_none/
-outputs/eval_removed_all/
-outputs/eval_removed_removed/
-outputs/eval_removed_context/
-outputs/eval_removed_background/
-outputs/attack_removed_full/
-outputs/smoke_attack_removed/
-outputs/smoke_eval_removed_all/
-
-# Local evidence backup copied from HPC
+backups/
 evidence/
+
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+*.bak
+*.bak.*
+*.tmp
+*.temp
+*~
+*_original.py
+
+attack_*/
+uncertainty_*/
+token_regions_*/
+
+scratch/
+tmp/
+temp/

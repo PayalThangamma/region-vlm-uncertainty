@@ -1536,7 +1536,7 @@ The recommended robustness run is:
 LLaVA-1.5-13B
 ```
 
-Qwen can be considered as a future model-specific backend extension.
+Qwen2.5-VL-7B was subsequently implemented as a separate model-specific backend and completed end-to-end.
 
 ---
 
@@ -1626,7 +1626,7 @@ A model backend must define:
 | LLaVA-1.5-13B | Working | Completed model-size robustness check |
 | MiniGPT-4 | Ran but produced unusable empty outputs | Not used |
 | Shikra | Loaded but generated repeated `0` outputs | Not used |
-| Qwen | Not plug-and-play | Possible future backend extension |
+| Qwen2.5-VL-7B | Working | Completed cross-family backend evaluation |
 
 ### Recommended Framing
 
@@ -1910,11 +1910,7 @@ The strongest current conclusion is:
 Global uncertain-token masking and background-region masking significantly reduce object hallucination in LLaVA-1.5-7B. The same protocol does not produce a reliable hallucination reduction in LLaVA-1.5-13B. Answer-flip analysis shows that 7B benefits from net hallucination corrections, while 13B exhibits mixed flips that cancel out.
 ```
 
-Possible future extension:
-
-```text
-Implement a Qwen backend for the same epistemic-causal protocol.
-```
+The Qwen2.5-VL-7B backend was later implemented and completed. The final project now includes both within-family and cross-family comparisons.
 
 ---
 
@@ -2106,4 +2102,265 @@ Final interpretation:
 ```text
 High-uncertainty global and background tokens identify visually influential parts of the representation. Suppressing them can reduce hallucination, but the effect is not uniquely attributable to uncertainty ranking and comes with a measurable loss in correct recognition. The behavior is model-dependent and does not transfer directly from LLaVA-1.5-7B to LLaVA-1.5-13B.
 ```
+---
 
+## Run 026 - Qwen2.5-VL-7B Backend Setup and Smoke Validation
+
+**Status:** Completed  
+**Model:** Qwen2.5-VL-7B-Instruct  
+**Dataset:** ROHE smoke subset  
+**Samples:** 3  
+
+### Goal
+
+Implement a separate Qwen backend for the same epistemic-causal protocol and verify visual-token geometry, hidden-state extraction, attack generation, uncertainty computation, region alignment, and masked generation.
+
+### Key Validation Results
+
+```text
+sample_000062: merged visual tokens = 391
+sample_000068: merged visual tokens = 288
+sample_000069: merged visual tokens = 391
+```
+
+The dynamic Qwen visual grids matched the actual `<|image_pad|>` token counts.
+
+The following smoke checks passed:
+
+```text
+dynamic Qwen region maps
+visual hidden-state hooks
+independent visual forward pass
+Qwen-specific PGD attack
+merged-token uncertainty computation
+five-condition masked generation
+```
+
+### Important Backend Difference
+
+```text
+LLaVA:
+masking inside selected visual-attention layers
+
+Qwen:
+masking merged visual embeddings before language-model input
+```
+
+The causal protocol is shared, but the intervention location is backend-specific.
+
+---
+
+## Run 027 - Full Qwen Dynamic Region Mapping
+
+**Status:** Completed  
+**Samples:** 522  
+
+### Output
+
+```text
+qwen_pipeline/outputs/token_regions_full/
+```
+
+### Verification
+
+```text
+522 sample folders
+all merged-token counts matched
+all removed/context/background counts summed to the merged-token count
+```
+
+---
+
+## Run 028 - Full Qwen Removed-Image Attack Generation
+
+**Status:** Completed  
+**Samples:** 522  
+
+### Output
+
+```text
+qwen_pipeline/outputs/attack_removed_full/
+```
+
+### Verification
+
+```text
+522 JSON summaries
+522 attack tensors
+```
+
+---
+
+## Run 029 - Full Qwen Epistemic Uncertainty Computation
+
+**Status:** Completed  
+**Samples:** 522  
+
+### Output
+
+```text
+qwen_pipeline/outputs/uncertainty_removed_full/
+```
+
+### Verification
+
+```text
+522 uncertainty JSON files
+```
+
+---
+
+## Run 030 - Full Qwen Five-Condition Removed-Image Evaluation
+
+**Status:** Completed  
+**Samples:** 522 per condition  
+
+### Conditions
+
+```text
+none
+all
+removed
+context
+background
+```
+
+### Main Results
+
+```text
+condition     hallucination rate   effect vs none
+none          58.24%               0.00 pp
+all           54.41%              +3.83 pp
+removed       58.24%               0.00 pp
+context       58.43%              -0.19 pp
+background    55.17%              +3.07 pp
+```
+
+### Bootstrap Results
+
+```text
+all: effect = +3.83 pp, 95% CI [2.30, 5.56], p < 0.0001
+background: effect = +3.07 pp, 95% CI [1.53, 4.60], p < 0.0001
+```
+
+### Answer Flips
+
+```text
+all:        20 yes->no, 0 no->yes, net +20
+removed:     2 yes->no, 2 no->yes, net 0
+context:     2 yes->no, 3 no->yes, net -1
+background: 17 yes->no, 1 no->yes, net +16
+```
+
+---
+
+## Run 031 - Qwen Active-Suppression Ablation
+
+**Status:** Completed  
+
+```text
+condition     active samples   effect
+all           522 / 522        +3.83 pp
+removed       503 / 522         0.00 pp
+context       508 / 522        -0.20 pp
+background    522 / 522        +3.07 pp
+```
+
+---
+
+## Run 032 - Qwen Matched Random Control
+
+**Status:** Completed  
+**Seed:** 42  
+
+```text
+region       high uncertainty   random matched   uncertainty advantage
+all          54.41%             53.83%           -0.57 pp
+removed      58.24%             58.05%           -0.19 pp
+context      58.43%             58.62%           +0.19 pp
+background   55.17%             55.17%            0.00 pp
+```
+
+None of the comparisons was statistically significant.
+
+---
+
+## Run 033 - Qwen Matched Low-Uncertainty Control
+
+**Status:** Completed  
+
+```text
+region       high uncertainty   low uncertainty   high advantage
+all          54.41%             53.83%           -0.57 pp
+removed      58.24%             57.47%           -0.77 pp
+context      58.43%             58.43%            0.00 pp
+background   55.17%             55.17%            0.00 pp
+```
+
+The removed-region comparison slightly favored low-uncertainty masking: -0.77 pp, 95% CI [-1.53, -0.19], p = 0.0318.
+
+---
+
+## Run 034 - Qwen Original-Image Sanity Check
+
+**Status:** Completed  
+**Samples:** 522  
+
+```text
+condition     accuracy   accuracy drop
+none          90.42%     0.00 pp
+all           87.74%     2.68 pp
+removed       90.23%     0.19 pp
+context       90.42%     0.00 pp
+background    88.51%     1.92 pp
+```
+
+```text
+all: accuracy drop 2.68 pp, 95% CI [1.15, 4.41], p = 0.0002
+background: accuracy drop 1.92 pp, 95% CI [0.77, 3.26], p = 0.0016
+```
+
+---
+
+## Run 035 - Final Cross-Model Comparison and Plots
+
+**Status:** Completed  
+
+```text
+model             baseline HR   all effect   removed   context   background
+LLaVA-1.5-7B      79.50%        +3.64 pp     +1.15     +0.57     +3.07
+LLaVA-1.5-13B     88.70%        -0.57 pp     -0.57     -0.19     -0.57
+Qwen2.5-VL-7B     58.24%        +3.83 pp      0.00     -0.19     +3.07
+```
+
+```text
+model             all drop   background drop   removed drop   context drop
+LLaVA-1.5-7B      2.30 pp    1.92 pp           0.38 pp        0.38 pp
+Qwen2.5-VL-7B     2.68 pp    1.92 pp           0.19 pp        0.00 pp
+```
+
+### Final Outputs
+
+```text
+outputs/metrics/cross_model/
+outputs/plots/final/
+```
+
+---
+
+## Final Project Interpretation - Updated 2026-07-15
+
+```text
+1. Global and background masking reduce hallucination in LLaVA-1.5-7B and Qwen2.5-VL-7B.
+2. LLaVA-1.5-13B does not reproduce this effect.
+3. Removed-region and context-region masking are weak or ineffective across models.
+4. LLaVA-1.5-7B high-uncertainty masking differs from matched low-uncertainty masking, but not consistently from matched random masking.
+5. Qwen high-uncertainty masking does not outperform matched random or matched low-uncertainty masking.
+6. Global and background masking reduce correct recognition on original images in both LLaVA-1.5-7B and Qwen2.5-VL-7B.
+```
+
+Final interpretation:
+
+```text
+Global and background visual information is causally influential for object-presence decisions in LLaVA-1.5-7B and Qwen2.5-VL-7B. Suppressing these representations can reduce hallucination, but the benefit is not uniquely uncertainty-specific and comes with a measurable false-negative cost. The effect is model-dependent and does not transfer to LLaVA-1.5-13B.
+```
