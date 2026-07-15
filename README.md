@@ -35,7 +35,7 @@ using the ROHE benchmark.
 region-vlm-uncertainty/
 
 ├── code/                  # Analysis scripts
-├── docs/                  # Thesis notes and experiment logs
+├── docs/                  # Notes and experiment logs
 ├── notebooks/             # Analysis notebooks
 ├── patches/               # Required source patches
 ├── scripts/               # HPC scripts
@@ -110,11 +110,11 @@ Cross-Model Comparison
 
 The repository contains implementations for
 
-| Model | Status |
-|--------|--------|
-| LLaVA-1.5-7B | ✓ |
-| LLaVA-1.5-13B | ✓ |
-| Qwen2.5-VL-7B | ✓ |
+| Model |
+|--------|
+| LLaVA-1.5-7B |
+| LLaVA-1.5-13B |
+| Qwen2.5-VL-7B |
 
 Although the overall experimental protocol is shared, the intervention differs by architecture.
 
@@ -189,15 +189,6 @@ The complete pipeline consists of:
 7. Original-image sanity evaluation
 8. Cross-model comparison
 
-Example:
-
-```bash
-python code/12_llava_attack.py
-python code/13_compute_uncertainty.py
-python code/14_mask_generation.py
-python code/23_cross_model_comparison.py
-python code/24_cross_model_plots.py
-```
 
 The Qwen implementation is located under
 
