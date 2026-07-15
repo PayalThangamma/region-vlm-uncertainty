@@ -1,5 +1,7 @@
 # Region-Aware Epistemic Uncertainty for Mitigating Hallucinations in Large Vision-Language Models
 
+https://payalthangamma.github.io/region-vlm-uncertainty/
+
 This repository contains the implementation accompanying my Master's thesis on mitigating hallucinations in Large Vision-Language Models (LVLMs) using **region-aware epistemic uncertainty** and **causal visual-token masking**.
 
 The project evaluates whether suppressing visually uncertain representations reduces object hallucinations while preserving correct visual recognition.
