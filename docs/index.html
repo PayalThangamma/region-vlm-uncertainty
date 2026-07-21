@@ -3,20 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Project page for region-wise causal analysis of epistemic visual uncertainty in LVLM hallucination." />
-  <title>Region-wise Causal Analysis of Epistemic Visual Uncertainty</title>
+
+  <meta
+    name="description"
+    content="Project page for region-wise causal intervention on epistemically uncertain visual tokens for object hallucination in large vision-language models."
+  />
+
+  <title>
+    Region-wise Causal Intervention on Epistemically Uncertain Visual Tokens
+  </title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#top"><span class="brand-mark">RU</span><span>Region Uncertainty</span></a>
-      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="brand" href="#top">
+        <span class="brand-mark">RU</span>
+        <span>Region Uncertainty</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <nav class="site-nav">
-        <a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#controls">Controls</a><a href="#citation">Citation</a>
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#controls">Controls</a>
+        <a href="#citation">Citation</a>
       </nav>
     </div>
   </header>
@@ -25,23 +56,73 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Research Project · Large Vision-Language Models</p>
-          <h1>Region-wise Causal Analysis of <span>Epistemic Visual Uncertainty</span></h1>
-          <p class="hero-subtitle">A causal intervention framework for understanding which visual regions influence object hallucination in LLaVA and Qwen2.5-VL.</p>
+          <p class="eyebrow">
+            Research Project · Large Vision-Language Models
+          </p>
+
+          <h1>
+            Region-wise Causal Intervention on
+            <span>Epistemically Uncertain Visual Tokens</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            A region-wise causal intervention framework for understanding
+            which semantic image regions influence object hallucination in
+            LLaVA-1.5 and Qwen2.5-VL.
+          </p>
+
           <div class="hero-actions">
-            <a class="button button-primary" href="assets/report.pdf" target="_blank">Read Report</a>
-            <a class="button button-secondary" href="https://github.com/PayalThangamma/region-vlm-uncertainty" target="_blank">View Code</a>
-            <a class="button button-ghost" href="#results">Explore Results</a>
+            <a
+              class="button button-primary"
+              href="assets/paper.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read Report
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://github.com/PayalThangamma/region-vlm-uncertainty"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Code
+            </a>
+
+            <a class="button button-ghost" href="#results">
+              Explore Results
+            </a>
           </div>
-          <div class="author-line"><span>Payal Thangamma Alemada Sathish</span></div>
+
+          <div class="author-line">
+            <span>Payal Thangamma Alemada Sathish</span>
+          </div>
         </div>
+
         <div class="hero-card reveal delay-1">
           <p class="hero-card-top">● Three-model causal evaluation</p>
+
           <div class="hero-metrics">
-            <div class="metric"><strong>522</strong><span>Removed-object samples</span></div>
-            <div class="metric"><strong>3</strong><span>LVLMs evaluated</span></div>
-            <div class="metric"><strong>5</strong><span>Masking conditions</span></div>
-            <div class="metric"><strong>8</strong><span>Object categories</span></div>
+            <div class="metric">
+              <strong>522</strong>
+              <span>Removed-object samples</span>
+            </div>
+
+            <div class="metric">
+              <strong>3</strong>
+              <span>LVLMs evaluated</span>
+            </div>
+
+            <div class="metric">
+              <strong>5</strong>
+              <span>Masking conditions</span>
+            </div>
+
+            <div class="metric">
+              <strong>8</strong>
+              <span>Object categories</span>
+            </div>
           </div>
         </div>
       </div>
@@ -49,31 +130,153 @@
 
     <section id="overview" class="section">
       <div class="container">
-        <div class="section-heading reveal"><p class="eyebrow">Research Question</p><h2>Where does uncertain visual evidence matter?</h2><p>When an object is removed, hallucination may be driven by residual evidence near the object, nearby context, or broader scene-level cues.</p></div>
+        <div class="section-heading reveal">
+          <p class="eyebrow">Research Question</p>
+
+          <h2>Where does uncertain visual evidence matter?</h2>
+
+          <p>
+            When an object is removed, hallucination may be driven by residual
+            evidence near the original object location, nearby contextual
+            structure, or broader scene-level cues.
+          </p>
+        </div>
+
         <div class="question-grid">
-          <article class="card reveal"><span>01</span><h3>Removed region</h3><p>Does uncertainty at the original object location directly drive the hallucinated answer?</p></article>
-          <article class="card reveal delay-1"><span>02</span><h3>Context region</h3><p>Do nearby objects and local structure reinforce the absent object's presence?</p></article>
-          <article class="card reveal delay-2"><span>03</span><h3>Background region</h3><p>Do global scene priors and co-occurrence cues bias the model toward confirming the removed object?</p></article>
+          <article class="card reveal">
+            <span>01</span>
+            <h3>Removed region</h3>
+            <p>
+              Does uncertainty at the original object location directly
+              influence the hallucinated answer?
+            </p>
+          </article>
+
+          <article class="card reveal delay-1">
+            <span>02</span>
+            <h3>Context region</h3>
+            <p>
+              Do nearby objects and local scene structure reinforce the absent
+              object's presence?
+            </p>
+          </article>
+
+          <article class="card reveal delay-2">
+            <span>03</span>
+            <h3>Background region</h3>
+            <p>
+              Do global scene priors and co-occurrence cues bias the model
+              toward confirming the removed object?
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="method" class="section section-alt">
       <div class="container">
-        <div class="section-heading reveal"><p class="eyebrow">Method</p><h2>From removed objects to causal interventions</h2><p>The pipeline combines controlled counterfactual images, semantic regions, representation-space perturbations, uncertainty, and region-specific masking.</p></div>
-        <figure class="media-card reveal"><img src="assets/pipeline.jpg" alt="Pipeline overview" /><figcaption>Object removal, semantic token mapping, uncertainty estimation, and causal masking.</figcaption></figure>
-        <div class="method-grid">
-          <article class="card reveal"><span>1</span><h3>Counterfactual construction</h3><p>One object is removed from each COCO image using LaMa.</p></article>
-          <article class="card reveal delay-1"><span>2</span><h3>Semantic token mapping</h3><p>Pixels are aligned with fixed LLaVA patches or dynamic Qwen merged tokens.</p></article>
-          <article class="card reveal delay-2"><span>3</span><h3>Epistemic uncertainty</h3><p>Clean and adversarial visual representations identify unstable tokens.</p></article>
-          <article class="card reveal delay-3"><span>4</span><h3>Causal masking</h3><p>None, all, removed, context, and background interventions are evaluated.</p></article>
+        <div class="section-heading reveal">
+          <p class="eyebrow">Method</p>
+
+          <h2>From removed objects to causal interventions</h2>
+
+          <p>
+            The pipeline combines controlled counterfactual images, semantic
+            region maps, representation-space perturbations, epistemic
+            uncertainty estimation, and region-specific visual-token
+            suppression.
+          </p>
         </div>
+
+        <figure class="media-card reveal">
+          <img
+            src="assets/pipeline.jpg"
+            alt="Overview of the region-wise causal intervention pipeline"
+          />
+
+          <figcaption>
+            Object removal, semantic token mapping, uncertainty estimation, and
+            region-wise causal masking.
+          </figcaption>
+        </figure>
+
+        <div class="method-grid">
+          <article class="card reveal">
+            <span>1</span>
+            <h3>Counterfactual construction</h3>
+            <p>
+              One target object is removed from each COCO image using LaMa
+              inpainting.
+            </p>
+          </article>
+
+          <article class="card reveal delay-1">
+            <span>2</span>
+            <h3>Semantic token mapping</h3>
+            <p>
+              Image regions are aligned with fixed LLaVA patches or dynamic
+              Qwen merged visual tokens.
+            </p>
+          </article>
+
+          <article class="card reveal delay-2">
+            <span>3</span>
+            <h3>Epistemic uncertainty</h3>
+            <p>
+              Clean and adversarially perturbed visual representations are
+              compared to identify unstable visual tokens.
+            </p>
+          </article>
+
+          <article class="card reveal delay-3">
+            <span>4</span>
+            <h3>Causal masking</h3>
+            <p>
+              None, global, removed-region, context-region, and
+              background-region interventions are evaluated.
+            </p>
+          </article>
+        </div>
+
         <div class="sample-layout">
-          <figure class="media-card reveal"><img src="assets/sample.jpg" alt="Sample and semantic region map" /><figcaption>Original image, removed-object image, and semantic token regions.</figcaption></figure>
+          <figure class="media-card reveal">
+            <img
+              src="assets/sample.jpg"
+              alt="Original image, removed-object image, and semantic token-region map"
+            />
+
+            <figcaption>
+              Original image, LaMa-inpainted image, and token-level semantic
+              regions.
+            </figcaption>
+          </figure>
+
           <div class="model-stack reveal delay-1">
-            <article class="model-card"><p>LLaVA-1.5-7B</p><h3>Fixed grid</h3><span>24 × 24 tokens; masking inside selected visual-attention layers.</span></article>
-            <article class="model-card"><p>LLaVA-1.5-13B</p><h3>Within-family robustness</h3><span>Same intervention at larger model scale.</span></article>
-            <article class="model-card"><p>Qwen2.5-VL-7B</p><h3>Dynamic merged tokens</h3><span>Variable visual grids with merged-embedding masking.</span></article>
+            <article class="model-card">
+              <p>LLaVA-1.5-7B</p>
+              <h3>Fixed visual grid</h3>
+              <span>
+                24 × 24 visual tokens with suppression inside selected
+                visual-attention layers.
+              </span>
+            </article>
+
+            <article class="model-card">
+              <p>LLaVA-1.5-13B</p>
+              <h3>Within-family comparison</h3>
+              <span>
+                The same intervention is evaluated at a larger model scale.
+              </span>
+            </article>
+
+            <article class="model-card">
+              <p>Qwen2.5-VL-7B</p>
+              <h3>Dynamic merged tokens</h3>
+              <span>
+                Variable visual grids with merged-token suppression before
+                language-model input.
+              </span>
+            </article>
           </div>
         </div>
       </div>
@@ -81,63 +284,305 @@
 
     <section id="results" class="section">
       <div class="container">
-        <div class="section-heading reveal"><p class="eyebrow">Main Results</p><h2>Global and background evidence matter most</h2><p>Positive effects indicate hallucination reduction relative to each model's no-masking baseline.</p></div>
-        <figure class="media-card reveal"><img src="assets/cross_model_causal_effects.png" alt="Cross-model causal effects" /><figcaption>LLaVA-1.5-7B and Qwen2.5-VL-7B benefit most from global and background masking; LLaVA-1.5-13B does not.</figcaption></figure>
-        <div class="result-cards">
-          <article class="result-card reveal"><p>LLaVA-1.5-7B</p><strong>+3.64 pp</strong><span>Global masking</span><small>Background: +3.07 pp</small></article>
-          <article class="result-card reveal delay-1"><p>LLaVA-1.5-13B</p><strong class="negative">−0.57 pp</strong><span>Global masking</span><small>No reliable improvement</small></article>
-          <article class="result-card reveal delay-2"><p>Qwen2.5-VL-7B</p><strong>+3.83 pp</strong><span>Global masking</span><small>Background: +3.07 pp</small></article>
+        <div class="section-heading reveal">
+          <p class="eyebrow">Main Results</p>
+
+          <h2>
+            Global and background masking produce the strongest hallucination
+            reductions
+          </h2>
+
+          <p>
+            Positive effects indicate percentage-point reductions in
+            hallucination relative to each model's no-masking baseline.
+          </p>
         </div>
-        <div class="table-wrap reveal"><table><thead><tr><th>Model</th><th>Baseline</th><th>All</th><th>Removed</th><th>Context</th><th>Background</th></tr></thead><tbody><tr><td>LLaVA-1.5-7B</td><td>79.50%</td><td>+3.64</td><td>+1.15</td><td>+0.57</td><td>+3.07</td></tr><tr><td>LLaVA-1.5-13B</td><td>88.70%</td><td>−0.57</td><td>−0.57</td><td>−0.19</td><td>−0.57</td></tr><tr><td>Qwen2.5-VL-7B</td><td>58.24%</td><td>+3.83</td><td>0.00</td><td>−0.19</td><td>+3.07</td></tr></tbody></table><p>Effects are percentage points.</p></div>
+
+        <figure class="media-card reveal">
+          <img
+            src="assets/cross_model_causal_effects.png"
+            alt="Cross-model hallucination reductions under region-wise masking"
+          />
+
+          <figcaption>
+            LLaVA-1.5-7B and Qwen2.5-VL-7B show the largest reductions under
+            global and background masking, while LLaVA-1.5-13B does not show a
+            reliable improvement.
+          </figcaption>
+        </figure>
+
+        <div class="result-cards">
+          <article class="result-card reveal">
+            <p>LLaVA-1.5-7B</p>
+            <strong>+3.64 pp</strong>
+            <span>Global masking</span>
+            <small>Background: +3.07 pp</small>
+          </article>
+
+          <article class="result-card reveal delay-1">
+            <p>LLaVA-1.5-13B</p>
+            <strong class="negative">−0.57 pp</strong>
+            <span>Global masking</span>
+            <small>No statistically reliable improvement</small>
+          </article>
+
+          <article class="result-card reveal delay-2">
+            <p>Qwen2.5-VL-7B</p>
+            <strong>+3.83 pp</strong>
+            <span>Global masking</span>
+            <small>Background: +3.07 pp</small>
+          </article>
+        </div>
+
+        <div class="table-wrap reveal">
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Baseline hallucination</th>
+                <th>Global</th>
+                <th>Removed</th>
+                <th>Context</th>
+                <th>Background</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>LLaVA-1.5-7B</td>
+                <td>79.50%</td>
+                <td>+3.64</td>
+                <td>+1.15</td>
+                <td>+0.57</td>
+                <td>+3.07</td>
+              </tr>
+
+              <tr>
+                <td>LLaVA-1.5-13B</td>
+                <td>88.70%</td>
+                <td>−0.57</td>
+                <td>−0.57</td>
+                <td>−0.19</td>
+                <td>−0.57</td>
+              </tr>
+
+              <tr>
+                <td>Qwen2.5-VL-7B</td>
+                <td>58.24%</td>
+                <td>+3.83</td>
+                <td>0.00</td>
+                <td>−0.19</td>
+                <td>+3.07</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Masking effects are reported in percentage points relative to the
+            no-masking condition.
+          </p>
+        </div>
       </div>
     </section>
 
     <section id="controls" class="section section-alt">
       <div class="container">
-        <div class="section-heading reveal"><p class="eyebrow">Controls</p><h2>Is the improvement really uncertainty-specific?</h2><p>Matched random and low-uncertainty controls separate uncertainty ranking from general information removal.</p></div>
-        <figure class="media-card reveal"><img src="assets/qwen_uncertainty_controls.png" alt="Qwen controls" /><figcaption>For Qwen2.5-VL-7B, high-uncertainty masking does not outperform matched random or low-uncertainty masking.</figcaption></figure>
+        <div class="section-heading reveal">
+          <p class="eyebrow">Control Experiments</p>
+
+          <h2>Are the improvements specific to epistemic uncertainty?</h2>
+
+          <p>
+            Matched random and matched low-uncertainty controls distinguish
+            uncertainty-guided token selection from general visual-information
+            removal.
+          </p>
+        </div>
+
+        <figure class="media-card reveal">
+          <img
+            src="assets/qwen_uncertainty_controls.png"
+            alt="Qwen high-uncertainty, matched random, and matched low-uncertainty controls"
+          />
+
+          <figcaption>
+            For Qwen2.5-VL-7B, high-uncertainty masking does not outperform
+            matched random or matched low-uncertainty masking.
+          </figcaption>
+        </figure>
+
         <div class="question-grid">
-          <article class="card reveal"><span>Random</span><h3>Selection alone is not enough</h3><p>Randomly suppressing the same number of tokens often produces a similar effect.</p></article>
-          <article class="card reveal delay-1"><span>Low uncertainty</span><h3>Backend-dependent specificity</h3><p>LLaVA-7B differs from low-uncertainty masking, while Qwen does not.</p></article>
-          <article class="card reveal delay-2"><span>Active masks</span><h3>Weak regions remain weak</h3><p>Removed and context effects remain weak even when suppression is active.</p></article>
+          <article class="card reveal">
+            <span>Random</span>
+            <h3>General information removal matters</h3>
+            <p>
+              Randomly suppressing the same number of tokens often produces
+              effects comparable to high-uncertainty masking.
+            </p>
+          </article>
+
+          <article class="card reveal delay-1">
+            <span>Low uncertainty</span>
+            <h3>Architecture-dependent specificity</h3>
+            <p>
+              LLaVA-1.5-7B differs from matched low-uncertainty masking,
+              whereas Qwen2.5-VL-7B does not.
+            </p>
+          </article>
+
+          <article class="card reveal delay-2">
+            <span>Active masks</span>
+            <h3>Weak regional effects remain weak</h3>
+            <p>
+              Removed-region and context-region effects remain limited even
+              when analysis is restricted to samples with active suppression.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="section-heading reveal"><p class="eyebrow">Recognition Trade-off</p><h2>Hallucination reduction is not cost-free</h2><p>Global and background masking also reduce correct recognition when the queried object is present.</p></div>
-        <figure class="media-card reveal"><img src="assets/original_image_accuracy_drop.png" alt="Original-image accuracy drop" /><figcaption>The strongest interventions create false-negative costs of roughly two percentage points.</figcaption></figure>
-        <div class="takeaway reveal"><p class="eyebrow">Central Takeaway</p><h3>Region-wise masking reveals where visual evidence matters, but uncertainty ranking is not universally selective.</h3></div>
+        <div class="section-heading reveal">
+          <p class="eyebrow">Recognition Trade-off</p>
+
+          <h2>Hallucination reduction is not cost-free</h2>
+
+          <p>
+            Global and background masking also reduce correct object
+            recognition when the queried object is present in the original
+            image.
+          </p>
+        </div>
+
+        <figure class="media-card reveal">
+          <img
+            src="assets/original_image_accuracy_drop.png"
+            alt="Original-image recognition accuracy drop after masking"
+          />
+
+          <figcaption>
+            The strongest interventions introduce false-negative recognition
+            costs of approximately two percentage points.
+          </figcaption>
+        </figure>
+
+        <div class="takeaway reveal">
+          <p class="eyebrow">Central Takeaway</p>
+
+          <h3>
+            Region-wise masking reveals where visual evidence influences
+            hallucination, but uncertainty ranking is not universally selective.
+          </h3>
+        </div>
       </div>
     </section>
 
     <section class="section section-alt">
       <div class="container">
-        <div class="section-heading reveal"><p class="eyebrow">Key Findings</p><h2>What the experiments establish</h2></div>
+        <div class="section-heading reveal">
+          <p class="eyebrow">Key Findings</p>
+          <h2>What the experiments establish</h2>
+        </div>
+
         <div class="finding-grid">
-          <article class="card reveal"><span>01</span><h3>Global and background regions dominate</h3><p>These interventions are strongest in two distinct 7B backends.</p></article>
-          <article class="card reveal delay-1"><span>02</span><h3>The effect is model dependent</h3><p>LLaVA-1.5-13B does not reproduce the positive effect.</p></article>
-          <article class="card reveal delay-2"><span>03</span><h3>Uncertainty is not uniquely causal</h3><p>Random and low-uncertainty controls explain part of the gain.</p></article>
-          <article class="card reveal delay-3"><span>04</span><h3>Mitigation has a recognition cost</h3><p>Aggressive masking removes useful visual evidence.</p></article>
+          <article class="card reveal">
+            <span>01</span>
+            <h3>Global and background masking are strongest</h3>
+            <p>
+              These interventions produce the largest hallucination reductions
+              in two distinct 7B model architectures.
+            </p>
+          </article>
+
+          <article class="card reveal delay-1">
+            <span>02</span>
+            <h3>The effect is model-dependent</h3>
+            <p>
+              LLaVA-1.5-13B does not reproduce the positive masking effects
+              observed in the two 7B models.
+            </p>
+          </article>
+
+          <article class="card reveal delay-2">
+            <span>03</span>
+            <h3>Uncertainty is not uniquely causal</h3>
+            <p>
+              Matched controls show that uncertainty ranking is not universally
+              responsible for the observed improvements.
+            </p>
+          </article>
+
+          <article class="card reveal delay-3">
+            <span>04</span>
+            <h3>Mitigation has a recognition cost</h3>
+            <p>
+              The same masking conditions that reduce hallucination can also
+              remove useful visual evidence.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="citation" class="section">
       <div class="container">
-        <div class="section-heading reveal"><p class="eyebrow">Citation</p><h2>Cite this work</h2></div>
-        <div class="citation-card reveal"><button class="copy-button" data-copy-target="bibtex">Copy BibTeX</button><pre id="bibtex"><code>@misc{alemadasathish2026regionwise,
-  title  = {Region-wise Causal Analysis of Epistemic Visual Uncertainty for Object Hallucination in Large Vision-Language Models},
+        <div class="section-heading reveal">
+          <p class="eyebrow">Citation</p>
+          <h2>Cite this work</h2>
+        </div>
+
+        <div class="citation-card reveal">
+          <button class="copy-button" data-copy-target="bibtex">
+            Copy BibTeX
+          </button>
+
+          <pre id="bibtex"><code>@misc{alemadasathish2026regionwise,
+  title  = {Region-wise Causal Intervention on Epistemically Uncertain Visual Tokens for Object Hallucination in Large Vision-Language Models},
   author = {Payal Thangamma Alemada Sathish},
   year   = {2026},
   url    = {https://github.com/PayalThangamma/region-vlm-uncertainty}
-}</code></pre></div>
+}</code></pre>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer><div class="container footer-grid"><div><strong>Region-wise Causal Analysis</strong><p>Epistemic visual uncertainty and LVLM hallucination.</p></div><div><a href="assets/report.pdf" target="_blank">Report</a><a href="https://github.com/PayalThangamma/region-vlm-uncertainty" target="_blank">GitHub</a><a href="mailto:payalthangammaas@gmail.com">Email</a></div></div></footer>
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Region-wise Causal Intervention</strong>
+        <p>
+          Epistemically uncertain visual tokens and object hallucination in
+          large vision-language models.
+        </p>
+      </div>
+
+      <div>
+        <a
+          href="assets/paper.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Report
+        </a>
+
+        <a
+          href="https://github.com/PayalThangamma/region-vlm-uncertainty"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <a href="mailto:payalthangammaas@gmail.com">
+          Email
+        </a>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
